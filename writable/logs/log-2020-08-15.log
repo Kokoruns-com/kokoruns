@@ -1,0 +1,33 @@
+CRITICAL - 2020-08-15 18:45:43 --> Table 'kokoruns.tcompanies' doesn't exist
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('SELECT 1\nFROM `...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Rules.php(234): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Validation.php(294): CodeIgniter\Validation\Rules->is_unique('test@yahoo.com', 'femail', Array, NULL)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Validation.php(189): CodeIgniter\Validation\Validation->processRules('company_email', 'company_email', 'test@yahoo.com', Array, Array)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Controller.php(219): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(65): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->companyregisteraction()
+#10 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#11 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2020-08-15 18:53:25 --> Allowed fields must be specified for model: {0}
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Model.php(1234): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Empl...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Model.php(709): CodeIgniter\Model->doProtectFields(Array)
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(98): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->companyregisteraction()
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-08-15 19:19:50 --> Invalid file: {0}
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/companyre...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/companyre...', Array, true)
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(56): view('front/companyre...')
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->employerregister()
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

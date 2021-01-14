@@ -1,0 +1,15 @@
+CRITICAL - 2020-11-23 10:27:26 --> Table 'kokoruns_kokoruns.tcompanies' doesn't exist
+#0 /home/kokoruns/public_html/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT 1\nFROM `...')
+#1 /home/kokoruns/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 /home/kokoruns/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 /home/kokoruns/public_html/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 /home/kokoruns/public_html/system/Validation/Rules.php(234): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kokoruns/public_html/system/Validation/Validation.php(294): CodeIgniter\Validation\Rules->is_unique('testc@yahoo.com', 'fcompany_email', Array, NULL)
+#6 /home/kokoruns/public_html/system/Validation/Validation.php(189): CodeIgniter\Validation\Validation->processRules('company_email', 'company_email', 'testc@yahoo.com', Array, Array)
+#7 /home/kokoruns/public_html/system/Controller.php(219): CodeIgniter\Validation\Validation->run()
+#8 /home/kokoruns/public_html/app/Controllers/Front.php(243): CodeIgniter\Controller->validate(Array)
+#9 /home/kokoruns/public_html/system/CodeIgniter.php(914): App\Controllers\Front->cregisteraction()
+#10 /home/kokoruns/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#11 /home/kokoruns/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /home/kokoruns/public_html/index.php(45): CodeIgniter\CodeIgniter->run()
+#13 {main}

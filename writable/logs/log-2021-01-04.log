@@ -1,0 +1,108 @@
+CRITICAL - 2021-01-04 10:47:10 --> Class 'App\Controllers\CompanyVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->cregisteraction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 10:47:52 --> Class 'App\Controllers\CompanyVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->cregisteraction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 10:49:52 --> Class 'App\Models\CompanyVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->cregisteraction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 10:50:57 --> Class 'App\Models\CompanyVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->cregisteraction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 11:19:17 --> Call to a member function getSegment() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->CompanyVerifyEmail('excanny@yahoo.c...', '5d718c9464c8305...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 12:13:40 --> Call to a member function getSegment() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->CompanyVerifyEmail('excanny@yahoo.c...', '5d718c9464c8305...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 12:40:17 --> Call to a member function getSegment() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->CompanyVerifyEmail('excanny@yahoo.c...', '5d718c9464c8305...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 12:40:19 --> Call to a member function getSegment() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->CompanyVerifyEmail('excanny@yahoo.c...', '5d718c9464c8305...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 12:49:41 --> Call to a member function getSegment() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->CompanyVerifyEmail('rr', 'gg')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 13:23:07 --> Class 'App\Controllers\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->index()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 13:23:11 --> Class 'App\Controllers\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->index()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 14:33:06 --> Class 'App\Controllers\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->index()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 14:33:11 --> Class 'App\Controllers\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->index()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 14:33:16 --> Class 'App\Controllers\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->index()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 14:40:37 --> Class 'App\Controllers\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->index()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 14:49:44 --> Class 'App\Controllers\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->index()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 16:01:37 --> Call to a member function getSegment() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->CompanyVerifyEmail('rr', 'gg')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-04 16:56:28 --> Call to a member function getSegment() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->CompanyVerifyEmail('rr', 'gg')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

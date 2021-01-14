@@ -1,0 +1,42 @@
+CRITICAL - 2020-10-04 21:54:55 --> Undefined variable: id
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(925): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 925, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->profilesetupaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-04 21:54:55 --> Undefined variable: id
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(925): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 925, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->profilesetupaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-04 21:55:00 --> Undefined variable: id
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(925): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 925, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->profilesetupaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-04 21:55:00 --> Undefined variable: id
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(925): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 925, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->profilesetupaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-04 21:55:01 --> Undefined variable: id
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(925): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 925, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->profilesetupaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-04 21:55:01 --> Undefined variable: id
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(925): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 925, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->profilesetupaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -1,0 +1,554 @@
+
+/* PROFILE */
+
+hr {
+  border: 0.5px solid darkgray;  
+}
+
+.company-profile {
+    padding-left:15.5%;
+    padding-right: 15.5%;
+    display: ;
+    padding-bottom: 200px;
+    /*padding-top: 50px;*/
+    padding-top: 0px;   
+}
+
+.company-profile-header-container {
+   display: flex;   
+   align-self: center;
+   justify-content: center;
+   padding-bottom: 40px; 
+   padding-top: 20px;    
+   
+}
+
+.company-profile-header {
+   font-family: sans-serif;
+  font-weight: normal;
+  color: darkgray;
+  font-size: 27px; 
+  letter-spacing: 1px;     
+}
+
+.edit-profile-button-div {
+    padding-top: 20px;
+    padding-left: 10px; 
+    display: block;
+}
+
+.edit-profile-button {
+  border: none;
+  background-color: #0991ff;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 5px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-family: sans-serif; 
+  font-size: 17px;    
+  height: 32px; 
+  letter-spacing: 1px;    
+}
+
+.edit-profile-button:hover {
+  background-color: white;
+  color: #0991ff;    
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 10px 30px 0 rgba(0,0,0,0.25);       
+}
+
+.company-profile-container {  
+  padding: 20px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 10px 43px 0 rgba(0,0,0,0.20); 
+  background-color: white;    
+}
+
+.company-profile-container:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.25), 0 10px 43px 0 rgba(0,0,0,0.30);    
+}
+
+.about-div {
+  padding-bottom: 30px;    
+}
+
+.about-label {
+ font-size: 23px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 7px;
+  letter-spacing: 1px;    
+}
+
+.about {
+  font-size: 18px ;
+  color: darkgray;
+  line-height: 1.5;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+    
+}
+
+.locations-div {
+  padding-bottom: 30px;     
+}
+
+.locations-label {
+ font-size: 25px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 10px;
+  letter-spacing: 1px;    
+}
+
+.locations {
+  font-size: 18px ;
+  color: darkgray;
+  line-height: 1.5;
+  font-family: sans-serif;
+  letter-spacing: 1px;  
+  padding-top: 5px;
+  padding-bottom: 5px;    
+}
+
+
+.social-div {
+   padding-bottom: 30px;
+   letter-spacing: 8px; 
+}
+
+.social-div-a {
+  padding-bottom: 10px; 
+  display: inline-block;
+}
+
+.social-label {
+ font-size: 23px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 12px;
+  letter-spacing: 1px; 
+}
+
+.social {
+  font-size: 20px ;
+  color: white ;
+  font-family: sans-serif;
+  letter-spacing: 1px;  
+  padding: 5px;
+  padding-left: 12px;
+  padding-right: 12px;    
+  border: none;
+  background-color: darkgray;
+  border-radius: 5px;
+  color: white;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  letter-spacing: 2px; 
+  display: inline-block;
+}
+
+.social:hover {
+  background-color: white;
+  color: darkgray;    
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 10px 30px 0 rgba(0,0,0,0.25);  
+}
+
+.social-icon {
+  width:22px ;
+  padding-right: 10px;    
+ 
+}
+
+.tags-div {
+  padding-bottom: 30px; 
+  letter-spacing: 8px;     
+}
+
+
+.tags-label {
+  font-size: 23px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px; 
+}
+
+.tag-div {
+  padding-bottom: 10px; 
+  display: inline-block;   
+}
+
+.tags {
+  font-size: 14px ;
+  color: white;
+  font-family: monospace;
+  letter-spacing: 1px; 
+  border-radius: 5px; 
+  background-color: darkgray;
+  display:inline-block;
+  padding: 5px;
+  padding-bottom: 7px;    
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight:bold ;
+}
+
+.tags:hover {
+  background-color: white;
+  color: darkgray;    
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 10px 30px 0 rgba(0,0,0,0.25); 
+    
+}
+
+.delete-tags-button {
+  padding: 0px; 
+  background: transparent;
+  border: none;
+
+}
+
+.delete-icon {
+  width: 17px;
+   
+}
+
+.delete-icon:hover {
+    filter: invert(0.9);
+}
+
+.edit-profile-form-container-padding {
+ display: none;
+ padding-bottom: 100px;    
+}
+
+.edit-profile-form-container {
+       
+   background-color: white;
+   padding: 20px;
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 10px 43px 0 rgba(0,0,0,0.20);
+}
+
+.edit-profile-form-container:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.25), 0 10px 43px 0 rgba(0,0,0,0.30);      
+}
+
+.edit-profile-form {
+    
+}
+
+.form-about-div {
+ padding-bottom: 30px;    
+}
+
+.form-about-label {
+  font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;    
+}
+
+.textarea-div {
+  display: grid;  
+}
+
+.form-about-textarea {  
+  max-height: 100px ;
+  min-height: 100px ;
+  padding: 7px;
+    padding-left: 10px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    color: #333333;    
+}
+
+.form-about-textarea:hover {
+
+      
+}
+
+.form-locations-div {
+   padding-bottom: 30px;    
+}
+
+.form-locations-label {
+ font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;     
+}
+
+.input-div-1 {
+    display: grid;
+   
+}
+
+.input-div-2 {
+    display: none;
+
+}
+
+.form-locations-input {
+  padding: 7px;
+    padding-left: 10px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    color: #333333;    
+}
+
+.form-locations-input:hover {
+ 
+}
+
+.add-locations-button-div {
+    padding-top: 10px;
+    display: block;    
+}
+
+.add-more-button {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 3px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #0991ff;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  height: 32px; 
+  letter-spacing: 1px;     
+} 
+
+.add-more-button:hover {
+  border: 2px solid #0991ff;
+}
+
+
+.form-social-div {
+  padding-bottom: 30px;      
+}
+
+.form-social-label {
+  font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;   
+}
+
+.social-select-div-1 {
+  display: grid;
+  line-height: 5px;    
+}
+
+.social-flex-div {
+  display: flex;    
+}
+
+.social-select-div-2 {
+  display: none;  
+}
+
+
+.form-social-select {
+  width: 20%;  
+  height: 37px ;      
+  padding: 7px;
+  padding-left: 10px;
+  border: solid 1px darkgray;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #333333;    
+}
+
+.form-social-select:hover {
+
+}
+
+.form-social-input {
+  width: 80%;    
+  padding: 7px;
+  padding-left: 10px;
+  border: solid 1px darkgray;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #333333;    
+}
+
+@media screen and (max-width: 700px) {
+    
+    .form-social-select {
+      width: 35%;  
+    }  
+    
+    .form-social-input {
+       width: 65%; 
+    }
+    
+}
+
+.form-social-input:hover {
+
+}
+
+.add-social-button-div {
+  padding-top: 10px; 
+}
+
+.add-social-button {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 3px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #0991ff;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  height: 32px; 
+  letter-spacing: 1px;     
+}
+
+.add-social-button:hover {
+  border: 2px solid #0991ff;
+}
+
+.form-tags-div {
+  padding-bottom: 30px;    
+}
+
+.form-tags-label {
+  font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;       
+}
+
+.tags-input-div-1 {
+ display: inline-block;
+ padding-right: 5px;      
+}
+
+.tag-input-container {
+ padding-right: 5px; 
+ padding-bottom: 5px;
+ display: inline-block;    
+}
+
+.tag-input-container-2 {
+ padding-right: 5px; 
+ padding-bottom: 5px;
+ display: none;    
+}
+
+
+
+.form-tags-input {
+  padding: 7px;
+    padding-left: 10px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    color: #333333;
+    width: 150px;
+}
+
+.form-tags-input:hover { 
+}
+
+.add-tag-button-div {
+  padding-top: 5px;  
+}
+
+.add-tag-button {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 3px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #0991ff;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  height: 32px; 
+  letter-spacing: 1px;     
+}
+
+.add-tag-button:hover {
+  border: 2px solid #0991ff;    
+}
+
+.edit-profile-form-buttons {
+ padding-top: 20px; 
+ 
+}
+
+.edit-profile-cancel-button {
+  border: 2px solid white;    
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 3px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #0991ff;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  height: 32px; 
+  letter-spacing: 1px;     
+}
+
+.edit-profile-cancel-button:hover {
+ border: 2px solid #0991ff;
+}
+
+.edit-profile-finish-button {
+  border: none;
+  background-color: #0991ff;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 3px;    
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  height: 32px; 
+  letter-spacing: 1px;       
+}
+
+.edit-profile-finish-button:hover {
+ background-color: white;
+  color: #0991ff;
+   box-shadow: 0 5px 10px 0 rgba(0,0,0,0.25), 0 10px 30px 0 rgba(0,0,0,0.30);       
+}
+
+
+
+
+
+
+

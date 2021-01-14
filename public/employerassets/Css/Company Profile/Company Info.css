@@ -1,0 +1,206 @@
+
+/* COMPANY INFO */
+
+
+ .company-info-banner-container {
+  padding-left:17%;
+  padding-right: 17%;
+  /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 10px 43px 0 rgba(0,0,0,0.20);*/
+  background-image: linear-gradient(#9dccf2, white, white);
+  padding-bottom: 10px;
+  padding-top: 10px;   
+}
+
+.company-info-banner {
+  /*background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(Images/background.jpg);*/
+  background-color: lightgreen;
+  padding: 10px;
+  /*border-radius:25px;*/  
+}
+
+.icon-div {
+  display: flex;
+  padding-bottom: 0px;
+  padding-left: 2%; 
+  padding-right: 2%;    
+}
+
+.inbox-logo {
+  width: 25px;
+  height: 18px;
+  padding-right: 15px;
+  padding-top: 5px; 
+  float: left;  
+}
+
+.menu-bars-logo {
+ width: 30px;
+ height: 30px;  
+ float: right;   
+}
+
+.company-logo-div {
+ padding-bottom: 5px;   
+}
+
+.company-logo {
+  width: 20%;    
+  min-width: 120px;      
+  border-radius: 50%; 
+  border: solid 6px white;
+  box-shadow: 0 2px 4px 0 rgba(255,255,255,1.0), 0 -2px 4px 0 rgba(255,255,255,1.0);    
+}
+
+.company-name {
+  font-family: sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 23px;
+  padding-bottom: 3px;
+  letter-spacing: 1px;    
+}
+
+.view-company-info-div {
+  padding: 5px;  
+}
+
+.view-company-info-button {
+  border: none;
+  background-color: #0991ff;
+  border-radius: 2px;
+  padding: 4px;   
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;   
+  font-family: sans-serif; 
+  font-size: 14px;
+  letter-spacing: 1px;   
+  
+}
+
+.view-company-info-button:hover {
+  color: #0991ff;    
+  background-color: white;    
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 5px 20px 0 rgba(0,0,0,0.25);   
+}
+
+.hide-company-info-div {
+  padding: 5px;
+  padding-bottom: 10px;
+  display: none;   
+}
+
+.hide-company-info-button {
+  border: none;
+  background-color: #0991ff;
+  border-radius: 2px;
+  padding: 4px;   
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;   
+  font-family: sans-serif; 
+  font-size: 14px;
+  letter-spacing: 1px;    
+   
+}
+
+.hide-company-info-button:hover {
+  color: #0991ff;    
+  background-color: white;    
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 5px 20px 0 rgba(0,0,0,0.25);   
+}
+
+.company-info-container {
+  display: flex;
+  align-content: center; 
+  align-items: center; 
+  justify-content: center; 
+  line-height: 1.5;
+  display:none ;
+    
+}
+
+.company-info { 
+  color: #333333;   
+  text-align: left;
+  padding: 20px;
+  width: 80%; 
+  background-color: white;
+  font-family: sans-serif;    
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 10px 43px 0 rgba(0,0,0,0.20);
+  border-radius: 3px;
+  letter-spacing: 1px; 
+}
+
+.company-info:hover {
+ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.25), 0 10px 43px 0 rgba(0,0,0,0.30);   
+}
+
+.company-info a {
+     text-decoration: none;
+    font-weight: bold;
+    color: #0991ff;
+}
+
+.company-info a:hover {
+    color: #d92727;
+}
+
+.company-info-label {
+ font-family: sans-serif;
+  font-size: 18px; 
+  color: darkgray;
+  text-decoration: underline;  
+  letter-spacing: 1.5px;     
+}
+
+.sections-banner {
+ line-height: 2.0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-image:linear-gradient(to right, #9dccf2 , white, white,white, white, #9dccf2) ;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 10px 43px 0 rgba(0,0,0,0.20);   
+}
+
+.sections {
+  padding-left: 8.5%;
+    padding-right: 8.5%;
+    border: none;
+    border-bottom: solid 4px white;
+    background-color: white;   
+    color: #0991ff;  
+    font-family: sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: ;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 5px 20px 0 rgba(0,0,0,0.25);   
+}
+
+.sections:hover {     
+ border-bottom: solid 4px #0991ff;     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

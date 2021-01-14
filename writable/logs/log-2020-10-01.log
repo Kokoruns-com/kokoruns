@@ -1,0 +1,76 @@
+CRITICAL - 2020-10-01 12:25:35 --> Duplicate entry 'Accountant-Total' for key 'PRIMARY'
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(137): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->addexperienceaction()
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#8 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-10-01 12:30:52 --> Duplicate entry 'Developer-Marxa' for key 'PRIMARY'
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(137): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->addexperienceaction()
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#8 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-10-01 15:37:35 --> Illegal string offset 'frole'
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(302): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 302, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(54): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-01 17:19:36 --> Undefined offset: 7
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(424): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 424, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(54): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-01 18:55:35 --> Call to undefined method App\Models\ApplicantPortfolioModel::affectedRows
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(538): CodeIgniter\Model->__call('affectedRows', Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->deleteportfolioaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-01 18:56:37 --> Undefined variable: updated
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(278): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 278, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->deletejobexperienceaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-01 19:37:45 --> trim() expects parameter 1 to be string, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'trim() expects ...', 'C:\\xampp\\htdocs...', 278, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Validation.php(278): trim(Array)
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Validation.php(189): CodeIgniter\Validation\Validation->processRules('skills', 'skills', Array, Array, Array)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Controller.php(219): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(304): CodeIgniter\Controller->validate(Array)
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->addeducationaction()
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-10-01 22:45:06 --> Call to undefined method App\Models\ApplicantPortfolioModel::affectedRows
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(620): CodeIgniter\Model->__call('affectedRows', Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->deleteportfolioaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

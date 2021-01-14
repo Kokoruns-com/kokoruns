@@ -1,0 +1,167 @@
+CRITICAL - 2020-09-17 10:08:42 --> Call to undefined function strlower()
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(33): view('applicant/dashb...', Array)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-17 10:36:38 --> Array to string conversion
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 221, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(33): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 10:36:58 --> Array to string conversion
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 221, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(33): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 10:37:57 --> Array to string conversion
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 221, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(33): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 10:42:34 --> Array to string conversion
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 221, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(33): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 13:08:34 --> Class 'App\Controllers\ApplicantEducationModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->addeducationaction()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-17 13:41:25 --> Undefined index: fclass_of_degre
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(571): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 571, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(36): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 14:06:00 --> Undefined index: class_of_degree
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(624): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 624, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(36): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 14:06:09 --> Undefined index: class_of_degree
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(624): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 624, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(36): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 14:06:24 --> Undefined index: class_of_degree
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(624): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 624, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(36): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 14:06:26 --> Undefined index: class_of_degree
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(624): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 624, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(36): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 14:06:28 --> Undefined index: class_of_degree
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(624): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 624, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(36): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-17 17:11:44 --> Call to a member function getRandomName() on null
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->uploadportfolioaction()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-17 18:00:12 --> Too few arguments to function CodeIgniter\HTTP\IncomingRequest::getFile(), 0 passed in C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php on line 383 and exactly 1 expected
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(383): CodeIgniter\HTTP\IncomingRequest->getFile()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->uploadportfolioaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-17 18:01:16 --> Too few arguments to function CodeIgniter\HTTP\IncomingRequest::getFile(), 0 passed in C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php on line 383 and exactly 1 expected
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(383): CodeIgniter\HTTP\IncomingRequest->getFile()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->uploadportfolioaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-17 18:04:04 --> Too few arguments to function CodeIgniter\HTTP\IncomingRequest::getFile(), 0 passed in C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php on line 383 and exactly 1 expected
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(383): CodeIgniter\HTTP\IncomingRequest->getFile()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->uploadportfolioaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-17 18:08:31 --> Undefined index: portfolio_image
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(383): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 383, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->uploadportfolioaction()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-17 18:56:58 --> You must use the "set" method to update an entry.
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseBuilder.php(2219): CodeIgniter\Database\BaseBuilder->validateInsert()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(414): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->addweblinkaction()
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-17 18:57:57 --> You must use the "set" method to update an entry.
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseBuilder.php(2219): CodeIgniter\Database\BaseBuilder->validateInsert()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(414): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->addweblinkaction()
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

@@ -1,0 +1,72 @@
+CRITICAL - 2020-08-31 10:07:38 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(108): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 108, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(20): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-31 10:50:30 --> Undefined variable: errors
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\front\register.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 68, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/register', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(22): view('front/register')
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->register()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-31 11:18:31 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\front\register.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 65, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/register', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(22): view('front/register')
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->register()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-31 11:50:05 --> Unknown column 'fuser' in 'where clause'
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('SELECT 1\nFROM `...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Rules.php(234): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Validation.php(294): CodeIgniter\Validation\Rules->is_unique('test@yahoo.com', 'fuser', Array, NULL)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Validation\Validation.php(189): CodeIgniter\Validation\Validation->processRules('user-email-or-p...', 'user-email-or-p...', 'test@yahoo.com', Array, Array)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Controller.php(219): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(31): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->registeraction()
+#10 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#11 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2020-08-31 14:20:31 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(108): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 108, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(20): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-31 17:03:59 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(108): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 108, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(20): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-31 17:05:44 --> Undefined variable: applicant_details
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 19, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

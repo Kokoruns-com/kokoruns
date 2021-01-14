@@ -1,0 +1,20 @@
+CRITICAL - 2020-08-27 10:02:49 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\applicant\dashboard.php(108): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 108, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('applicant/dashb...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Applicant.php(20): view('applicant/dashb...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-27 14:43:10 --> Trying to get property 'fname' of non-object
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\front\profilesetup.php(76): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 76, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/profilese...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(286): view('front/profilese...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->profilesetup()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}

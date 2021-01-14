@@ -1,0 +1,79 @@
+CRITICAL - 2020-08-17 10:47:28 --> syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) or const (T_CONST)
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Router\Router.php(192): CodeIgniter\Router\Router->autoRoute('front/loginacti...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(789): CodeIgniter\Router\Router->handle('front/loginacti...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-08-17 11:01:44 --> Unknown column 'fstate' in 'field list'
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('UPDATE `tapplic...')
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tapplic...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tapplic...')
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Database\BaseBuilder.php(2441): CodeIgniter\Database\BaseConnection->query('UPDATE `tapplic...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Model.php(864): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(329): CodeIgniter\Model->update(Array, Array)
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->profilesetupaction()
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#8 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-08-17 11:23:11 --> Array to string conversion
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\front\employerregister.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 62, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/employerr...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(56): view('front/employerr...')
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->employerregister()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-17 12:14:10 --> Array to string conversion
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\front\register.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 65, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/register', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(16): view('front/register')
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->register()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-17 12:21:56 --> Undefined variable: validation
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Views\front\employerregister.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 67, Array)
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/employerr...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\app\Controllers\Front.php(56): view('front/employerr...')
+#4 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->employerregister()
+#5 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#6 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-08-17 12:55:22 --> Cannot call constructor
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(886): App\Controllers\Front->__construct()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-17 13:03:54 --> Cannot call constructor
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(886): App\Controllers\Front->__construct()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-17 13:03:56 --> Cannot call constructor
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(886): App\Controllers\Front->__construct()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-17 13:03:57 --> Cannot call constructor
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(886): App\Controllers\Front->__construct()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-17 13:04:22 --> Cannot call constructor
+#0 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(886): App\Controllers\Front->__construct()
+#1 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\WEBAPPS\Kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\Kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

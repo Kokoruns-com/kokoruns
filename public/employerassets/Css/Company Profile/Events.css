@@ -1,0 +1,413 @@
+/*PROFILE*/
+
+
+hr {
+  border: 0.5px solid darkgray;  
+}
+
+.company-events {
+   padding-left:15.5%;
+    padding-right: 15.5%;
+    display: ;
+    padding-bottom: 200px;
+    /*padding-top: 50px;*/
+    padding-top: 0px;
+    display: none;
+}
+
+.company-events-header-container {
+  display: flex;   
+   align-self: center;
+   justify-content: center; 
+    padding-bottom: 40px; 
+   padding-top: 20px;   
+}
+
+.company-events-header {
+   font-family: sans-serif;
+  font-weight: normal;
+  color: darkgray;
+  font-size: 27px;   
+  letter-spacing: 1px;     
+}
+
+.add-event-button-container {
+    padding-top: 20px;
+    padding-left: 10px;  
+}
+
+.add-event-button {
+   border: none;
+  background-color: #0991ff;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 5px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-family: sans-serif; 
+  font-size: 17px;    
+  height: 32px; 
+  letter-spacing: 1px;      
+}
+
+.add-event-button:hover {
+  background-color: white;
+  color: #0991ff;    
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 10px 30px 0 rgba(0,0,0,0.25);          
+}
+
+.posted-event-container {   
+  padding: 20px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 10px 43px 0 rgba(0,0,0,0.20);  
+  background-color: white;
+}
+
+.posted-event-container:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.25), 0 10px 43px 0 rgba(0,0,0,0.30);    
+}
+
+.event-date-container {
+  display: flex; 
+  padding-bottom: 10px;   
+}
+
+.event-date-day {
+ padding-right: 5px; 
+ letter-spacing:2px;  
+ color: darkgray;
+ font-size: 15px; 
+ font-family: sans-serif; 
+ font-weight: bold;    
+}
+
+.event-date-month {
+ padding-right: 5px; 
+ letter-spacing:2px;  
+ color: darkgray;
+ font-size: 15px; 
+ font-family: sans-serif;
+ font-weight: bold;    
+}
+
+.event-date-year {
+ padding-right: 5px; 
+ letter-spacing:2px;  
+ color: darkgray;
+ font-size: 15px; 
+ font-family: sans-serif; 
+ font-weight: bold;    
+}
+
+.event-title {
+  font-size: 23px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 7px;
+  letter-spacing: 1px; 
+  padding-bottom: 10px;   
+}
+
+.event-requirement-container {
+   padding-bottom: 10px;   
+}
+
+.event-requirement-title {
+ font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 7px;
+  letter-spacing: 1px; 
+  padding-bottom: 5px;      
+}
+
+.event-requirement {
+ font-size: 18px ;
+  font-family: sans-serif;
+  letter-spacing: 1px; 
+}
+
+.event-requirement a {
+  color: darkgray;
+  text-decoration: none;    
+}
+
+.event-requirement a:hover {
+    color: #0991ff;
+}
+
+.event-description {
+  font-size: 16px ;
+  font-family: sans-serif;
+  letter-spacing: 1px;  
+  padding-bottom: 15px; 
+  color: darkgray;
+}
+
+.posted-events-buttons {
+  padding-top: 10px;  
+}
+
+.edit-event-button {
+  border: none;
+  background-color: transparent;
+}
+
+.edit-event-button img {
+ width: 27px;    
+}
+
+.edit-event-button img:hover {
+  filter: invert(0.9);  
+}
+
+.delete-event-button {
+  border: none;
+  background-color: transparent;
+}
+
+.delete-event-button img {
+ width: 27px;    
+}
+
+.delete-event-button img:hover {
+  filter: invert(0.9);  
+}
+
+.add-event-container-padding {
+  display: none;
+ padding-bottom: 100px;   
+}
+ 
+.add-event-form-container {
+ background-color: white;
+ padding: 20px;
+ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15), 0 10px 43px 0 rgba(0,0,0,0.20);
+    
+}
+
+.add-event-form-container:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.25), 0 10px 43px 0 rgba(0,0,0,0.30);    
+}
+
+.add-event-form {
+    
+}
+
+.form-event-date-div {
+ padding-bottom: 30px;  
+     
+}
+
+
+.form-event-date-label {
+ font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;      
+}
+
+.form-date-holder {
+ display:flex; 
+}
+
+
+.form-event-day {
+  padding: 5px;
+    padding-left: 5px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    width: 33.3%;
+    color: #333333;        
+}
+
+.form-event-day:hover {
+  
+}
+
+.form-event-month {
+ padding: 5px;
+    padding-left: 5px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    width: 33.3%;
+    color: #333333;     
+}
+
+.form-event-month:hover {
+ 
+}
+
+.form-event-year {
+  padding: 5px;
+    padding-left: 5px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    width: 33.3%;
+    color: #333333;  
+}
+
+.form-event-year:hover {
+ 
+}
+
+.form-event-title-div {
+  padding-bottom: 30px; 
+  display: grid;    
+}
+
+.form-event-title-label {
+  font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;   
+}
+
+.form-event-title-input {
+  padding: 7px;
+    padding-left: 10px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    color: #333333;         
+}
+
+.form-event-title-input:hover {
+ 
+}
+
+.form-event-requirement-div {
+  padding-bottom: 30px; 
+  display: grid;      
+}
+
+.form-event-requirement-label {
+ font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;      
+}
+
+.form-event-requirement-input {
+  padding: 7px;
+    padding-left: 10px;
+    border: solid 1px darkgray;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    color: #333333;
+}
+
+.form-event-requirement-input:hover {
+ 
+}
+
+.form-event-description-div {
+   padding-bottom: 30px; 
+   display: grid;     
+}
+
+.form-event-description-label {
+ font-size: 20px ;
+  color: dimgray;
+  font-family: sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 1px;      
+}
+
+.form-event-description-input {
+  max-height: 100px ;
+  min-height: 100px ; 
+  padding: 7px;
+  padding-left: 10px;
+  border: solid 1px darkgray;
+  background-color: transparent;
+  font-family: sans-serif; 
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #333333;    
+}
+
+.form-event-description-input:hover {
+  
+}
+
+.add-event-form-buttons {
+  padding-top: 20px;  
+}
+
+.cancel-add-event-button {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 3px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #0991ff;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  height: 32px; 
+  letter-spacing: 1px;     
+}
+
+.cancel-add-event-button:hover {
+  border: 2px solid #0991ff;   
+}
+
+.finish-add-event-button {
+ border: none;
+  background-color: #0991ff;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 3px;    
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  font-family: sans-serif; 
+  font-size: 15px;    
+  height: 32px; 
+  letter-spacing: 1px;          
+}
+
+.finish-add-event-button:hover {
+  background-color: white;
+  color: #0991ff;
+   box-shadow: 0 5px 10px 0 rgba(0,0,0,0.25), 0 10px 30px 0 rgba(0,0,0,0.30);      
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

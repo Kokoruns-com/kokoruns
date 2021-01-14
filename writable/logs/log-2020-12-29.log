@@ -1,0 +1,85 @@
+CRITICAL - 2020-12-29 11:56:40 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Views\front\register.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 80, Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('front/register', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Front.php(51): view('front/register')
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->register()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-12-29 14:53:58 --> Class 'CodeIgniter\Filters\MyFilter' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(378): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2020-12-29 14:54:29 --> Class 'CodeIgniter\Filters\MyFilter' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(418): CodeIgniter\Filters\Filters->run('/', 'after')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2020-12-29 14:54:31 --> Class 'CodeIgniter\Filters\MyFilter' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(418): CodeIgniter\Filters\Filters->run('/', 'after')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2020-12-29 15:07:37 --> Class 'CodeIgniter\Filters\MyFilter' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(378): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2020-12-29 15:10:23 --> Class 'CodeIgniter\Filters\MyFilter' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(418): CodeIgniter\Filters\Filters->run('/', 'after')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2020-12-29 15:10:24 --> Class 'CodeIgniter\Filters\MyFilter' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(418): CodeIgniter\Filters\Filters->run('/', 'after')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2020-12-29 15:20:39 --> Class 'App\Filters\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Filters\Filters.php(173): App\Filters\MyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(378): CodeIgniter\Filters\Filters->run('/', 'before')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-29 15:20:41 --> Class 'App\Filters\ApplicantVerificationEmailModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Filters\Filters.php(173): App\Filters\MyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(378): CodeIgniter\Filters\Filters->run('/', 'before')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-29 15:28:07 --> 
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\HTTP\RedirectResponse.php(92): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Common.php(813): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Filters\MyFilter.php(18): redirect('/register/verif...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Filters\Filters.php(173): App\Filters\MyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(378): CodeIgniter\Filters\Filters->run('register/verify...', 'before')
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-12-29 17:16:58 --> Column 'femail' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Front.php(363): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->verificationphoneresend()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-12-29 17:19:59 --> Column 'ftoken' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Front.php(363): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->verificationphoneresend()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}

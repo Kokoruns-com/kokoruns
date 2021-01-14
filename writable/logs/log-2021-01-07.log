@@ -1,0 +1,14 @@
+CRITICAL - 2021-01-07 00:45:02 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Applicant.php(2842): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 2842, Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->searchprofessions()
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-07 00:45:07 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Applicant.php(2842): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 2842, Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->searchprofessions()
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

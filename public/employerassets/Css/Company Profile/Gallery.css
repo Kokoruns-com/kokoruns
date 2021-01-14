@@ -1,0 +1,77 @@
+/*GALLERY*/
+
+.company-gallery {
+  padding-left:17%;
+  padding-right: 17%;
+  display: ;
+  padding-bottom: 200px;
+  /*padding-top: 50px;*/
+  padding-top: 0px;   
+  display: none;    
+}
+
+.company-gallery-header-container {
+ display: flex;   
+   align-self: center;
+   justify-content: center;  
+  padding-bottom: 40px; 
+   padding-top: 20px;       
+}
+
+.company-gallery-header {
+ font-family: sans-serif;
+  font-weight: normal;
+  color: darkgray;
+  font-size: 27px;
+  letter-spacing: 1px;    
+}
+
+.add-image-button-container {
+   padding-top: 20px;
+    padding-left: 10px;   
+}
+
+.add-image-button {
+  border: none;
+  background-color: #0991ff;
+  border-radius: 5px;
+  padding: 2px; 
+  padding-top: 5px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-family: sans-serif; 
+  font-size: 17px;    
+  height: 32px; 
+  letter-spacing: 1px;      
+}
+
+.add-image-button:hover {
+   background-color: white;
+  color: #0991ff;    
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20), 0 10px 30px 0 rgba(0,0,0,0.25);    
+}
+
+.company-gallery-container {
+ padding: 10px;   
+}
+
+.image-padding {
+  
+}
+
+.image {
+  padding: 10px;    
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 5px 9px 0 rgba(0,0,0,0.30), 0 10px 43px 0 rgba(0,0,0,0.20);
+  border-radius: 15px;
+  background-color: white;    
+}
+
+.image:hover {
+    opacity: 0.7;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.60), 0 17px 50px 0 rgba(0,0,0,0.30);
+}

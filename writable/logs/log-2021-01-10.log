@@ -1,0 +1,24 @@
+CRITICAL - 2021-01-10 19:22:22 --> Column 'femail' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Front.php(380): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->verificationphoneresend()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-10 19:24:45 --> Column 'femail' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Front.php(380): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Front->verificationphoneresend()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}

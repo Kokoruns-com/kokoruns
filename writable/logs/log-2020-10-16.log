@@ -1,0 +1,26 @@
+CRITICAL - 2020-10-16 05:23:09 --> Unknown column 'fjob_title' in 'field list'
+#0 /home/kokoruns/public_html/system/Database/MySQLi/Connection.php(331): mysqli->query('INSERT INTO `tj...')
+#1 /home/kokoruns/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tj...')
+#2 /home/kokoruns/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tj...')
+#3 /home/kokoruns/public_html/system/Database/BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tj...', Array, false)
+#4 /home/kokoruns/public_html/system/Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kokoruns/public_html/app/Controllers/Applicant.php(1701): CodeIgniter\Model->insert(Array)
+#6 /home/kokoruns/public_html/system/CodeIgniter.php(914): App\Controllers\Applicant->sendjobdashmessage()
+#7 /home/kokoruns/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#8 /home/kokoruns/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kokoruns/public_html/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-10-16 21:12:30 --> Call to undefined method App\Models\ApplicantExperienceModel::affectedRows
+#0 /home/kokoruns/public_html/app/Controllers/Applicant.php(600): CodeIgniter\Model->__call('affectedRows', Array)
+#1 /home/kokoruns/public_html/system/CodeIgniter.php(914): App\Controllers\Applicant->deletejobexperienceaction()
+#2 /home/kokoruns/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 /home/kokoruns/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/kokoruns/public_html/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-16 21:12:30 --> Call to undefined method App\Models\ApplicantExperienceModel::affectedRows
+#0 /home/kokoruns/public_html/app/Controllers/Applicant.php(600): CodeIgniter\Model->__call('affectedRows', Array)
+#1 /home/kokoruns/public_html/system/CodeIgniter.php(914): App\Controllers\Applicant->deletejobexperienceaction()
+#2 /home/kokoruns/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#3 /home/kokoruns/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/kokoruns/public_html/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

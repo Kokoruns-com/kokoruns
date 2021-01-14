@@ -1,0 +1,48 @@
+CRITICAL - 2020-12-03 13:22:08 --> Unknown column 'freceiver_name' in 'field list'
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `tr...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tr...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tr...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tr...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Applicant.php(3018): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->recommendationrequest()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-12-03 13:24:18 --> Unknown column 'fsender_name' in 'field list'
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `tr...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tr...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tr...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tr...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Applicant.php(3018): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->recommendationrequest()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-12-03 13:30:07 --> Unknown column 'freceiver_name' in 'field list'
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `tr...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tr...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tr...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tr...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Applicant.php(3057): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Applicant->recommendationoffer()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Applicant))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-12-03 15:27:43 --> Column 'femployer_id' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `tj...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tj...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tj...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tj...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Company.php(738): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Company->createjobaction()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
