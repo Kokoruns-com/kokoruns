@@ -6,8 +6,8 @@ class CompanyVerificationEmailModel extends Model
 {
     protected $primaryKey = 'frecno';
 
-    protected $table      = 'tcompany_verification_codes';
+    protected $table = 'tcompany_verification_codes';
    
-    protected $allowedFields = ['femail', 'ftoken', 'fcookie'];
+    protected $allowedFields = ['femail', 'ftoken', 'fcookie', 'finserted_id'];
 
 }

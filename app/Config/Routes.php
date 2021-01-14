@@ -48,6 +48,7 @@ $routes->get('/forgot', 'Front::forgot');
 $routes->get('/profilesetup', 'Front::profilesetup');
 $routes->get('/register/verify/email', 'Front::registerverifyemail');
 $routes->get('/register/verify/phone', 'Front::registerverifyphone');
+$routes->get('/register/confirm/email', 'Front::cregisterverifyemail');
 
 
 $routes->get('/applicant/dashboard', 'Applicant::dashboard');

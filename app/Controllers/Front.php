@@ -442,6 +442,60 @@ class Front extends BaseController
 	}
 
 
+	public function CRegisterVerifyEmail()
+	{
+	
+		return view('front/cregisterverifyemail');
+	}
+
+
+	public function CRegisterVerifyEmailAction()
+	{
+		//var_dump($this->request->getPost());
+	    if (! $this->validate([
+
+			'verify-code-email' => 'required|trim'
+			
+		]))
+		{
+			session()->setFlashdata('error', $this->validator->getErrors());
+			return redirect()->to(base_url('/register/confirm/email'));
+		}
+	    
+			$code  = $this->request->getPost('verify-code-email');
+    	    $verify = new CompanyVerificationEmailModel();
+			$token_details = $verify->where('ftoken', $code)->first();
+	
+			//var_dump($token_details);
+    	    if(is_null($token_details))
+    	    {
+
+				session()->setFlashdata('error', 'Sorry! You entered an invalid verification code. You can click resend to get another one');
+				return redirect()->to(base_url('/register/confirm/email'));
+    	    }
+    	    else
+    	    {
+				$id = $token_details['finserted_id'];
+
+				$data = [
+					'fverified' => 1,
+				];
+
+				//var_dump($id);
+
+				$am = new AssociationModel();
+				$updated = $am->update($id, $data);
+
+				if($updated > 0)
+				{
+					session()->setFlashdata('success', 'Email verified successfully. Now you can log in.');
+					return redirect()->to(base_url('/alogin'));
+				}
+
+    	    }
+	}
+
+
 	public function registerverifyphone()
 	{
 
@@ -1098,7 +1152,6 @@ class Front extends BaseController
 			}
 			else
 			{
-
 				// //Applicant ID already exists. Add 1 to it
 				$id = $association_details['frecno'];
 				$id2 = $id + 4;
@@ -1123,6 +1176,7 @@ class Front extends BaseController
 			$model = new AssociationModel();
 			$model->insert($data);
 			$inserted = $model->affectedRows();
+			$inserted_ID = $model->insertID();
 
 			if($inserted > 0)
 			{
@@ -1138,33 +1192,37 @@ class Front extends BaseController
 				
 				if ($email->send()) 
 				{
-					// $verify_email = new CompanyVerificationEmailModel();
+					$verify_email = new CompanyVerificationEmailModel();
 
-					// $data = [
-					// 	'femail' => $this->request->getPost('user-email-or-phone-number'),
-					// 	'ftoken'  => $token_free,
-					// 	'fcookie' => $_COOKIE["_krs"],
-					// 	'fdevice' => 'email'
-					// 	];
+					$data = [
+						'femail' => $this->request->getPost('association_email'),
+						'ftoken'  => $token_free,
+						'fcookie' => $_COOKIE["_krs"],
+						'fdevice' => 'email',
+						'finserted_id' => $inserted_ID,
+						];
 
 					//var_dump($data);
-					// $verify_email->insert($data);
 
-					// session()->set('verify_email', $this->request->getPost('user-email-or-phone-number'));
-					// session()->setFlashdata('success', 'Verification code sent to your email successfully.');
+					$inserted = $verify_email->insert($data);
 
-					// return redirect()->to(base_url('/register/verify/email'));
-
-					echo "Hi";
+					if($inserted > 0)
+					{
+						// $assoc_email = $this->request->getPost('association_email');
+						session()->set('verify_email', $this->request->getPost('association_email'));
+						session()->setFlashdata('success', 'Verification code sent to your email successfully.');
+	
+						return redirect()->to(base_url('/register/confirm/email/'));
+					}
+					
 				} 
 				else 
 				{
-					//echo $email->printDebugger();
-					return false;
+
+					echo $email->printDebugger();
+					
 				}
 
-				// session()->setFlashdata('success', 'Registration successful. Now you can login into your account.');
-				// return redirect()->to(base_url('/alogin'));
 			}
 
 		}
@@ -1298,46 +1356,6 @@ class Front extends BaseController
 			return redirect()->to(base_url('/slogin'));
 		}
 
-	}
-
-
-	public function CompanyVerifyEmail()
-	{
-	//    $check = $this->uri->segment(3);
-	//    $token = $this->uri->segment(4);
-	   //cho $uri->getSegment(2);
-	   echo $request->uri->getSegment(2);
-	   //$this->request->uri->getSegment(2); 
-	//    $row = $this->User_model->FetchSellerDetails($check, $token);
-	// 	//var_dump($row);
-	//    if(!empty($row))
-	//    {
-	// 		// $sess_array = array(
-	// 		// 	'shop_name' => $row->fshop_name,
-	// 		// 	'shop_id' => $row->fshop_id,
-	// 		// 	'merchant_email' =>   $row->femail,
-	// 		// 	'merchant_city' =>   $row->fcity_name,
-	// 		// );
-	// 		// $this->session->set_userdata($sess_array);
-
-	// 		$updated = $this->User_model->ActivateSeller($row->femail);
-	// 		if($updated > 0)
-	// 		{
-	// 			$this->session->set_flashdata('success', 'Your email is verified now. You can login.'); 
-	// 			redirect('index.php/w/login');
-	// 		}
-	// 		else
-	// 		{
-	// 			$this->session->set_flashdata('error', 'Wrong or invalid reset token');
-	// 			redirect('index.php/w/forgotpasword');
-	// 		}
-			
-	//    }
-	//    else
-	//    {
-	// 		$this->session->set_flashdata('error', 'Wrong or invalid reset token');
-	// 		redirect('index.php/w/forgotpasword');
-	//    }
 	}
 
 

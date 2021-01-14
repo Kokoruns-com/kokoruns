@@ -195,12 +195,13 @@
             </div> 
             
             <div colspan="2" align="center">
-             <br>
+             
               <button type="" class="Register-company-button" id="">Register Association</button>
+              <br>
               <br>
     </form>
                   <p>
-                  <a class="back-to-home" href="<?php echo site_url(); ?>">Back to Home</a></p>
+                  <a class="back-to-home" href="<?php echo site_url(); ?>login">Login</a></p>
             </div>
              
             
