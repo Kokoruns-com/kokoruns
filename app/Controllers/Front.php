@@ -488,8 +488,24 @@ class Front extends BaseController
 
 				if($updated > 0)
 				{
-					session()->setFlashdata('success', 'Email verified successfully. Now you can log in.');
-					return redirect()->to(base_url('/alogin'));
+					
+					$association_details = $am->where('frecno', $id)->first();
+					//var_dump($association_details);
+
+					$sessiondata = [
+
+						'id' => $association_details['frecno'],
+						'association_id' => $association_details['fassociation_id'],
+						'association_name' => $association_details['fassociation_name'],
+						'association_email' => $association_details['fassociation_email'],
+	
+					];
+	
+					session()->set($sessiondata);
+					//var_dump($sessiondata);
+
+					return redirect()->to(base_url('/association/dashboard'));
+
 				}
 
     	    }

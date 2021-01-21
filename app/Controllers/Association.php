@@ -21,6 +21,8 @@ use App\Models\RecommendationRequestModel;
 use App\Models\RecommendationOfferModel;
 use App\Models\MessageModel;
 use App\Models\AssociationGalleryModel;
+use App\Models\AssociationBranchModel;
+use App\Libraries\Zebra_Image;
 
 class Association extends BaseController
 {
@@ -29,7 +31,7 @@ class Association extends BaseController
 
 		if(!session()->id)
         {
-            return redirect()->to(base_url('/slogin'));
+            return redirect()->to(base_url('/alogin'));
 		} 
 	
     }
@@ -52,11 +54,14 @@ class Association extends BaseController
 		$data['association_gallery'] = $association_gallery->where('fassociation_id', $association_id)->orderBy('frecno', 'desc')->findAll();
 
 
-       //var_dump($data);
+		$association_branch = new AssociationBranchModel();
+		$data['association_branches'] = $association_branch->where('fassociation_id', $association_id)->orderBy('fbranch_name', 'asc')->findAll();
+
+
+       //var_dump($data['association_branches']);
 		return view('association/dashboard', $data);
 	
 	}
-	
 
 
 	public function updateprofileaction()
@@ -199,61 +204,380 @@ class Association extends BaseController
 	}
 
 
+	public function updateaboutaction()
+	{
+		
+		$data = [
+
+            'fabout' => $this->request->getPost('about'),
+    
+            ];
+            
+		
+		//var_dump($data);
+
+		$id = session()->id;
+
+		$association = new AssociationModel();
+		$updated = $association->update($id, $data);
+		
+		if($updated > 0)
+		{
+			$response = [
+				'success' => true,
+				'data' => 'saved',
+				'msg' => "Association Profile updated successfully",
+			];
+		}
+		else
+		{
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Association Profile not updated",
+			];
+		}
+
+
+		return $this->response->setJSON($response);
+	}
+
+	///createbranchaction
+	
+
+	public function createbranchaction()
+	{
+		 //var_dump($this->request->getPost());
+		 if (! $this->validate([
+			'branch_name' => [
+						'rules'  => 'required|trim',
+						'errors' => [
+							'required' => 'Branch name is required!',
+							]
+						],
+			'branch_manager' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Branch Manager is required!',
+				]
+			],
+			'branch_address' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Branch Address is required!',
+				]
+			],
+			'branch_phone' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Branch Phone is required!',
+				]
+			],
+			'branch_email' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Branch Email is required!',
+				]
+			],
+
+		
+		]))
+		{
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Branch not added"
+			];
+		}
+		
+		$association_id = session()->association_id;
+
+        $association = new AssociationModel();
+		$association_details = $association->where('fassociation_id', $association_id)->first();
+
+
+        $data = [
+			'fassociation_id' => $association_details['fassociation_id'],
+            'fbranch_id' => 'BR' . time(),
+			'fbranch_name' => $this->request->getPost('branch_name'),
+			'fbranch_manager' => $this->request->getPost('branch_manager'),
+			'fbranch_address' => $this->request->getPost('branch_address'),
+			'fbranch_phone' => $this->request->getPost('branch_phone'),
+			'fbranch_email' => $this->request->getPost('branch_email'),
+            
+            ];
+            
+        //var_dump($start_time);
+
+        $branch = new AssociationBranchModel();
+		$branch->insert($data);
+		$inserted = $branch->affectedRows();
+		if($inserted > 0)
+		{
+			$response = [
+				'success' => true,
+				'data' => 'saved',
+				'msg' => "Branch created successfully"
+			];
+			
+		}
+		else
+		{
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Branch not created"
+			];	
+			
+		}
+
+		return $this->response->setJSON($response);
+	}
+
+
+	public function updatebranchaction()
+	{
+		//editbranchaction
+
+		$id = $this->request->getPost('id');
+
+		$data = [
+	
+			'fbranch_name' => $this->request->getPost('branch_name'),
+			'fbranch_manager' => $this->request->getPost('branch_manager'),
+			'fbranch_address' => $this->request->getPost('branch_address'),
+			'fbranch_phone' => $this->request->getPost('branch_phone'),
+			'fbranch_email' => $this->request->getPost('branch_email'),
+            
+			];
+
+
+
+			$branchm = new AssociationBranchModel();
+			$updated = $branchm->update($id, $data);
+		
+			if($updated > 0)
+			{
+				$response = [
+					'success' => true,
+					'data' => 'saved',
+					'msg' => "Association Branch deleted successfully",
+				];
+			}
+			else
+			{
+				$response = [
+					'success' => false,
+					'data' => 'failed',
+					'msg' => "Association branch not deleted",
+				];
+			}
+
+			return $this->response->setJSON($response);
+
+	}
+
+
+	public function deletebranchaction()
+    {
+		$id = $this->request->getPost('recno');
+        $as = new AssociationBranchModel();
+        $as->where('frecno', $id)->delete();
+        $deleted = $as->affectedRows();
+		if($deleted > 0)
+		{
+			$response = [
+				'success' => true,
+				'data' => 'saved',
+				'msg' => "Association branch deleted successfully"
+			];
+		}
+		else
+		{
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Association branch not deleted"
+			];
+		}
+
+		return $this->response->setJSON($response);
+	}
+
+
+
+
+	public function updatesocialsaction()
+	{
+		//editbranchaction
+
+		$id = $this->request->getPost('id');
+
+		$data = [
+	
+			'flinkedin' => $this->request->getPost('linkedin'),
+			'ffacebook' => $this->request->getPost('facebook'),
+			'finstagram' => $this->request->getPost('instagram'),
+            
+			];
+
+
+
+			$am = new AssociationModel();
+			$updated = $am->update($id, $data);
+		
+			if($updated > 0)
+			{
+				$response = [
+					'success' => true,
+					'data' => 'saved',
+					'msg' => "Socials updated successfully",
+				];
+			}
+			else
+			{
+				$response = [
+					'success' => false,
+					'data' => 'failed',
+					'msg' => "Association branch not deleted",
+				];
+			}
+
+			return $this->response->setJSON($response);
+
+	}
+
+	
+
+
+
+	public function updateinfoaction()
+	{
+		//editbranchaction
+
+		$id = $this->request->getPost('recno');
+		//$id = 22;
+
+		$data = [
+	
+			'fcac' => $this->request->getPost('cac'),
+			'fwebsite' => $this->request->getPost('website'),
+			'ffield' => $this->request->getPost('field'),
+			'fmain_office_location' => $this->request->getPost('main_office_location'),
+			'fassociation_contact_email' => $this->request->getPost('contact_email'),
+            
+			];
+
+
+
+			$assoc = new AssociationModel();
+			$updated = $assoc->update($id, $data);
+		
+			if($updated > 0)
+			{
+				$response = [
+					'success' => true,
+					'data' => 'saved',
+					'msg' => "Association Profile updated successfully",
+				];
+			}
+			else
+			{
+				$response = [
+					'success' => false,
+					'data' => 'failed',
+					'msg' => "Association Profile not updated",
+				];
+			}
+
+			return $this->response->setJSON($response);
+
+	}
+	
+	
+
+
 	
 	public function createeventaction()
 	{
 		 //var_dump($this->request->getPost());
-		//  if (! $this->validate([
-		// 	// 'ffrom' => [
-		// 	// 			'rules'  => 'required|trim',
-		// 	// 			'errors' => [
-		// 	// 				'required' => 'Event Start is required!',
-		// 	// 				]
-		// 	// 			],
-		// 	// 'fto' => [
-		// 	// 	'rules' => 'required|trim',
-		// 	// 	'errors' => [
-		// 	// 			'required' => 'Event End is required!',
-		// 	// 	]
-		// 	// ],
-		// 	'ftitle' => [
-		// 		'rules' => 'required|trim',
-		// 		'errors' => [
-		// 				'required' => 'Event Title is required!',
-		// 		]
-		// 	],
-		// 	'fdescription' => [
-		// 		'rules' => 'required|trim',
-		// 		'errors' => [
-		// 				'required' => 'Event Description is required!',
-		// 		]
-		// 	],
+		 if (! $this->validate([
+			'event_start' => [
+						'rules'  => 'required|trim',
+						'errors' => [
+							'required' => 'Event Start is required!',
+							]
+						],
+			'event_end' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Event End is required!',
+				]
+			],
+			'event_title' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Event Title is required!',
+				]
+			],
+			'event_location' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Event Title is required!',
+				]
+			],
+			'event_description' => [
+				'rules' => 'required|trim',
+				'errors' => [
+						'required' => 'Event Description is required!',
+				]
+			],
 
 		
-		// ]))
-		// {
-		// 	$response = [
-		// 		'success' => false,
-		// 		'data' => 'failed',
-		// 		'msg' => "Event not added"
-		// 	];
-		// }
+		]))
+		{
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Event not added"
+			];
+		}
 		
 		// // $invitees = $this->request->getPost('invitees');
 		// // $extracted_invitees = implode(",", $invitees);
 
 		
+		if($this->request->getPost('event_price') == 'free')
+		{
+			$price1 = 0;
+			$price2 = null;
+		}
+		else if(!empty($this->request->getPost('event_price_from2')))
+		{
+			$price1 = $this->request->getPost('event_price_from2');
+			$price2 = null;
+		}
+		else if(!empty($this->request->getPost('event_price_from3')) && !empty($this->request->getPost('event_price_to')))
+		{
+			$price1 = $this->request->getPost('event_price_from3');
+			$price2 = $this->request->getPost('event_price_to');
+
+		}
+
+
 
         $data = [
-            
-			'ffrom' => $this->request->getPost('from'),
-			'fto' => $this->request->getPost('to'),
-			'ftitle' => $this->request->getPost('title'),
-			//'finvitees' => $extracted_invitees,
-			'fauthor' => $this->request->getPost('association_id'),
+			
 			'fevent_id' => 'EV' . time(),
-			'fdescription' => $this->request->getPost('description'),
-            
+			'ffrom' => $this->request->getPost('event_start'),
+			'fto' => $this->request->getPost('event_end'),
+			'ftitle' => $this->request->getPost('event_title'),
+			'fevent_location' => $this->request->getPost('event_location'),
+			'fauthor' => $this->request->getPost('author'),
+			'fdescription' => $this->request->getPost('event_description'),
+			'fevent_price1' => $price1,
+			'fevent_price2' => $price2,
+
             ];
             
         //var_dump($start_time);
@@ -287,9 +611,7 @@ class Association extends BaseController
 	
 	public function updateeventaction()
     {
-        //var_dump($this->request->getPost());
         
-		
 		 //var_dump($this->request->getPost());
 		//  if (! $this->validate([
 		// 	// 'ffrom' => [
@@ -400,10 +722,6 @@ class Association extends BaseController
 
 	public function loadassociationevents()
 	{
-		if(!session()->id)
-        {
-            return redirect()->to(base_url('/slogin'));
-		}
 
 		$association_id = session()->association_id;
 
@@ -430,99 +748,48 @@ class Association extends BaseController
 
 			foreach($association_events as $event)
 			{
+				if(empty($event['fevent_price1']))
+				{
+					$price_tag1 = "Free";
 
+					$price_tag2 = "";
+				}
+				else if(!empty($event['fevent_price1']))
+				{
+					$price_tag1 = '₦'. number_format($event['fevent_price1']);
 
-				$output .= '<div class="posted-event-container" >
-            
-				<div class="event-date-container">
-				<div class="event-date-day">'.date('M j, Y', strtotime($event['ffrom'])).' - </div>  
-		
-				<div class="event-date-day">'.date('M j, Y', strtotime($event['fto'])).'</div>
+					$price_tag2 = "";
+				}
+				else if(!empty($event['fevent_price2']))
+				{
+					$price_tag1 = '₦'. number_format($event['fevent_price1']);
+
+					$price_tag2 = '₦'. number_format($event['fevent_price2']);
+				}
+
+				$output .= '<div class="bg-dark text-white p-3 mb-2">
+					<h5>'.strtoupper($event['ftitle']).'</h5>
+					<i class="fas fa-calender"></i>'.date('M j, Y', strtotime($event['ffrom'])).' - '.date('M j, Y', strtotime($event['fto'])).' | '.$event['fevent_location'].'
+
+					<br>
+					<br>
+
+					<p>'.$event['fdescription'].'</p>
+
+					<i class="fa fa-globe"></i> www.icanng/meetup/fair
+
+					<br><br>
+
+					<button class="btn btn-white bg-white">Price:</button>&nbsp;'.$price_tag1.' '.$price_tag2.'
+
 					
-				</div> 
-					
-					
-				<div class="event-title">'.$event['ftitle'].'<hr></div>  
-					
-				<div class="event-requirement-container">
-				<div class="event-requirement-title">Requirement:</div> 
-				<div class="event-requirement"><a href="#">
-				Diamnond Bank Fair Tickets</a><hr></div>    
-				</div>    
-					
-				<div class="event-description">
-				'.$event['fdescription'].'    
-				</div>  
-					
-					
-				<div class="posted-events-buttons">   
-				 <button class="edit-event-button" id="'.$event['frecno'].'" onclick="EditEventForm(this.id)"><img src="'.$url.'/public/employerassets/Images/Company%20%20Profile/Edit%20icon.png"></button> 
-					&nbsp;
-				 <button class="delete-event-button event-delete" data-event_id="'.$event['frecno'].'"><img src="'.$url.'/public/employerassets/Images/Company%20%20Profile/Delete%20icon.png"></button>
-				</div> 
-		
-		<hr>
-		
-				<div  id="edit-event-form_'.$event['frecno'].'" class="add-event-container-padding close-edit-event">
-				<div class="add-event-form-container">
-					
-				<form id="update-event-form" class="add-event-form">
-		
-				
-				<input type="hidden" name="frecno" value="'.$event['frecno'].'">
-				 
-				<div class="form-event-date-div">
-				<div class="form-event-date-label">Start Date</div> 
-		
-		
-				<div class="row">
-							<div class="col-lg-6">
-							<label for="">From*</label>
-								<input type="datetime-local" class="form-control" value="'.date('Y-m-d\TH:i', strtotime($event['ffrom'])).'" name="from" id="from" required>
-							   
-							</div>
-							<br><br>
-							<div class="col-lg-6">
-							<label for="">To*</label>
-								<input type="datetime-local" class="form-control" value="'.date('Y-m-d\TH:i', strtotime($event['fto'])).'" name="to" id="to" required>
-							</div>
-						</div>
-				  
-				</div>
-		  
-		
-				<br>
-		
-				<div class="form-event-title-div">
-				<div class="form-event-title-label">Title</div>
-				<input class="form-event-title-input" name="title" value="'.$event['ftitle'].'" style="width:100%;">    
-				</div>
-					
-				<!-- <div class="form-event-requirement-div">
-				<div class="form-event-requirement-label">Event Requirement</div>
-				<input class="form-event-requirement-input" name="" style="width:100%;">    
-				</div> -->
-					
-				<div class="form-event-description-div">
-				<div class="form-event-description-label">Event Description</div>
-				<textarea class="form-event-description-input" name="description" style="width:100%;">'.$event['fdescription'].'</textarea>    
-				</div>
-					
-				<div align="right" class="add-event-form-buttons">
-				<button onclick="location.reload();" class="cancel-add-event-button">
-				Cancel</button>
-				<button type="submit" class="finish-add-event-button">
-				Update</button>    
-				</div>    
-					
-				</form>    
-					
-				</div> 
-					</div> 
-		
-				</div> 
-		
-				<br>';
+					<br>
+					<div class="text-right">
+						<i class="fa fa-edit text-white edit-event-button text-warning cursor" data-edit_id="'.$event['frecno'].'" data-event_title="'.$event['ftitle'].'" data-event_start="'.date("Y-m-d\TH:i:s", strtotime($event['ffrom'])).'" data-event_end="'.date("Y-m-d\TH:i:s", strtotime($event['fto'])).'" data-event_description="'.$event['fdescription'].'" data-event_location="'.$event['fevent_location'].'"></i>&nbsp;
+						<i class="fa fa-trash text-white delete-event-button text-danger cursor" data-delete_id="'.$event['frecno'].'"></i>
+					</div>
+				</div>';
+
 
 			}
 
@@ -538,6 +805,144 @@ class Association extends BaseController
 	}
 
 
+	public function ebroadcast()
+	{
+		$applicant_id = session()->association_id;
+
+
+		 $applicant = new ApplicantModel();
+	
+		//
+
+		$applicant_ids = ['godson.ihemere', 'gbemileke.daniel', 'bunto.ronny', 'demilade.oyeyele'];
+
+
+		$receivers = array();
+		foreach ($applicant_ids as $id) 
+		{
+			$receivers[] = $applicant->where('fapplicant_id', $id)->select('ffirst_name', 'flast_name')->first();
+		}
+	
+		$message_id = 'mg' . time();
+
+		for($i=0; $i<count($applicant_ids); $i++)
+		{
+			$data[]=array(
+				'fsender_id' => $this->request->getPost('sender'),
+				'fsender_name' => $this->request->getPost('sender_name')[$i],
+				'fsubject'=> $this->request->getPost('subject')[$i],
+				'fcontent'=> $this->request->getPost('message')[$i],
+				'freceiver_id'=>$applicant_ids[$i],
+				'freceiver_name'=> $receivers[$i],
+				'fmessage_id' => $message_id,
+				'fis_broadcast' => 1,
+			);
+		}
+
+
+		   
+		//   var_dump($data);
+            
+		
+			$message = new MessageModel();
+
+			$message->insertBatch($data);
+
+
+	
+		$inserted = $message->affectedRows();
+		if($inserted > 0)
+		{
+			$response = [
+				'success' => true,
+				'data' => 'saved',
+				'msg' => "Broadcast sent successfully"
+			];
+			
+		}
+		else
+		{
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Broadcast not sent"
+			];
+		}	
+
+
+		return $this->response->setJSON($response);
+
+	}
+
+
+
+	public function loadbroadcasts()
+	{
+		if(!session()->id)
+        {
+            return redirect()->to(base_url('/alogin'));
+		} 
+
+		$association_id = session()->association_id;
+
+    
+		$message = new MessageModel();
+		$broadcasts = $message->where('fsender_id', $association_id)->where('fis_broadcast', 1)->findAll();
+
+		$output = "";
+		
+		if(empty($broadcasts))
+		{
+			$output .= '
+				
+						
+					';
+		}
+		else
+		{
+
+			$output .='<table class="table table-bordered table-sm datatable">
+			<thead>
+			<tr>
+				<th>Subject</th>
+				<th>Content</th>
+				<th>Date Created</th>
+			</tr>
+			</thead>
+			<tbody >';
+
+			foreach($broadcasts as $broadcast)
+			{
+
+				$output .= '
+
+							
+						<tr>
+							<td>'.$broadcast['fsubject'].'</td>
+							<td>'.$broadcast['fcontent'].'</td>
+							<td>'.$broadcast['created_at'].'</td>
+						</tr>'
+						
+
+						;
+			 }
+
+			 $output .= 
+			 		'</tbody>
+			 		</table>';
+
+		}
+
+		$data = array(
+			'broadcasts' => $output,
+		);	
+
+		return $this->response->setJSON($data);
+	}
+
+
+
+
 	public function uploadgalleryaction()
 	{
 		if (! $this->validate([
@@ -549,16 +954,89 @@ class Association extends BaseController
 	
 		]))
 		{
-			
-			
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Image not uploaded"
+			];
         }
         
         $filh = $this->request->getFile('fileid');
 		$ndfgf = $filh->getRandomName();
 		$PATH = getcwd();
-		$filh->move($PATH .'/public/associationgalleries', $ndfgf);
+		//$filh->move($PATH .'/public/associationgalleries', $ndfgf);
 
+		$full_path = $filh->getTempName();
+
+		// create a new instance of the class
 	
+		$image = new Zebra_Image();
+
+		// if you handle image uploads from users and you have enabled exif-support with --enable-exif
+		// (or, on a Windows machine you have enabled php_mbstring.dll and php_exif.dll in php.ini)
+		// set this property to TRUE in order to fix rotation so you always see images in correct position
+		$image->auto_handle_exif_orientation = false;
+
+		// indicate a source image (a GIF, PNG or JPEG file)
+		$image->source_path = $full_path;
+
+		// indicate a target image
+		// note that there's no extra property to set in order to specify the target
+		// image's type -simply by writing '.jpg' as extension will instruct the script
+		// to create a 'jpg' file
+		$image->target_path = 'public/associationgalleries/600/'. $ndfgf;
+
+		// since in this example we're going to have a jpeg file, let's set the output
+		// image's quality
+		$image->jpeg_quality = 100;
+
+		// some additional properties that can be set
+		// read about them in the documentation
+		$image->preserve_aspect_ratio = true;
+		$image->enlarge_smaller_images = true;
+		$image->preserve_time = true;
+		$image->handle_exif_orientation_tag = true;
+
+		// resize the image to exactly 100x100 pixels by using the "crop from center" method
+		// (read more in the overview section or in the documentation)
+		//  and if there is an error, check what the error is about
+		if (!$image->resize(400, 245, ZEBRA_IMAGE_CROP_CENTER)) {
+
+			// if there was an error, let's see what the error is about
+			switch ($image->error) {
+
+				case 1:
+					echo 'Source file could not be found!';
+					break;
+				case 2:
+					echo 'Source file is not readable!';
+					break;
+				case 3:
+					echo 'Could not write target file!';
+					break;
+				case 4:
+					echo 'Unsupported source file format!';
+					break;
+				case 5:
+					echo 'Unsupported target file format!';
+					break;
+				case 6:
+					echo 'GD library version does not support target file format!';
+					break;
+				case 7:
+					echo 'GD library is not installed!';
+					break;
+				case 8:
+					echo '"chmod" command is disabled via configuration!';
+					break;
+				case 9:
+					echo '"exif_read_data" function is not available';
+					break;
+
+			}
+		// if no errors
+		} //else echo 'Success!';
+
 
 		 $data = [
 
@@ -572,29 +1050,30 @@ class Association extends BaseController
 		$gallery = new AssociationGalleryModel();
         
 		$gallery->insert($data);
-	   echo $inserted = $gallery->affectedRows();
-		// if($inserted > 0)
-		// {
-		// 	$response = [
-		// 		'success' => true,
-		// 		'data' => 'saved',
-		// 		'msg' => "Image uploaded successfully"
-		// 	];
+	    $inserted = $gallery->affectedRows();
+		if($inserted > 0)
+		{
+			$response = [
+				'success' => true,
+				'data' => 'saved',
+				'msg' => "Image uploaded successfully"
+			];
 			
-		// }
-		// else
-		// {
-		// 	$response = [
-		// 		'success' => false,
-		// 		'data' => 'failed',
-		// 		'msg' => "Image not uploaded"
-		// 	];
-		// }	
+		}
+		else
+		{
+			$response = [
+				'success' => false,
+				'data' => 'failed',
+				'msg' => "Image not uploaded"
+			];
+		}	
 
 	//var_dump($filh);
 
 		
-	// 	return $this->response->setJSON($response);
+		return $this->response->setJSON($response);
+
 	}
 
 
@@ -1103,8 +1582,6 @@ class Association extends BaseController
 			session()->setFlashdata('error', 'Choice not added');
 			return redirect()->to(base_url('association/messagedetails/'.$this->request->getPost('job_id').'/'.$this->request->getPost('applicant_id')));
 		}
-
-
 
 	}
 

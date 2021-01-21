@@ -8,6 +8,6 @@ class EventModel extends Model
 
     protected $table      = 'tevents';
    
-    protected $allowedFields = ['ffrom', 'fto', 'ftitle', 'finvitees', 'fauthor', 'fdescription', 'fevent_id'];
+    protected $allowedFields = ['ffrom', 'fto', 'ftitle', 'finvitees', 'fauthor', 'fdescription', 'fevent_id', 'fevent_location', 'fevent_price1', 'fevent_price2'];
 
 }
