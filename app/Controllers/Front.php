@@ -769,7 +769,7 @@ class Front extends BaseController
 
 					session()->set($sessiondata);
 
-					return redirect()->to(base_url('/applicant/experiences'));
+					return redirect()->to(base_url('/applicant/dashboard'));
 				}
 			}
 			else

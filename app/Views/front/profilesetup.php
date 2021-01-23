@@ -340,7 +340,7 @@ function ProfessionButton2() {
                     
                     &nbsp;&nbsp;&nbsp;
                     
-            <select class="form-select-lga" id="lga" name="lga" required>
+                <select class="form-select-lga" id="lga" name="lga" required>
                    <option value="0">Select LGA:</option>
                 </select>
                 </div>
@@ -407,39 +407,39 @@ function ProfessionButton2() {
         
         </div>
 
-        <script src="<?php echo base_url();?>/public/assets/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>/public/assets/jquery.min.js"></script>
 
-        <script>
-            $('#state').change(function(){
-                    var state = $('#state').val();
-                    //alert(state);
-                    if(state != '')
-                    {
-                        //alert("Hi");
-                        $.ajax({
-                            url:"<?php echo site_url(); ?>front/getAllLGAs",
-                            method:"POST",
-                            data:{state:state},
-                            success:function(data)
-                            {
-                                //alert(data);
-                                $('#lga').html(data);
-                            },
-                            error: function(xhr, textStatus, errorThrown) {
-                            //code to execute
-                                //alert(xhr.responseText);
-                            //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
-                            },
-                        });
-                        
-                    }
-                    else
-                    {
-                        // $('#state').html('<option value="">Select State</option>');
-                        // $('#city').html('<option value="">Select City</option>');
-                    }
-                });
-        </script>
+    <script>
+        $('#state').change(function(){
+                var state = $('#state').val();
+                //alert(state);
+                if(state != '')
+                {
+                    //alert("Hi");
+                    $.ajax({
+                        url:"<?php echo site_url(); ?>front/getAllLGAs",
+                        method:"POST",
+                        data:{state:state},
+                        success:function(data)
+                        {
+                            //alert(data);
+                            $('#lga').html(data);
+                        },
+                        error: function(xhr, textStatus, errorThrown) {
+                        //code to execute
+                            //alert(xhr.responseText);
+                        //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+                        },
+                    });
+                    
+                }
+                else
+                {
+                    // $('#state').html('<option value="">Select State</option>');
+                    // $('#city').html('<option value="">Select City</option>');
+                }
+            });
+    </script>
 
 
 <script>

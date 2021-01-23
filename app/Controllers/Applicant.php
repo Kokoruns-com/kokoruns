@@ -41,7 +41,7 @@ class Applicant extends BaseController
     }
 
 
-    public function experiences()
+    public function dashboard()
     {
 	
 		if(!session()->username)
@@ -84,7 +84,7 @@ class Applicant extends BaseController
 		$language = new LanguageModel();
 		$data['languages'] = $language->orderBy('fname', 'asc')->findAll();
 		
-		return view('applicant/experiences', $data);
+		return view('applicant/dashboard', $data);
 		
 	}
 

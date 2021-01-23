@@ -1,0 +1,188 @@
+CRITICAL - 2021-01-23 12:24:56 --> Object of class App\Controllers\Association could not be converted to string
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 12:26:58 --> Object of class App\Controllers\Association could not be converted to string
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 12:33:08 --> Call to a member function getRandomName() on array
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 12:33:58 --> Call to a member function move() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 12:49:48 --> Column 'fauthor' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `te...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `te...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `te...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `te...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(636): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-23 12:52:42 --> Column 'fevent_image1' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `te...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `te...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `te...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `te...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(636): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-23 15:51:56 --> Column 'fevent_image1' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `te...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `te...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `te...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `te...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(630): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-23 15:53:49 --> Column 'fevent_image1' cannot be null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `te...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `te...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `te...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO `te...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(630): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->createeventaction()
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-23 16:39:36 --> Class 'App\Models\AssociationAdminModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->makeadmin()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 16:40:20 --> Class 'App\Controllers\ApplicantAdminModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->makeadmin()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 16:40:59 --> Class 'App\Models\AssociationAdminModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->makeadmin()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 16:41:05 --> Class 'App\Models\AssociationAdminModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->makeadmin()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 16:41:09 --> Class 'App\Models\AssociationAdminModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->makeadmin()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 16:58:27 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Views\association\dashboard.php(270): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 270, Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Common.php(1087): CodeIgniter\View\View->render('association/das...', Array, true)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(63): view('association/das...', Array)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->dashboard()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-23 17:01:21 --> Call to a member function insert() on null
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->makeadmin()
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 17:27:04 --> Class 'App\Controllers\ApplicantAdminModel' not found
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin(NULL)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-23 17:27:53 --> Call to undefined method App\Models\AssociationAdminModel::affectedRows
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(1910): CodeIgniter\Model->__call('affectedRows', Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin(NULL)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-23 17:27:59 --> Call to undefined method App\Models\AssociationAdminModel::affectedRows
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(1910): CodeIgniter\Model->__call('affectedRows', Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin(NULL)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-23 17:28:43 --> Call to undefined method App\Models\AssociationAdminModel::affectedRows
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(1910): CodeIgniter\Model->__call('affectedRows', Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin(NULL)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-23 17:28:49 --> Call to undefined method App\Models\AssociationAdminModel::affectedRows
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(1910): CodeIgniter\Model->__call('affectedRows', Array)
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin(NULL)
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-23 17:30:08 --> Unknown column 'freco' in 'where clause'
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('DELETE FROM `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2836): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(952): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(1908): CodeIgniter\Model->delete()
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin('godson.ihemere')
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-23 17:30:09 --> Unknown column 'freco' in 'where clause'
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('DELETE FROM `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2836): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(952): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(1908): CodeIgniter\Model->delete()
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin('godson.ihemere')
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-23 17:30:14 --> Unknown column 'freco' in 'where clause'
+#0 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\MySQLi\Connection.php(331): mysqli->query('DELETE FROM `ta...')
+#1 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ta...')
+#2 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ta...')
+#3 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Database\BaseBuilder.php(2836): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ta...', Array, false)
+#4 C:\xampp\htdocs\WEBAPPS\kokoruns\system\Model.php(952): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\WEBAPPS\kokoruns\app\Controllers\Association.php(1908): CodeIgniter\Model->delete()
+#6 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(914): App\Controllers\Association->removeadmin('1')
+#7 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Association))
+#8 C:\xampp\htdocs\WEBAPPS\kokoruns\system\CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEBAPPS\kokoruns\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}

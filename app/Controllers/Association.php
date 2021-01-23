@@ -22,6 +22,7 @@ use App\Models\RecommendationOfferModel;
 use App\Models\MessageModel;
 use App\Models\AssociationGalleryModel;
 use App\Models\AssociationBranchModel;
+use App\Models\AssociationAdminModel;
 use App\Libraries\Zebra_Image;
 
 class Association extends BaseController
@@ -57,8 +58,12 @@ class Association extends BaseController
 		$association_branch = new AssociationBranchModel();
 		$data['association_branches'] = $association_branch->where('fassociation_id', $association_id)->orderBy('fbranch_name', 'asc')->findAll();
 
+		$association_admin = new AssociationAdminModel();
+		$data['association_admins'] = $association_admin->where('fassociation_id', $association_id)->orderBy('fsubadmin_name', 'asc')->findAll();
 
-       //var_dump($data['association_branches']);
+
+	   //var_dump($data['association_admins']);
+	   
 		return view('association/dashboard', $data);
 	
 	}
@@ -449,8 +454,6 @@ class Association extends BaseController
 
 	
 
-
-
 	public function updateinfoaction()
 	{
 		//editbranchaction
@@ -520,7 +523,7 @@ class Association extends BaseController
 						'required' => 'Event Title is required!',
 				]
 			],
-			'event_location' => [
+			'event_address' => [
 				'rules' => 'required|trim',
 				'errors' => [
 						'required' => 'Event Title is required!',
@@ -542,9 +545,7 @@ class Association extends BaseController
 				'msg' => "Event not added"
 			];
 		}
-		
-		// // $invitees = $this->request->getPost('invitees');
-		// // $extracted_invitees = implode(",", $invitees);
+
 
 		
 		if($this->request->getPost('event_price') == 'free')
@@ -566,27 +567,129 @@ class Association extends BaseController
 
 
 
+			if(!empty($this->request->getFile('event_images1')))
+			{
+				$file1 = $this->request->getFile('event_images1');
+				$filename1 = $file1->getRandomName();
+			}
+			else
+			{
+				$filename1 = 'event.jpg';
+			}
+	
+			if(!empty($this->request->getFile('event_images2')))
+			{
+				$file2 = $this->request->getFile('event_images2');
+				$filename2 = $file2->getRandomName();
+			}
+	
+			if(!empty($this->request->getFile('event_images3')))
+			{
+				$file3 = $this->request->getFile('event_images3');
+				$filename3 = $file3->getRandomName();
+			}
+	
+			if(!empty($this->request->getFile('event_images4')))
+			{
+				$file4 = $this->request->getFile('event_images4');
+				$filename4 = $file4->getRandomName();
+			}
+	
+			if(!empty($this->request->getFile('event_images5')))
+			{
+				$file5 = $this->request->getFile('event_images5');
+				$filename5 = $file5->getRandomName();
+			}
+	
+			if(!empty($this->request->getFile('event_images6')))
+			{
+				$file6 = $this->request->getFile('event_images6');
+				$filename6 = $file6->getRandomName();
+			}
+
+
         $data = [
 			
 			'fevent_id' => 'EV' . time(),
 			'ffrom' => $this->request->getPost('event_start'),
 			'fto' => $this->request->getPost('event_end'),
 			'ftitle' => $this->request->getPost('event_title'),
-			'fevent_location' => $this->request->getPost('event_location'),
 			'fauthor' => $this->request->getPost('author'),
 			'fdescription' => $this->request->getPost('event_description'),
 			'fevent_price1' => $price1,
 			'fevent_price2' => $price2,
-
+			'fevent_address' => $this->request->getPost('event_address'),
+			'fevent_state' => $this->request->getPost('event_state'), 
+			'fevent_lga' => $this->request->getPost('event_lga'),
+			'fevent_image1' => $filename1,
+			'fevent_image2' => $filename2,
+			'fevent_image3' => $filename3,
+			'fevent_image4' => $filename4,
+			'fevent_image5' => $filename5,
+			'fevent_image6' => $filename6,
             ];
             
-        //var_dump($start_time);
+        // //var_dump($start_time);
 
         $event = new EventModel();
 		$event->insert($data);
 		$inserted = $event->affectedRows();
 		if($inserted > 0)
 		{
+
+			if(!empty($this->request->getFile('event_images1')))
+			{
+				$file1 = $this->request->getFile('event_images1');
+				$filename1 = $file1->getRandomName();
+				$PATH = getcwd();
+				$file1->move($PATH .'/public/eventimages', $filename1);
+			}
+			else
+			{
+				$file1 = 'event.jpg';
+			}
+	
+			if(!empty($this->request->getFile('event_images2')))
+			{
+				$file2 = $this->request->getFile('event_images2');
+				$filename2 = $file2->getRandomName();
+				$PATH = getcwd();
+				$file2->move($PATH .'/public/eventimages', $filename2);
+			}
+	
+			if(!empty($this->request->getFile('event_images3')))
+			{
+				$file3 = $this->request->getFile('event_images3');
+				$filename3 = $file3->getRandomName();
+				$PATH = getcwd();
+				$file3->move($PATH .'/public/eventimages', $filename3);
+			}
+	
+			if(!empty($this->request->getFile('event_images4')))
+			{
+				$file4 = $this->request->getFile('event_images4');
+				$filename4 = $file4->getRandomName();
+				$PATH = getcwd();
+				$file4->move($PATH .'/public/eventimages', $filename4);
+			}
+	
+			if(!empty($this->request->getFile('event_images5')))
+			{
+				$file5 = $this->request->getFile('event_images5');
+				$filename5 = $file5->getRandomName();
+				$PATH = getcwd();
+				$file5->move($PATH .'/public/eventimages', $filename5);
+			}
+	
+			if(!empty($this->request->getFile('event_images6')))
+			{
+				$file6 = $this->request->getFile('event_images6');
+				$filename6 = $file6->getRandomName();
+				$PATH = getcwd();
+				$file6->move($PATH .'/public/eventimages', $filename6);
+			}
+
+
 			$response = [
 				'success' => true,
 				'data' => 'saved',
@@ -718,6 +821,88 @@ class Association extends BaseController
 
 		return $this->response->setJSON($response);
 	}
+
+
+	// public function GetMainCatFilteredItems(Request $request)
+	// {
+	// 	$category = Session::get('category_name');
+	// 	$subcategory = $request->subcategory;
+	// 	$childcategory = $request->childcategory;
+	// 	$brand = $request->brand;
+
+	// 	// $query ="SELECT * FROM `titems` WHERE fmain_category ='".$category."'";
+
+	// 	// if(!empty($subcategory))
+	// 	// {
+		
+	// 	// $query .=" AND fsub_category ='".$subcategory."'";
+	// 	// }
+
+	// 	// if(!empty($childcategory))
+	// 	// {
+		
+	// 	// $query .=" AND fparent_category ='".$childcategory."'";
+	// 	// }
+
+	// 	// if(!empty($brand))
+	// 	// {
+		
+	// 	// $query .=" AND fbrand ='".$brand."'";
+	// 	// }
+
+	// 	$query_addendum =" ORDER BY fitem_name ASC;";
+	// 	$output = "";
+	// 	$url = url('/');
+	// 	$items = DB::select($query.$query_addendum);
+
+	// 	if(empty($items))
+	// 	{
+	// 	$output = '<div class="col-lg-12 text-center"><p>No merchants available</p></div>';
+	// 	}
+	// 	else
+	// 	{
+	// 	foreach ($items as $item) 
+	// 	{
+	// 		$products_count = Product::where('fitem','=', $item->fitem_name)->count();
+
+	// 	$output .='
+	// 	<a href="'.$url.'/products/'.strtolower($item->fitem_name).'">
+	// 	<div class="col-md-6 col-lg-4">
+	// 	<div class="blog-box bg-white">
+	// 		<div class="blog-images">
+	// 			<div class="img">
+	// 			<img src="https://admin.awoofmart.ng/uploads/itemimginit/'.$item->fitem_image.'" class="img-fluid" style="height:230px" alt="">
+				
+	// 			</div>
+	// 		</div>
+	// 		<div class="details text-center">
+	// 			<a href="'.$url.'/products/'.strtolower($item->fitem_name).'">
+	// 			<h2 class="blog-title text-center">
+	// 			'.$item->fitem_name.'
+	// 			</h2>
+				
+	// 			<p class="blog-text">
+	// 			'.$products_count.' product(s)
+	// 			</p>
+	// 			</a>
+	// 		</div>
+	// 		</div>
+	// 	</div>
+	// 	</a>'
+	// 	;
+
+			
+
+	// 	}
+	// 	}
+
+	// 	$data = [
+	// 	'maincatfiltereditems' =>	$output,
+	// 	];	
+
+	// return json_encode($data);
+	// }
+
 	
 
 	public function loadassociationevents()
@@ -725,10 +910,46 @@ class Association extends BaseController
 
 		$association_id = session()->association_id;
 
+		// $title = $this->request->getPost('title');
+		// $start_date = $this->request->getPost('start_date');
+		// $end_date = $this->request->getPost('end_date');
+		// $event_type = $this->request->getPost('event_type');
+		// $location = $this->request->getPost('location');
+
+
+
+		// $query ="SELECT * FROM `tevents` WHERE factive = 1";
+
+
+		// if(!empty($title))
+		// {
+		// 	$query .=" AND ftitle ='".$title."'";
+		// }
+
+		// if(!empty($start_date))
+		// {
+		// 	$query .=" AND ffrom ='".$start_date."'";
+		// }
+
+		// if(!empty($end_date))
+		// {
+		// 	$query .=" AND fto ='".$end_date."'";
+		// }
+
+		// if(!empty($event_type))
+		// {
+		// 	$query .=" AND fevent_price1 ='".$event_type."'";
+		// }
+
+
+
         $association = new EventModel();
 		$association_events = $association->where('fauthor', $association_id)->orderBy('frecno', 'desc')->findAll();
 
-		$output = "";
+		// $db = \Config\Database::connect();
+		// $association_events = $db->query($query);
+
+		// $output = "";
 		
 		if(empty($association_events))
 		{
@@ -767,33 +988,44 @@ class Association extends BaseController
 					$price_tag2 = '₦'. number_format($event['fevent_price2']);
 				}
 
-				$output .= '<div class="bg-dark text-white p-3 mb-2">
-					<h5>'.strtoupper($event['ftitle']).'</h5>
-					<i class="fas fa-calender"></i>'.date('M j, Y', strtotime($event['ffrom'])).' - '.date('M j, Y', strtotime($event['fto'])).' | '.$event['fevent_location'].'
 
-					<br>
-					<br>
+				$output .= '
+					<div class="card mb-3 rounded-0">
+					<img class="card-img-top rounded-0" src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image" width="100%" height="300rem">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-lg-3 text-right">
+								<img src="https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="50%">
+							</div>
+							<div class="col-lg-9">
+								<h4 class="card-title">'.ucwords(strtolower($event['ftitle'])).'</h4>
+								<p><i class="far fa-calendar-alt"></i> &nbsp;'.date('M j, Y', strtotime($event['ffrom'])).' - '.date('M j, Y', strtotime($event['fto'])).'</p>
+								<p><i class="fas fa-map-marker-alt"></i> &nbsp;'.$event['fevent_address'].' | '.$event['fevent_lga'].', '.$event['fevent_state'].'</p>
+								<p><i class="fas fa-money-bill"></i> &nbsp;'.$price_tag1.'</p>
+								<p>'.$event['fdescription'].'</p>
 
-					<p>'.$event['fdescription'].'</p>
+								<div class="row">
+									<div class="col">
+										<p>'.$event['fevent_link'].'</p>
+									</div>
+								</div>
 
-					<i class="fa fa-globe"></i> www.icanng/meetup/fair
 
-					<br><br>
+								<p class="text-right"><i class="far fa-edit cursor fa-lg text-warning edit-event-button" data-toggle="tooltip" title="edit" data-edit_id="'.$event['frecno'].'" data-event_title="'.$event['ftitle'].'" data-event_start="'.date("Y-m-d\TH:i:s", strtotime($event['ffrom'])).'" data-event_end="'.date("Y-m-d\TH:i:s", strtotime($event['fto'])).'" data-event_description="'.$event['fdescription'].'" data-event_location="'.$event['fevent_location'].'"></i> <i class="far fa-trash-alt cursor fa-lg text-danger" data-toggle="tooltip" title="delete"></i></p>
 
-					<button class="btn btn-white bg-white">Price:</button>&nbsp;'.$price_tag1.' '.$price_tag2.'
-
-					
-					<br>
-					<div class="text-right">
-						<i class="fa fa-edit text-white edit-event-button text-warning cursor" data-edit_id="'.$event['frecno'].'" data-event_title="'.$event['ftitle'].'" data-event_start="'.date("Y-m-d\TH:i:s", strtotime($event['ffrom'])).'" data-event_end="'.date("Y-m-d\TH:i:s", strtotime($event['fto'])).'" data-event_description="'.$event['fdescription'].'" data-event_location="'.$event['fevent_location'].'"></i>&nbsp;
-						<i class="fa fa-trash text-white delete-event-button text-danger cursor" data-delete_id="'.$event['frecno'].'"></i>
+								
+							</div>
+						</div>
 					</div>
-				</div>';
-
-
+				</div>
+			
+				';
 			}
 
 		}
+
+
+		
 
 		
 		$data = array(
@@ -1608,6 +1840,86 @@ class Association extends BaseController
 	}
 
 
+
+	public function makeadmin()
+	{
+		
+		$applicant = new ApplicantModel();
+		$applicant_details = $applicant->where('fapplicant_id', $this->request->getPost('user_id'))->first();
+
+		// var_dump($applicant_details);
+
+		if(empty($applicant_details))
+		{
+			session()->setFlashdata('error', 'User is not registered on Kokoruns. Kindly ask them to do so.');
+            return redirect()->to(base_url('/association/dashboard'));
+		}
+		else
+		{
+			
+			$aa = new AssociationAdminModel();
+			$already_admin = $aa->where('fsubadmin_id', $this->request->getPost('user_id'))->where('fassociation_id', $this->request->getPost('association_id'))->first();
+			//var_dump($already_admin);
+
+			if(!empty($already_admin))
+			{
+				session()->setFlashdata('error', 'User is already a subadmin of this page.');
+            	return redirect()->to(base_url('/association/dashboard'));
+			}
+			else
+			{
+
+				$data = [
+					
+					'fassociation_id' => $this->request->getPost('association_id'),
+					'fsubadmin_id' => $this->request->getPost('user_id'),
+					'fsubadmin_name' => $applicant_details['ffirst_name']. ' '. $applicant_details['flast_name'],
+			
+					];
+					
+				
+				//var_dump($data);
+			
+		
+				$asa = new AssociationAdminModel();
+				$asa->insert($data);
+				$inserted = $asa->affectedRows();
+				if($inserted > 0)
+				{
+					session()->setFlashdata('success', 'Admin added successfully');
+            		return redirect()->to(base_url('/association/dashboard'));
+				}
+				else
+				{
+					session()->setFlashdata('error', 'Error! Admin not added. Try again.');
+            		return redirect()->to(base_url('/association/dashboard'));
+				}
+
+			}
+
+
+		}
+
+	}
+
+
+	public function removeadmin($id)
+	{
+        $aam = new AssociationAdminModel();
+        $aam->where('frecno', $id)->delete();
+        $deleted = $aam->affectedRows();
+		if($deleted > 0)
+		{
+			session()->setFlashdata('success', 'Admin removed successfully');
+            return redirect()->to(base_url('/association/dashboard'));
+		}
+		else
+		{
+			session()->setFlashdata('error', 'Admin not removed. Try again.');
+            return redirect()->to(base_url('/association/dashboard'));
+		}
+
+	}
 
     public function logout()
 	{

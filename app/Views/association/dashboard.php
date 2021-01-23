@@ -4,29 +4,15 @@
   <title>Kokoruns - Association</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
 
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 
   <style>
-
-
-            .loader {
-            border: 16px solid #f3f3f3; /* Light grey */
-            border-top: 16px solid #3498db; /* Blue */
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin .5s linear infinite;
-            }
-
-            @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-            }
 
 
         .repeat-remove{
@@ -52,13 +38,13 @@
     position: fixed;
     top: -50px;
     width: 100%;
-    height: 50px;
+    height: 55px;
     display: block;
     transition: top 0.3s;
     z-index: 1;
     }
 
-    #navbar a {
+    /* #navbar a {
     float: left;
     display: block;
     color: #000;
@@ -72,7 +58,7 @@
     #navbar a:hover {
     background-color: #ddd;
     color: black;
-    }
+    } */
 
 
     body
@@ -106,7 +92,7 @@
 
     .side-box
     {
-        font-size: 20px;
+        font-size: 18px;
         color: #707070;
     }
 
@@ -116,20 +102,55 @@
         color: #707070;
     }
 
+    .background_image
+    {
+        background: url('https://i.pinimg.com/originals/f9/20/c8/f920c8b2b94109fd0eef7eefae132db8.jpg') no-repeat; width:100%; background-size: cover;
+    }
+
+
+    .imageThumb {
+    max-height: 75px;
+    border: 2px solid;
+    padding: 1px;
+    cursor: pointer;
+    }
+
+    .pip {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+    }
+    .remove {
+    display: block;
+    background: #444;
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    }
+    .remove:hover {
+    background: white;
+    color: black;
+    }
+
+    input[type="file"] {
+     display: block;
+    }
+
+
+    .info-box{
+        position: fixed; top: 93px; right: 0; width: 100%;
+        
+    }
+
+
 </style>
 
-
-<link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>public/assets/waitMe.css">
 
 </head>
     <body style="background:#f5f5dc;">
 
 
-        <!-- <div class="loader" id="loader_div" style="display:none; z-index: 9; margin: 20rem 5rem 14rem 32rem; position: absolute;top: 0;  left: 0;"></div> -->
-
-        <!-- <div style="position: absolute;top: 0;  left: 0; width: 100%;"> -->
-
-        <header class="container-fluid bg-white" style="position: fixed; top: 0; width: 100%; z-index: 9; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <header class="container-fluid bg-white" style="position: fixed; top: 0; width: 100%; z-index: 9; border-bottom: 1px solid #ccc;">
 
               <nav class="p-2">
                 
@@ -146,24 +167,28 @@
         </header>
 
 
-        <div id="navbar" style="border-bottom: 1px solid #000;">
-            <a> 
-                <img src="https://www.synergynigeria.com/wp-content/uploads/2016/06/ICAN-Logo-227x300.jpg" alt="" width="10%;">
-            </a>
-            <a>The Institute Of Chartered Accountants Of Nigeria</a>
-            <a class="btn btn-primary btn-sm py-2 text-white">Follow</a>
-        <br>
+    <div id="navbar" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <div class="row pt-3 pb-5 pl-5">
+            <div class="col-sm-8 pl-5">
+                <img src="https://www.synergynigeria.com/wp-content/uploads/2016/06/ICAN-Logo-227x300.jpg" alt="" width="5%;" height="70%"> &nbsp;
+                <span> <strong> The Institute Of Chartered Accountants Of Nigeria </strong> </span>
+            </div> 
+            <div class="col-sm-4 text-center">
+                <a class="btn btn-primary btn-sm text-white">Follow</a>
+            </div>
         </div>
+    </div>
 
-    <div class="container-fluid" style="margin-top: 5.5rem;">
+    <div class="container-fluid" style="margin-top: 5.8rem;">
         <div class="row">
-            <div class="col-lg-9 pl-4">
-                    <div class="row bg-dark py-2">
+            <div class="col-lg-9 pl-3">
+                <div class="p-3 bg-dark background_image">
+                    <div class="row py-2">
                         <div class="col-lg-1">
-                                <i class="fa fa-envelope fa-lg text-white"></i>
+                            <i class="fa fa-envelope fa-lg text-white"></i>
                         </div>
                         <div class="col-lg-6 text-right pt-3" style="padding-right: 1.3rem;">
-                                <img src="https://www.synergynigeria.com/wp-content/uploads/2016/06/ICAN-Logo-227x300.jpg" alt="logo" width="120px" height="120px">
+                                <img src="https://www.synergynigeria.com/wp-content/uploads/2016/06/ICAN-Logo-227x300.jpg" style="border: 10px solid #fff;" alt="logo" width="120px" height="120px">
                         </div>
                         <div class="col-lg-5 text-right">
                             <!-- //<i class="fas fa-bars fa-lg text-white"></i> -->
@@ -184,13 +209,13 @@
                        
                         </div>
                     </div>
-                    <div class="row bg-dark py-2">
+                    <div class="row py-2">
                         <div class="col-lg-12 text-center text-white">
                                <h4 class="header-title">The Institute Of Chartered Accountants Of Nigeria</h4>
                         </div>
                         
                     </div>
-                    <div class="row bg-dark py-2">
+                    <div class="row py-2">
                     
                         <div class="col">
                             <div class="">
@@ -224,7 +249,32 @@
  
                     </div>
 
-                    <div class="row border mt-2 mb-5 bg-white" id="profile-box">
+                    </div>
+
+
+                    <br>
+
+                    <?php if(!empty(session()->getFlashdata('success'))){ ?>
+
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Success!</strong> <?php echo session()->getFlashdata('success');?>
+                    </div>
+                        
+                    <?php } ?>
+
+                    <?php if(!empty(session()->getFlashdata('error'))){ ?>
+
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Sorry!</strong> <?php echo session()->getFlashdata('error');?>
+                        </div>
+
+                    <?php } ?>
+
+                    
+                <div>
+                    <div class="row border mt-2 mb-5 bg-white" id="profile-box" style="margin: .01rem;">
                         <div class="col p-3">
                             <h4 class="title">About <span class="float-right btn btn-info btn-sm rounded-0 py-0 text-white edit-btn" style="background:#3090C7" data-toggle="modal" data-target="#aboutModal">Edit</span></h4>
                             <p id="about_section" class="text-details"><?php echo $association_details['fabout']; ?></p>
@@ -282,195 +332,146 @@
                         </div>
                     </div>
 
+                 <div id="events-box" style="display:none;">
 
-                    <div class="row border mt-2 mb-5 bg-white" id="events-box" style="display:none;">
+                    <!-- <div class="row mt-2 mb-2 bg-white border" style="margin-left: .08rem; margin-right: .009rem;">
                         <div class="col p-3">
 
-                            <button class="btn btn-info btn-sm rounded-0 text-white" style="background:#3090C7" id="add-event-btn" data-toggle="modal" data-target="#createEventModal">Create Event</button>
-
-                           
-                            <hr>
-                            <br>
-
-                            <h4 class="title">Filters </h4>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label for="">Start Date</label><br>
-                                    <input type="date" name=""  class="form-control form-control-sm rounded-0 border-dark">
-                                </div>
-                                <div class="col ">
-                                    <label for="">End Date</label><br>
-                                    <input type="date" name=""  class="form-control form-control-sm rounded-0 border-dark">
-                                </div>
-                                <div class="col">
-                                    <label for="">Type</label><br>
-                                    <select name=""  class="form-control form-control-sm rounded-0 border-dark" style="height:31px;">
-                                        <option value="">Free</option>
-                                        <option value="">Paid</option>
-                                        <option value="">Career</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <label for="">Location</label><br>
-                                    <select name=""  class="form-control form-control-sm rounded-0 border-dark" style="height:31px;">
-                                        <option value="">Free</option>
-                                        <option value="">Paid</option>
-                                        <option value="">Career</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <h4 class="title">Search </h4>
-
-                            <div class="row">
-                                <div class="col">
-                                  
-                                    <input type="text" name=""  class="form-control form-control-sm rounded-0 border-dark">
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <h4 class="title">Published Events </h4>
-
-                            <br>
-
-
-
-                            <div id="posted-event-container">
                             
-                            </div>
 
+                        </div> 
+                            
+                    </div> -->
+                    <div class="mb-5 mt-5" style="margin-left: .08rem; margin-right: .009rem; ">
+                            <div>
                            
-                        
 
+                        <h4 class="title px-2">Published Events <button class="btn btn-info btn-sm rounded-0 text-white float-right" style="background:#3090C7" id="add-event-btn" data-toggle="modal" data-target="#createEventModal">Create Event</button></h4>
+                        <br>
+
+                                   
+
+
+                                    <div id="posted-event-container" style="padding-left:0;">
+
+                                    </div>
+
+                            </div>
                         </div>
-                    </div>
+                         
+                </div>
+
+                </div>
+
 
                 
+                <div class="mt-2 mb-5" id="ebroadcast-box" style="display:none;">
+					<div class="p-3 border bg-white">
+					
+						<h4 class="text-center title">Send Out Important Message To a Large Audience</h4>
+						<br>
+						<form id="ebroadcast_form">
+							<div class="row">
 
-                    <div class="row border mt-2 mb-5 bg-white" id="esolutions-box" style="display:none;">
-                        <div class="col p-3">
+								<div class="col">
+									<div class="border p-3">
+										<p><strong> Compose Message</strong></p>
+										<label for="">Subject</label>
+										<input type="text" name="subject" id="subject" class="form-control" required>
+										<br>
+										<input type="hidden" name="sender" value="<?php echo $association_details['fassociation_id']; ?>">
+										<input type="hidden" name="sender_name" value="<?php echo $association_details['fassociation_name']; ?>">
+										<label for="">Message</label>
+										<textarea name="message" id="message" class="form-control"  cols="30" rows="8" required></textarea>
 
-                           
-                        </div>
+										<br>
+										<label><strong>Select Target Group</strong></label> <br>
+									
+										<input type="radio" name="target" > Members &nbsp; <input type="radio" name="target" id="target"> Followers
 
-                    </div>
+										<br>
+										<button class="float-right btn btn-info btn-sm rounded-0  text-white" style="background:#3090C7" type="submit">SEND</button>
+										<br>
+									</div>
+								</div>
+								
+							</div>
+						</form>
 
-
-                    <div class="row  mt-2 mb-5 " id="ebroadcast-box" style="display:none;">
-                        <div class="col p-3 border bg-white">
-
-                            <h4 class="text-center title">Send Out Important Message To a Large Audience</h4>
-                            <br>
-                            <form id="ebroadcast_form">
-                                <div class="row">
-
-                                    <div class="col">
-                                        <div class="border p-3">
-                                            <p><strong> Compose Message</strong></p>
-                                            <label for="">Subject</label>
-                                            <input type="text" name="subject" id="subject" class="form-control" required>
-                                            <br>
-                                            <input type="hidden" name="sender" value="<?php echo $association_details['fassociation_id']; ?>">
-                                            <input type="hidden" name="sender_name" value="<?php echo $association_details['fassociation_name']; ?>">
-                                            <label for="">Message</label>
-                                            <textarea name="message" id="message" class="form-control"  cols="30" rows="8" required></textarea>
-
-                                            <br>
-                                            <label><strong>Select Target Group</strong></label> <br>
-                                        
-                                            <input type="radio" name="target" > Members &nbsp; <input type="radio" name="target" id="target"> Followers
-
-                                            <br>
-                                            <button class="float-right btn btn-info btn-sm rounded-0  text-white" style="background:#3090C7" type="submit">SEND</button>
-                                            <br>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </form>
-
-                        </div>
-                   
+					</div>
+                 
 
                         <div class="col p-3 border bg-white mt-2">
 
 
-                        <div class="p-3 ">
+                            <div class="p-3 ">
 
-                            <h4 class="title">Sent Broadcasts</h4>
+                                    <h4 class="title">Sent Broadcasts</h4>
 
-                            <div id="broadcast_list_area">
-                            
-
-
-                                
-                            </div>
-                        </div>
-
-                        </div>
-
-
-
-
-
-
-                        </div>
-
-
-
-               
-
-                    <div class="row mt-2 mb-5" id="gallery-box" style="display:none;">
-                        <div class="col p-3">
-
-                        <div class="portfolio_box">
-
-                            <div class="row p-2">
-                                <div class="col-sm-6 text-center">
-                                <div class="pt-5 m-3">
-                                    <label for="file-input-images"><i class="fas fa-upload fa-5x border p-3 border-dark"></i></label>
-                                        <input type="hidden" id="association_id" value="<?php echo $association_details['fassociation_id']; ?>">
-                                        <form id="image_upload_form">
+                                    <div id="broadcast_list_area">
+                                    
                                         
-                                            <input type="file" id="file-input-images" hidden/>
-
-                                        </form>
                                     </div>
-                                </div>
+                            </div>
 
-                                
+                        </div>
 
-                                <?php foreach ($association_gallery as $portfolio) {?>
-                    
-                                    <div class="col-sm-6">
-                                        <div class="border m-2">
-                                            <img src="<?php echo site_url('public/associationgalleries/600/'.$portfolio['fimage']);?>" alt="" width="100%">
-                                            <span data-image_id="<?php echo $portfolio['fimage_id'];?>" data-image_name="<?php echo $portfolio['fimage'];?>" class="fa fa-times text-danger cursor delete-image" style="position:relative;top:-234px;left:438px;"></span>
+					</div>
+
+
+
+                <div class="row mt-2 mb-5" id="gallery-box" style="display:none;">
+                   
+                        <div class="col">
+
+                            <div class="portfolio_box bg-white">
+
+                                <div class="row p-2">
+                                    <div class="col-sm-6 text-center">
+                                    <div class="pt-5 m-3">
+                                        <label for="file-input-images"><i class="fas fa-upload fa-5x border p-3 border-dark"></i></label>
+                                            <input type="hidden" id="association_id" value="<?php echo $association_details['fassociation_id']; ?>">
+                                            <form id="image_upload_form">
+                                            
+                                                <input type="file" id="file-input-images" hidden/>
+
+                                            </form>
                                         </div>
                                     </div>
 
                                     
-                                    
-                                <?php } ?>
 
-                                  
+                                    <?php foreach ($association_gallery as $portfolio) {?>
+
+                                        <div class="col-sm-6">
+                                            <div class="border m-2">
+                                                <img src="<?php echo site_url('public/associationgalleries/600/'.$portfolio['fimage']);?>" alt="" width="100%">
+                                                <span data-image_id="<?php echo $portfolio['fimage_id'];?>" data-image_name="<?php echo $portfolio['fimage'];?>" class="fa fa-times text-danger cursor delete-image" style="position:relative;top:-234px;left:438px;"></span>
+                                            </div>
+                                        </div>
+
+                                        
+                                        
+                                    <?php } ?>
+
+                                    
+                                    
+                                    
+
+                                </div>
                                 
-                                
-            
+                                </div>
+
                             </div>
                             
-                            </div>
-
                         </div>
-                    </div>
-
+            
             </div>
-            <div class="col-lg-3">
+
+
+
+           
+            <div class="col-lg-3 pl-0 info-box">
                <div class="border p-2 bg-white">
                     <div id="info_section">
                    <p class="side-box mb-0">  Members</p>
@@ -498,9 +499,45 @@
                     <button class="btn btn-info btn-sm rounded-0 py-0 text-white edit-btn" id="info-btn" style="background:#3090C7" data-recno="<?php echo $association_details['frecno']; ?>" data-cac="<?php echo $association_details['fcac']; ?>" data-website="<?php echo $association_details['fwebsite']; ?>" data-field="<?php echo $association_details['ffield']; ?>" data-main_office_state="<?php echo $association_details['fmain_office_location_state']; ?>" data-main_office_lga="<?php echo $association_details['fmain_office_location_lga']; ?>" data-contact_email="<?php echo $association_details['fassociation_contact_email']; ?>">Edit</button> 
                
                </div>
+
+
+                
+               <div class="border p-2 bg-white mt-2">
+                    <div id="info_section">
+                  
+                  <p>Add a page Sub-Admin </p>
+
+                 <form action="<?php echo site_url(); ?>association/makeadmin" method="post">
+                   <div class="input-group mb-3">
+                    <input type="hidden" name="association_id" value="<?php echo $association_details['fassociation_id']; ?>">
+                    <input type="text" class="form-control form-control-sm rounded-0" name="user_id" placeholder="Enter User's Kokoruns' ID e.g john.smith">
+                    <div class="input-group-append">
+                        <button class="btn btn-success btn-sm" type="submit">Add</button>
+                    </div>
+                    </div>
+                 </form>
+                  </div>
+
+                  <br>
+
+                  
+                <div>
+                            <!-- <p>Sub-Admins List</p> -->
+                    <ol>
+                        <?php foreach ($association_admins as $admin) { ?>
+                                <li><?php echo $admin['fsubadmin_name']; ?> <a href="<?php echo site_url('association/removeadmin/'. $admin['frecno']); ?>">remove</a></li>
+                        <?php } ?>
+                    </ol>
+                </div>
+                  
+               
+               </div>
+
             </div>
         </div>
-    </div>
+    <!-- </div> -->
+
+  
 
 
 
@@ -518,6 +555,8 @@
                     <p class="modal-title"><strong> Edit About </strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+
+                
         
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -763,66 +802,204 @@
         <div class="modal-content rounded-0">
            
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <p class="modal-title"><strong> Create Event</strong></p>
+                <div class="modal-header rounded-0 py-2" style="background: #70a1B9">
+                    <p class="modal-title text-white"><strong> Event Details</strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
         
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body pt-0">
 
-                    
                     <div id="create-event-box">
 
                         <form id="createEventform">
-                            <fieldset>
-                                    <legend>Event Details</legend>
-
+                       
                             <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Title</label><br>
+                                <div class="col-lg-7">
+                                   
+                                    <div class="pt-0">
+                                        <label for="" class="mb-0 mt-1">Title</label><span class="text-danger">*</span><br>
                                         <input type="hidden" name="author" value="<?php echo $association_details['fassociation_id']; ?>">
-                                        <input type="text" name="event_title" id="event_title" class="form-control form-control-sm rounded-0 border-dark" required>
+                                        <input type="text" name="event_title" id="event_title" class="form-control form-control-sm rounded-0 mt-0" required>
                                     </div>
+                                  
+                                </div>
+                                <div class="col-lg-5">
+                                   
+                                    <div class="pt-0">
+                                        <label for="" class="mb-0 mt-1">Event Online Link</label><br>
+                                       
+                                        <input type="url" name="event_title" id="event_title" class="form-control form-control-sm rounded-0 mt-0">
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                                   
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="">
+                                        <label for="" class="mb-0 mt-2">Start Date</label><span class="text-danger">*</span><br>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="event_start" id="event_start" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="">
+                                        <label for="" class="mb-0  mt-2">End Date</label><span class="text-danger">*</span><br>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="event_end" id="event_end" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="">
+                                        <label for="" class="mb-0  mt-2">Event Type</label><span class="text-danger">*</span><br>
+                                        <select name="event_type" id="event_type" class="form-control form-control-sm rounded-0" required>
+                                            <option value="">Select one</option>
+                                            <option value="Entertainment">Entertainment</option>
+                                            <option value="Gala">Gala</option>
+                                            <option value="Social">Social</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="">
+                                        <label for="" class="mb-0  mt-2">Industry</label><span class="text-danger">*</span><br>
+                                        <select name="event_industry" id="event_industry" class="form-control form-control-sm rounded-0" required>
+                                            <option value="">Select one</option>
+                                            <option value="Entertainment">Entertainment</option>
+                                            <option value="Gala">Gala</option>
+                                            <option value="Social">Social</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="">
+                                        <label for="" class="mb-0  mt-2">Address</label><span class="text-danger">*</span><br>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="event_address" id="event_address" required>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="">
+                                        <label for="" class="mb-0  mt-2">State</label><span class="text-danger">*</span><br>
+                                        <select name="event_state" id="state" class="form-control form-control-sm rounded-0" required>
+                                            <option value="" selected="selected"> Select State </option>
+                                            <option value="Abia">Abia</option>
+                                            <option value="Adamawa">Adamawa</option>
+                                            <option value="AkwaIbom">AkwaIbom</option>
+                                            <option value="Anambra">Anambra</option>
+                                            <option value="Bauchi">Bauchi</option>
+                                            <option value="Bayelsa">Bayelsa</option>
+                                            <option value="Benue">Benue</option>
+                                            <option value="Borno">Borno</option>
+                                            <option value="Cross River">Cross River</option>
+                                            <option value="Delta">Delta</option>
+                                            <option value="Ebonyi">Ebonyi</option>
+                                            <option value="Edo">Edo</option>
+                                            <option value="Ekiti">Ekiti</option>
+                                            <option value="Enugu">Enugu</option>
+                                            <option value="FCT">FCT</option>
+                                            <option value="Gombe">Gombe</option>
+                                            <option value="Imo">Imo</option>
+                                            <option value="Jigawa">Jigawa</option>
+                                            <option value="Kaduna">Kaduna</option>
+                                            <option value="Kano">Kano</option>
+                                            <option value="Katsina">Katsina</option>
+                                            <option value="Kebbi">Kebbi</option>
+                                            <option value="Kogi">Kogi</option>
+                                            <option value="Kwara">Kwara</option>
+                                            <option value="Lagos">Lagos</option>
+                                            <option value="Nasarawa">Nasarawa</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Ogun">Ogun</option>
+                                            <option value="Ondo">Ondo</option>
+                                            <option value="Osun">Osun</option>
+                                            <option value="Oyo">Oyo</option>
+                                            <option value="Plateau">Plateau</option>
+                                            <option value="Rivers">Rivers</option>
+                                            <option value="Sokoto">Sokoto</option>
+                                            <option value="Taraba">Taraba</option>
+                                            <option value="Yobe">Yobe</option>
+                                            <option value="Zamfara">Zamfara</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+                                    <div class="">
+                                        <label for="" class="mb-0 mt-2">LGA</label><span class="text-danger">*</span><br>
+                                        <select class="form-control form-control-sm rounded-0" id="lga" name="event_lga" required>
+                                            <option value="0">Select LGA:</option>
+                                        </select>
+                                    </div>
+
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Start Date</label><br>
-                                        <input type="datetime-local" name="event_start" id="event_start" required>
+                                    <div class="">
+                                        <label for="" class="mb-0 mt-2">Description</label><span class="text-danger">*</span><br>
+                                        <textarea cols="30" rows="5" class="form-control form-control-sm rounded-0" name="event_description" id="event_description" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">End Date</label><br>
-                                        <input type="datetime-local" name="event_end" id="event_end" required>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Location</label><br>
-                                        <input type="text" class="form-control form-control-sm rounded-0 border-dark" name="event_location" id="event_location" required>
+                                    <div class="">
+                                        <label class="mt-2 mb-0">Upload Event Images</label>
+                                        <div class="border p-4">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <label for="event_images1"><span class="border py-1 pl-2 pr-1" style="display:block; width: 7rem;"><i class="fa fa-upload"></i><i class="fa fa-spinner fa-spin float-right" id="image1_spinner" style="display:none"></i></span></label>
+                                                    <input type="file" id="event_images1" name="event_images1" hidden/>
+                                                    <img id="blah" src="#" alt="your image" width="100%" style="display:none"/>
+                                                
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="event_images2"><i class="fa fa-upload border px-5 py-2"></i></label>
+                                                    <input type="file" id="event_images2" name="event_images2" hidden/>
+                                                    <img id="blah2" src="#" alt="your image" width="100%" style="display:none"/>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                <label for="event_images3"><i class="fa fa-upload border px-5 py-2"></i></label>
+                                                    <input type="file" id="event_images3" name="event_images3" hidden/>
+                                                    <img id="blah3" src="#" alt="your image" width="100%" style="display:none"/>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                <label for="event_images4"><i class="fa fa-upload border px-5 py-2"></i></label>
+                                                    <input type="file" id="event_images4" name="event_images4" hidden/>
+                                                    <img id="blah4" src="#" alt="your image" width="100%" style="display:none"/>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="event_images5"><i class="fa fa-upload border px-5 py-2"></i></label>
+                                                    <input type="file" id="event_images5" name="event_images5" hidden/>
+                                                    <img id="blah5" src="#" alt="your image" width="100%" style="display:none"/>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="event_images6"><i class="fa fa-upload border px-5 py-2"></i></label>
+                                                    <input type="file" id="event_images6" name="event_images6" hidden/>
+                                                    <img id="blah6" src="#" alt="your image" width="100%" style="display:none"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Description</label><br>
-                                        <textarea cols="30" rows="5" class="form-control form-control-sm rounded-0 border-dark" name="event_description" id="event_description" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Price</label>
+                                    <div class="">
+                                        <label for="" class="mb-0  mt-2">Price</label><span class="text-danger">*</span>
                                         <div class="row">
                                             <div class="col">
                                                 <input type="radio" name="event_price" id="free_event" value="free" required> Free 
@@ -836,7 +1013,7 @@
                                                                 <div class="row">
                                                                     <div class="col">
                                                                         Value:
-                                                                        <input type="number" class="form-control form-control-sm rounded-0 border-dark" name="event_price_from2" id="value1">
+                                                                        <input type="number" class="form-control form-control-sm rounded-0" name="event_price_from2" id="value1">
                                                                     </div>
                                                                 </div>
                                                             </div>    
@@ -850,13 +1027,13 @@
                                                                 <div class="col">
                                                                     <div class="form-group">
                                                                         <label for="">Min: </label> 
-                                                                        <input type="number" min="1" class="form-control form-control-sm rounded-0 border-dark" name="event_price_from3" id="value2">
+                                                                        <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price_from3" id="value2">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col">
                                                                     <div class="form-group">
                                                                       <label for="">Max: </label>
-                                                                      <input type="number" min="1" class="form-control form-control-sm rounded-0 border-dark" name="event_price_to" id="value3">
+                                                                      <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price_to" id="value3">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -880,8 +1057,8 @@
                 </div>
         
                 <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Create</button>
+                <div class="modal-footer py-1">
+                    <button type="submit" class="btn btn-success btn-sm">Create</button>
                 </div>
             </form>
         </div>
@@ -896,10 +1073,11 @@
         <div class="modal-content rounded-0">
            
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <p class="modal-title"><strong> Edit Event</strong></p>
+                <div class="modal-header rounded-0 py-2" style="background: #70a1B9">
+                    <p class="modal-title text-white"><strong> Edit Event</strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+
         
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -932,6 +1110,18 @@
                                     <div class="form-group">
                                         <label for="">End Date</label><br>
                                         <input type="datetime-local" name="event_end" id="event_end2">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Event Type</label><br>
+                                        <select name="event_type" id="event_type">
+                                            <option value="Entertainment">Entertainment</option>
+                                            <option value="Gala">Gala</option>
+                                            <option value="Social">Social</option>
+                                            <option value="Entertainment">Entertainment</option>
+                                            <option value="Entertainment">Entertainment</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -1023,6 +1213,17 @@
 
 
 
+        <!-- The Modal -->
+        <div class="modal fade" id="myModalx">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+            <img src="https://images.pexels.com/photos/587741/pexels-photo-587741.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+           
+            </div>
+        </div>
+        </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -1031,7 +1232,8 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
-     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script>
     $( function() {
         $( "#datepicker" ).datepicker();
@@ -1043,6 +1245,25 @@
         {
             $('[type="date"]').datepicker();
         }
+    </script>
+
+
+    <script>
+        $('#event_start').datetimepicker({
+            uiLibrary: 'bootstrap4',
+            modal: true,
+            footer: true,
+            format: 'HH:MM dd-mm-yyyy' 
+        });
+    </script>
+
+<script>
+        $('#event_end').datetimepicker({
+            uiLibrary: 'bootstrap4',
+            modal: true,
+            footer: true,
+            format: 'HH:MM dd-mm-yyyy' 
+        });
     </script>
 
 
@@ -1509,16 +1730,55 @@ $("body").on('click' ,'.deletebranch', function(e){
 
         $("#createEventform").submit(function(){ 
         
+            var form_data = new FormData();
 
-            var querystring = $(this).serialize();
 
-            //alert(querystring);
+            var file1 = $('#event_images1')[0].files[0];
+            form_data.append('event_images1', file1);
+
+            var file2 = $('#event_images2')[0].files[0];
+            form_data.append('event_images2', file2);
+            
+            var file3 = $('#event_images3')[0].files[0];
+            form_data.append('event_images3', file3);
+
+            var file4 = $('#event_images4')[0].files[0];
+            form_data.append('event_images4', file4);
+
+            var file5 = $('#event_images5')[0].files[0];
+            form_data.append('event_images5', file5);
+
+            var file6 = $('#event_images6')[0].files[0];
+            form_data.append('event_images6', file6);
+
+            var params = $(this).serializeArray();
+            $.each(params, function (i, val) {
+                form_data.append(val.name, val.value);
+            });
+
+
+
+            // for(var pair of form_data.entries()) 
+            // {
+            //     console.log(pair[0]+ ', ' + pair[1]); 
+            // }
+
+            // console.log(form_data);
+
+
+            // Display the values
+            // for (var value of form_data.values()) {
+            // console.log(value);
+            // }
+
 
             $.ajax({
                 url: '<?php echo site_url(); ?>association/createeventaction',
                 type: "POST",
-                data: querystring,
+                contentType: false,
+                processData: false,
                 dataType: "json",
+                data: form_data,
                 success: function(response) {
                     //code to execute
                     //console.log(response);
@@ -1541,9 +1801,9 @@ $("body").on('click' ,'.deletebranch', function(e){
                     },
                 });
 
-                return false;
+             return false;
             
-        });
+    });
 
 
 </script>
@@ -1560,14 +1820,10 @@ $("body").on('click' ,'.deletebranch', function(e){
           dataType:"json",
           success:function(data)
           {
+
+            //console.log(data);
            
-            //$('#other_skills').html(data.other_skills);
-
-            //console.log(data.employer_events);
-
-            //alert(data.employer_events);
-
-           $('#posted-event-container').html(data.association_events);
+            $('#posted-event-container').html(data.association_events);
             
           },
           error: function(xhr, textStatus, errorThrown) {
@@ -1875,7 +2131,7 @@ $(document).ready(function(){
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
     document.getElementById("navbar").style.top = "70px";
   } else {
     document.getElementById("navbar").style.top = "-50px";
@@ -1884,6 +2140,318 @@ function scrollFunction() {
 </script>
 
 
+
+
+<!-- <script>
+
+    $(document).ready(function() {
+    if (window.File && window.FileList && window.FileReader) {
+        $("#event_images").on("change", function(e) {
+        var files = e.target.files,
+            filesLength = files.length;
+        for (var i = 0; i < filesLength; i++) {
+            var f = files[i]
+            var fileReader = new FileReader();
+            fileReader.onload = (function(e) {
+            var file = e.target;
+            $("<span class=\"pip\">" +
+                "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                "<br/><span class=\"remove\">x</span>" +
+                "</span>").insertAfter("#event_images");
+            $(".remove").click(function(){
+                $(this).parent(".pip").remove();
+            });
+            
+            // Old code here
+            /*$("<img></img>", {
+                class: "imageThumb",
+                src: e.target.result,
+                title: file.name + " | Click to remove"
+            }).insertAfter("#files").click(function(){$(this).remove();});*/
+            
+            });
+            fileReader.readAsDataURL(f);
+        }
+        });
+    } 
+    else 
+    {
+        alert("Your browser doesn't support to File API")
+    }
+    });
+
+</script> -->
+
+
+
+<script>
+        $('#state').change(function(){
+                var state = $('#state').val();
+                //alert(state);
+                if(state != '')
+                {
+                    //alert("Hi");
+                    $.ajax({
+                        url:"<?php echo site_url(); ?>front/getAllLGAs",
+                        method:"POST",
+                        data:{state:state},
+                        success:function(data)
+                        {
+                            //alert(data);
+                            $('#lga').html(data);
+                        },
+                        error: function(xhr, textStatus, errorThrown) {
+                        //code to execute
+                            //alert(xhr.responseText);
+                        //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+                        },
+                    });
+                    
+                }
+                else
+                {
+                    // $('#state').html('<option value="">Select State</option>');
+                    // $('#city').html('<option value="">Select City</option>');
+                }
+            });
+    </script>
+
+    <script>
+
+    function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.progress = function(e)
+        {
+            $('#image1_spinner').show();
+        }
+        
+        reader.onload = function(e)
+        {
+            $('#blah').show();
+            $('#blah').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+    }
+
+    $("#event_images1").change(function() 
+    {
+        readURL(this);
+    });
+
+    </script>
+
+    <script>
+
+    function readURL2(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        
+
+        reader.loadstart = function(e)
+        {
+            $('#image1_spinner').show();
+        }
+        
+        reader.onload = function(e)
+        {
+            $('#blah2').show();
+            $('#blah2').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+    }
+
+    $("#event_images2").change(function() 
+    {
+        readURL2(this);
+    });
+
+    </script>
+
+
+    
+<script>
+
+function readURL3(input) {
+if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e)
+    {
+        $('#blah3').show();
+        $('#blah3').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+}
+}
+
+$("#event_images3").change(function() 
+{
+    readURL3(this);
+});
+
+</script>
+
+
+
+<script>
+
+function readURL4(input) {
+if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e)
+    {
+        $('#blah4').show();
+        $('#blah4').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+}
+}
+
+$("#event_images4").change(function() 
+{
+    readURL4(this);
+});
+
+</script>
+
+
+
+<script>
+
+function readURL5(input) {
+if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e)
+    {
+        $('#blah5').show();
+        $('#blah5').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+}
+}
+
+$("#event_images5").change(function() 
+{
+    readURL5(this);
+});
+
+</script>
+
+
+
+    <script>
+
+    function readURL6(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function(e)
+        {
+            $('#blah6').show();
+            $('#blah6').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+    }
+
+    $("#event_images6").change(function() 
+    {
+        readURL6(this);
+    });
+
+    </script>
+
+
+
+    <!-- <script>
+    
+    $(document).ready(function() {
+        if (window.File && window.FileList && window.FileReader) {
+            $("#event_images").on("change", function(e) {
+            var files = e.target.files,
+                filesLength = files.length;
+            for (var i = 0; i < filesLength; i++) {
+                var f = files[i]
+                var fileReader = new FileReader();
+                fileReader.onload = (function(e) {
+                var file = e.target;
+                $("<span class=\"pip\">" +
+                    "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                    "<br/><span class=\"remove\">Remove image</span>" +
+                    "</span>").insertAfter("#event_images");
+                $(".remove").click(function(){
+                    $(this).parent(".pip").remove();
+                });
+                
+                // Old code here
+                /*$("<img></img>", {
+                    class: "imageThumb",
+                    src: e.target.result,
+                    title: file.name + " | Click to remove"
+                }).insertAfter("#files").click(function(){$(this).remove();});*/
+                
+                });
+                fileReader.readAsDataURL(f);
+            }
+            });
+        } else {
+            alert("Your browser doesn't support to File API")
+        }
+        });
+
+    </script>
+
+
+<script>
+    
+    $(document).ready(function() {
+        if (window.File && window.FileList && window.FileReader) {
+            $("#event_images2").on("change", function(e) {
+            var files = e.target.files,
+                filesLength = files.length;
+            for (var i = 0; i < filesLength; i++) {
+                var f = files[i]
+                var fileReader = new FileReader();
+                fileReader.onload = (function(e) {
+                var file = e.target;
+                $("<span class=\"pip\">" +
+                    "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                    "<br/><span class=\"remove\">Remove image</span>" +
+                    "</span>").insertAfter("#event_images2");
+                $(".remove").click(function(){
+                    $(this).parent(".pip").remove();
+                });
+                
+                // Old code here
+                /*$("<img></img>", {
+                    class: "imageThumb",
+                    src: e.target.result,
+                    title: file.name + " | Click to remove"
+                }).insertAfter("#files").click(function(){$(this).remove();});*/
+                
+                });
+                fileReader.readAsDataURL(f);
+            }
+            });
+        } else {
+            alert("Your browser doesn't support to File API")
+        }
+        });
+
+    </script> -->
 
 
     </body>

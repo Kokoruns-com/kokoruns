@@ -5,14 +5,28 @@
     font-family: sans-serif;
     background-color: white;
     padding: 0;
-    display:flex;
+    display: /*none*/flex;
     max-height: 73px;
     padding-left: 1.3%;
-    padding-right: 3%;   
+    padding-right: 3%;
+    position: absolute;
+    z-index: 2;    
+    position: fixed;   
+}
+
+.header-class-logged-in {
+    margin: none;
+    font-family: sans-serif;
+    background-color: white;
+    padding: 0;
+    display: /*flex*/none;
+    max-height: 73px;
+    padding-left: 1.3%;
+    padding-right: 3%;      
 }
 
 .logo {
-    width:23% ;
+    width:21% ;
     min-width:150px;
     background: transparent;
     padding-top: 5px;
@@ -24,7 +38,7 @@
     }
     
 .login {  
-  padding-top: 2.25%;
+  padding-top: 2.25%;    
 }
 
 .login a {
@@ -42,7 +56,8 @@
 
 
 .sign-up {
-  padding-top: 2.25%; 
+  padding-top: 2.25%;    
+      
 }
 
 
@@ -66,7 +81,9 @@
   height: 110px; 
   background-color: white;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.3); 
-  display: none;    
+  display: none;
+  position: absolute;
+  /* position: fixed; */   
 }
 
 .login-dropdown a {
@@ -82,7 +99,9 @@
   height: 110px;  
   background-color: white;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.3); 
-  display: none;    
+  display: none; 
+  position: absolute;
+  /* position: fixed; */    
 }
 
 .sign-up-dropdown a {
@@ -101,12 +120,12 @@
 }
 
 .login:hover .login-dropdown {
-  display: block;    
+  display: block;   
 }
 
 
 .sign-up:hover .sign-up-dropdown {
-  display: block;    
+  display: block;     
 }
 
 
@@ -114,6 +133,10 @@
     
     .header-class {
       max-height: 47px;  
+    }
+    
+    .header-class-logged-in {
+     max-height: 47px;     
     }
     
    .login {
