@@ -61,7 +61,8 @@ class Association extends BaseController
 		$association_admin = new AssociationAdminModel();
 		$data['association_admins'] = $association_admin->where('fassociation_id', $association_id)->orderBy('fsubadmin_name', 'asc')->findAll();
 
-
+		$message = new MessageModel();
+		$data['broadcasts'] = $message->where('fsender_id', $association_id)->where('fis_broadcast', 1)->findAll();
 	   //var_dump($data['association_admins']);
 	   
 		return view('association/dashboard', $data);
@@ -582,11 +583,19 @@ class Association extends BaseController
 				$file2 = $this->request->getFile('event_images2');
 				$filename2 = $file2->getRandomName();
 			}
+			else
+			{
+				$filename2 = 'event2.jpg';
+			}
 	
 			if(!empty($this->request->getFile('event_images3')))
 			{
 				$file3 = $this->request->getFile('event_images3');
 				$filename3 = $file3->getRandomName();
+			}
+			else
+			{
+				$filename3 = 'event3.jpg';
 			}
 	
 			if(!empty($this->request->getFile('event_images4')))
@@ -594,11 +603,19 @@ class Association extends BaseController
 				$file4 = $this->request->getFile('event_images4');
 				$filename4 = $file4->getRandomName();
 			}
+			else
+			{
+				$filename4 = 'event4.jpg';
+			}
 	
 			if(!empty($this->request->getFile('event_images5')))
 			{
 				$file5 = $this->request->getFile('event_images5');
 				$filename5 = $file5->getRandomName();
+			}
+			else
+			{
+				$filename5 = 'event5.jpg';
 			}
 	
 			if(!empty($this->request->getFile('event_images6')))
@@ -606,16 +623,26 @@ class Association extends BaseController
 				$file6 = $this->request->getFile('event_images6');
 				$filename6 = $file6->getRandomName();
 			}
+			else
+			{
+				$filename6 = 'event6.jpg';
+			}
 
 
-        $data = [
+			$start_DT = date('Y-m-d H:i:s', strtotime($this->request->getPost('event_start')));
+			$end_DT = date('Y-m-d H:i:s', strtotime($this->request->getPost('event_end')));
+
+        	$data = [
 			
 			'fevent_id' => 'EV' . time(),
-			'ffrom' => $this->request->getPost('event_start'),
-			'fto' => $this->request->getPost('event_end'),
+			'ffrom' => $start_DT,
+			'fto' => $end_DT,
 			'ftitle' => $this->request->getPost('event_title'),
+			'fevent_link' => $this->request->getPost('event_link'),
 			'fauthor' => $this->request->getPost('author'),
 			'fdescription' => $this->request->getPost('event_description'),
+			'fevent_type' => $this->request->getPost('event_type'),
+			'fevent_industry' => $this->request->getPost('event_industry'),
 			'fevent_price1' => $price1,
 			'fevent_price2' => $price2,
 			'fevent_address' => $this->request->getPost('event_address'),
@@ -644,11 +671,7 @@ class Association extends BaseController
 				$PATH = getcwd();
 				$file1->move($PATH .'/public/eventimages', $filename1);
 			}
-			else
-			{
-				$file1 = 'event.jpg';
-			}
-	
+		
 			if(!empty($this->request->getFile('event_images2')))
 			{
 				$file2 = $this->request->getFile('event_images2');
@@ -656,6 +679,7 @@ class Association extends BaseController
 				$PATH = getcwd();
 				$file2->move($PATH .'/public/eventimages', $filename2);
 			}
+			
 	
 			if(!empty($this->request->getFile('event_images3')))
 			{
@@ -712,7 +736,7 @@ class Association extends BaseController
 
 
 	
-	public function updateeventaction()
+	public function editeventaction()
     {
         
 		 //var_dump($this->request->getPost());
@@ -755,21 +779,33 @@ class Association extends BaseController
 		// // $invitees = $this->request->getPost('invitees');
 		// // $extracted_invitees = implode(",", $invitees);
 
-        $id = $this->request->getPost('frecno');
+        $id = $this->request->getPost('id');
 
+		$start_DT = date('Y-m-d H:i:s', strtotime($this->request->getPost('event_start')));
+		$end_DT = date('Y-m-d H:i:s', strtotime($this->request->getPost('event_end')));
 
 		$data = [
-            
-			'ffrom' => date('Y-m-d H:i', strtotime($this->request->getPost('from'))),
-			'fto' => date('Y-m-d H:i', strtotime($this->request->getPost('to'))),
-			'ftitle' => $this->request->getPost('title'),
-			//'finvitees' => $extracted_invitees,
-			'fdescription' => $this->request->getPost('description'),
-            
-            ];
+	
+		'ffrom' => $start_DT,
+		'fto' => $end_DT,
+		'ftitle' => $this->request->getPost('event_title'),
+		'fevent_link' => $this->request->getPost('event_link'),
+		'fdescription' => $this->request->getPost('event_description'),
+		'fevent_price1' => $this->request->getPost('event_price1'),
+		'fevent_price2' => $this->request->getPost('event_price2'),
+		'fevent_address' => $this->request->getPost('event_address'),
+		'fevent_state' => $this->request->getPost('event_state'), 
+		'fevent_lga' => $this->request->getPost('event_lga'),
+		// 'fevent_image1' => $filename1,
+		// 'fevent_image2' => $filename2,
+		// 'fevent_image3' => $filename3,
+		// 'fevent_image4' => $filename4,
+		// 'fevent_image5' => $filename5,
+		// 'fevent_image6' => $filename6,
+		];
             
 		
-		//var_dump($data);
+		// //var_dump($data);
 	
 
         $event = new EventModel();
@@ -822,87 +858,6 @@ class Association extends BaseController
 		return $this->response->setJSON($response);
 	}
 
-
-	// public function GetMainCatFilteredItems(Request $request)
-	// {
-	// 	$category = Session::get('category_name');
-	// 	$subcategory = $request->subcategory;
-	// 	$childcategory = $request->childcategory;
-	// 	$brand = $request->brand;
-
-	// 	// $query ="SELECT * FROM `titems` WHERE fmain_category ='".$category."'";
-
-	// 	// if(!empty($subcategory))
-	// 	// {
-		
-	// 	// $query .=" AND fsub_category ='".$subcategory."'";
-	// 	// }
-
-	// 	// if(!empty($childcategory))
-	// 	// {
-		
-	// 	// $query .=" AND fparent_category ='".$childcategory."'";
-	// 	// }
-
-	// 	// if(!empty($brand))
-	// 	// {
-		
-	// 	// $query .=" AND fbrand ='".$brand."'";
-	// 	// }
-
-	// 	$query_addendum =" ORDER BY fitem_name ASC;";
-	// 	$output = "";
-	// 	$url = url('/');
-	// 	$items = DB::select($query.$query_addendum);
-
-	// 	if(empty($items))
-	// 	{
-	// 	$output = '<div class="col-lg-12 text-center"><p>No merchants available</p></div>';
-	// 	}
-	// 	else
-	// 	{
-	// 	foreach ($items as $item) 
-	// 	{
-	// 		$products_count = Product::where('fitem','=', $item->fitem_name)->count();
-
-	// 	$output .='
-	// 	<a href="'.$url.'/products/'.strtolower($item->fitem_name).'">
-	// 	<div class="col-md-6 col-lg-4">
-	// 	<div class="blog-box bg-white">
-	// 		<div class="blog-images">
-	// 			<div class="img">
-	// 			<img src="https://admin.awoofmart.ng/uploads/itemimginit/'.$item->fitem_image.'" class="img-fluid" style="height:230px" alt="">
-				
-	// 			</div>
-	// 		</div>
-	// 		<div class="details text-center">
-	// 			<a href="'.$url.'/products/'.strtolower($item->fitem_name).'">
-	// 			<h2 class="blog-title text-center">
-	// 			'.$item->fitem_name.'
-	// 			</h2>
-				
-	// 			<p class="blog-text">
-	// 			'.$products_count.' product(s)
-	// 			</p>
-	// 			</a>
-	// 		</div>
-	// 		</div>
-	// 	</div>
-	// 	</a>'
-	// 	;
-
-			
-
-	// 	}
-	// 	}
-
-	// 	$data = [
-	// 	'maincatfiltereditems' =>	$output,
-	// 	];	
-
-	// return json_encode($data);
-	// }
-
 	
 
 	public function loadassociationevents()
@@ -910,44 +865,64 @@ class Association extends BaseController
 
 		$association_id = session()->association_id;
 
-		// $title = $this->request->getPost('title');
-		// $start_date = $this->request->getPost('start_date');
-		// $end_date = $this->request->getPost('end_date');
-		// $event_type = $this->request->getPost('event_type');
-		// $location = $this->request->getPost('location');
+		if(!empty($this->request->getPost('start_date')))
+		{
+			$start_date = date('Y-m-d', strtotime($this->request->getPost('start_date')));
+		}
+
+		if(!empty($this->request->getPost('start_date')))
+		{
+			$end_date = date('Y-m-d', strtotime($this->request->getPost('end_date')));
+		}
+		
+		$event_type = $this->request->getPost('event_type');
+		$event_industry = $this->request->getPost('event_industry');
+		
+
+		if($this->request->getPost('event_price') == 'Free')
+		{
+			$event_price = $this->request->getPost('event_price');
+		}
+
+
+		$query ="SELECT * FROM `tevents` WHERE `fauthor` = '".$association_id."'";
+
+
+		if(!empty($start_date))
+		{
+			$query .=" AND ffrom ='".$start_date."'";
+		}
+
+		if(!empty($end_date))
+		{
+			$query .=" AND fto ='".$end_date."'";
+		}
+
+		if(!empty($event_type))
+		{
+			$query .=" AND fevent_type ='".$event_type."'";
+		}
+
+		if(!empty($this->request->getPost('event_price') && $this->request->getPost('event_price') == 'Free'))
+		{
+			$query .=" AND fevent_price1 ='0.00'";
+		}
+
+		if(!empty($this->request->getPost('event_price') && $this->request->getPost('event_price') == 'Paid'))
+		{
+			$query .=" AND fevent_price1 !='0.00'";
+		}
 
 
 
-		// $query ="SELECT * FROM `tevents` WHERE factive = 1";
+        // $association = new EventModel();
+		// $association_events = $association->where('fauthor', $association_id)->orderBy('frecno', 'desc')->findAll();
 
+		$db = \Config\Database::connect();
 
-		// if(!empty($title))
-		// {
-		// 	$query .=" AND ftitle ='".$title."'";
-		// }
+		$query1 =  $db->query($query);
 
-		// if(!empty($start_date))
-		// {
-		// 	$query .=" AND ffrom ='".$start_date."'";
-		// }
-
-		// if(!empty($end_date))
-		// {
-		// 	$query .=" AND fto ='".$end_date."'";
-		// }
-
-		// if(!empty($event_type))
-		// {
-		// 	$query .=" AND fevent_price1 ='".$event_type."'";
-		// }
-
-
-
-        $association = new EventModel();
-		$association_events = $association->where('fauthor', $association_id)->orderBy('frecno', 'desc')->findAll();
-
-		// $db = \Config\Database::connect();
-		// $association_events = $db->query($query);
+		$association_events = $query1->getResult('array');
 
 		// $output = "";
 		
@@ -969,13 +944,19 @@ class Association extends BaseController
 
 			foreach($association_events as $event)
 			{
-				if(empty($event['fevent_price1']))
+				if($event['fevent_price1'] == 0.00)
 				{
 					$price_tag1 = "Free";
 
 					$price_tag2 = "";
 				}
-				else if(!empty($event['fevent_price1']))
+				else if(!empty($event['fevent_price1']) && empty($event['fevent_price2']))
+				{
+					$price_tag1 = '₦'. number_format($event['fevent_price1']);
+
+					$price_tag2 = "";
+				}
+				else if(!empty($event['fevent_price1']) && ($event['fevent_price2'] == 0.00))
 				{
 					$price_tag1 = '₦'. number_format($event['fevent_price1']);
 
@@ -985,14 +966,37 @@ class Association extends BaseController
 				{
 					$price_tag1 = '₦'. number_format($event['fevent_price1']);
 
-					$price_tag2 = '₦'. number_format($event['fevent_price2']);
+					$price_tag2 = '- ₦'. number_format($event['fevent_price2']);
 				}
 
 
 				$output .= '
-					<div class="card mb-3 rounded-0">
-					<img class="card-img-top rounded-0" src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image" width="100%" height="300rem">
-					<div class="card-body">
+					<div class="card mb-4  rounded-0">
+					<div class="row">
+						<div class="col pr-0">
+							<img class="card-img-top rounded-0" src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image" width="100%" height="300rem">
+						</div>
+						<div class="col pl-0">
+							<div class="row">
+								<div class="col pr-0">
+									<img class="card-img-top rounded-0" src="https://images.pexels.com/photos/587741/pexels-photo-587741.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image" width="100%" height="150rem">
+								</div>
+								<div class="col pl-0">
+									<img class="card-img-top rounded-0" src="https://images.pexels.com/photos/306046/pexels-photo-306046.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image" width="100%" height="150rem">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col pr-0">
+									<img class="card-img-top rounded-0" src="https://images.pexels.com/photos/382297/pexels-photo-382297.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image" width="100%" height="150rem">
+								</div>
+								<div class="col pl-0">
+									<img class="card-img-top rounded-0" src="https://images.pexels.com/photos/433452/pexels-photo-433452.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image" width="100%" height="150rem">
+								</div>
+							</div>
+						</div>
+					</div>
+						
+					<div class="card-body pb-0">
 						<div class="row">
 							<div class="col-lg-3 text-right">
 								<img src="https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="50%">
@@ -1001,18 +1005,19 @@ class Association extends BaseController
 								<h4 class="card-title">'.ucwords(strtolower($event['ftitle'])).'</h4>
 								<p><i class="far fa-calendar-alt"></i> &nbsp;'.date('M j, Y', strtotime($event['ffrom'])).' - '.date('M j, Y', strtotime($event['fto'])).'</p>
 								<p><i class="fas fa-map-marker-alt"></i> &nbsp;'.$event['fevent_address'].' | '.$event['fevent_lga'].', '.$event['fevent_state'].'</p>
-								<p><i class="fas fa-money-bill"></i> &nbsp;'.$price_tag1.'</p>
+								<p><i class="fas fa-money-bill"></i> &nbsp;'.$price_tag1.' '.$price_tag2.'</p>
 								<p>'.$event['fdescription'].'</p>
 
 								<div class="row">
 									<div class="col">
-										<p>'.$event['fevent_link'].'</p>
+										<p class="text-primary">'.$event['fevent_link'].'</p>
+									</div>
+									<div class="col">
+									<p class="text-right">
+											<i class="far fa-edit cursor fa-lg text-warning edit-event-button" data-toggle="tooltip" title="edit" data-edit_id="'.$event['frecno'].'" data-event_title="'.$event['ftitle'].'" data-event_link="'.$event['fevent_link'].'"  data-event_start="'.date("H:i d-m-Y", strtotime($event['ffrom'])).'" data-event_end="'.date("H:i d-m-Y", strtotime($event['fto'])).'" data-event_description="'.$event['fdescription'].'" data-event_address="'.$event['fevent_address'].'" data-event_price1="'.$event['fevent_price1'].'" data-event_price2="'.$event['fevent_price2'].'"></i> &nbsp;&nbsp;
+											<i class="far fa-trash-alt cursor fa-lg text-danger delete-event-button" data-toggle="tooltip" title="delete" data-delete_id="'.$event['frecno'].'"></i></p>
 									</div>
 								</div>
-
-
-								<p class="text-right"><i class="far fa-edit cursor fa-lg text-warning edit-event-button" data-toggle="tooltip" title="edit" data-edit_id="'.$event['frecno'].'" data-event_title="'.$event['ftitle'].'" data-event_start="'.date("Y-m-d\TH:i:s", strtotime($event['ffrom'])).'" data-event_end="'.date("Y-m-d\TH:i:s", strtotime($event['fto'])).'" data-event_description="'.$event['fdescription'].'" data-event_location="'.$event['fevent_location'].'"></i> <i class="far fa-trash-alt cursor fa-lg text-danger" data-toggle="tooltip" title="delete"></i></p>
-
 								
 							</div>
 						</div>
@@ -1108,69 +1113,65 @@ class Association extends BaseController
 
 
 
-	public function loadbroadcasts()
-	{
-		if(!session()->id)
-        {
-            return redirect()->to(base_url('/alogin'));
-		} 
-
-		$association_id = session()->association_id;
+	// public function loadbroadcasts()
+	// {
+	
+	// 	$association_id = session()->association_id;
 
     
-		$message = new MessageModel();
-		$broadcasts = $message->where('fsender_id', $association_id)->where('fis_broadcast', 1)->findAll();
+	// 	$message = new MessageModel();
+	// 	$broadcasts = $message->where('fsender_id', $association_id)->where('fis_broadcast', 1)->findAll();
 
-		$output = "";
+	// 	$output = "";
 		
-		if(empty($broadcasts))
-		{
-			$output .= '
+	// 	if(empty($broadcasts))
+	// 	{
+	// 		$output .= '
 				
 						
-					';
-		}
-		else
-		{
+	// 				';
+	// 	}
+	// 	else
+	// 	{
 
-			$output .='<table class="table table-bordered table-sm datatable">
-			<thead>
-			<tr>
-				<th>Subject</th>
-				<th>Content</th>
-				<th>Date Created</th>
-			</tr>
-			</thead>
-			<tbody >';
+	// 		$output .='<table class="table table-bordered table-sm datatable">
+	// 		<thead>
+	// 		<tr>
+	// 			<th>Subject</th>
+	// 			<th>Content</th>
+	// 			<th>Date Created</th>
+	// 		</tr>
+	// 		</thead>
+	// 		<tbody >';
 
-			foreach($broadcasts as $broadcast)
-			{
+	// 		foreach($broadcasts as $broadcast)
+	// 		{
 
-				$output .= '
+	// 			$output .= '
 
 							
-						<tr>
-							<td>'.$broadcast['fsubject'].'</td>
-							<td>'.$broadcast['fcontent'].'</td>
-							<td>'.$broadcast['created_at'].'</td>
-						</tr>'
+	// 					<tr>
+	// 						<td>'.$broadcast['fsubject'].'</td>
+	// 						<td>'.$broadcast['fcontent'].'</td>
+	// 						<td>'.$broadcast['created_at'].'</td>
+	// 					</tr>'
 						
 
-						;
-			 }
+	// 					;
+	// 		 }
 
-			 $output .= 
-			 		'</tbody>
-			 		</table>';
+	// 		 $output .= 
+	// 		 		'</tbody>
+	// 		 		</table>';
 
-		}
+	// 	}
 
-		$data = array(
-			'broadcasts' => $output,
-		);	
+	// 	$data = array(
+	// 		'broadcasts' => $output,
+	// 	);	
 
-		return $this->response->setJSON($data);
-	}
+	// 	return $this->response->setJSON($data);
+	// }
 
 
 

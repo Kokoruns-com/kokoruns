@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
-
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
 
   <style>
@@ -142,6 +142,11 @@
         
     }
 
+    span.input-group-append
+    {
+        display:none;
+    }
+
 
 </style>
 
@@ -181,7 +186,7 @@
 
     <div class="container-fluid" style="margin-top: 5.8rem;">
         <div class="row">
-            <div class="col-lg-9 pl-3">
+            <div class="col-lg-9" style="padding-left: 4rem; padding-top: 2.4rem; padding-right: 3.5rem;">
                 <div class="p-3 bg-dark background_image">
                     <div class="row py-2">
                         <div class="col-lg-1">
@@ -283,7 +288,7 @@
 
                                 <h4 class="title">Branches </h4> 
 
-                                <button class="btn btn-info btn-sm rounded-0 text-white edit-btn" style="background:#3090C7" id="add-event-btn" data-toggle="modal" data-target="#createBranchModal">Add New</button>
+                                <button class="btn btn-info btn-sm rounded-0 text-white edit-btn" style="background:#3090C7" id="add-event-btn" data-toggle="modal" data-target="#createBranchModal">Add New +</button>
                                 
                                 <br><br>
 
@@ -307,8 +312,8 @@
 
                                                  
                                                     <div class="text-right pt-0">
-                                                        <i class="fa fa-edit text-warning  branch_edit_btn cursor edit-btn" data-recno="<?php echo $branch['frecno']; ?>" data-branch_name="<?php echo $branch['fbranch_name']; ?>"  data-branch_address="<?php echo $branch['fbranch_address']; ?>"  data-branch_manager="<?php echo $branch['fbranch_manager']; ?>"  data-branch_phone="<?php echo $branch['fbranch_phone']; ?>"  data-branch_email="<?php echo $branch['fbranch_email']; ?>" data-toggle="tooltip" title="Edit"></i>
-                                                        <i class="fa fa-trash text-danger deletebranch cursor" data-recno="<?php echo $branch['frecno']; ?>" data-toggle="tooltip" title="Delete"></i>
+                                                        <i class="far fa-edit text-warning  branch_edit_btn cursor edit-btn" data-recno="<?php echo $branch['frecno']; ?>" data-branch_name="<?php echo $branch['fbranch_name']; ?>"  data-branch_address="<?php echo $branch['fbranch_address']; ?>"  data-branch_manager="<?php echo $branch['fbranch_manager']; ?>"  data-branch_phone="<?php echo $branch['fbranch_phone']; ?>"  data-branch_email="<?php echo $branch['fbranch_email']; ?>" data-toggle="tooltip" title="Edit"></i>
+                                                        <i class="far fa-trash-alt text-danger deletebranch cursor" data-recno="<?php echo $branch['frecno']; ?>" data-toggle="tooltip" title="Delete"></i>
                                                     </div>
                                                 </fieldset>
 
@@ -334,20 +339,100 @@
 
                  <div id="events-box" style="display:none;">
 
-                    <!-- <div class="row mt-2 mb-2 bg-white border" style="margin-left: .08rem; margin-right: .009rem;">
-                        <div class="col p-3">
+            
+                    <div class="mb-5 mt-1" style="margin-left: .08rem; margin-right: .009rem;">
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-info btn-sm rounded-0 text-white btn-block" style="background:#3090C7" id="add-event-btn" data-toggle="modal" data-target="#createEventModal">Create Event</button>
+                                </div>
+                                <div class="col">
 
-                            
+                                    <div id="accordion">
+                                        <div class="card rounded-0 border border-0">
+                                            <a class="card-link caret-icon" data-toggle="collapse" href="#collapseOne">
+                                                <div class="card-header rounded-0 p-1 m-0" style="background: #008080;">
+                                                   
+                                                    <span class="ml-2 text-white">Find Published Events</span>  <i class="fas fa-search ml-2 text-white"></i>
+                                                    
+                                                    <i class="fas fa-caret-down fa-lg float-right mt-1  text-white" id="caret-icon"></i>
+                                                   
+                                                </div>
+                                            </a>
+                                            <div id="collapseOne" class="collapse" data-parent="#accordion">
+                                                <div class="card-body p-2">
+                                                    <form id="events_filter">
+                                                    <div class="row">
+                                                        <div class="col-lg-1 pt-4">
+                                                            <i class="far fa-calendar-alt" style="font-size:1.6rem;"></i>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="" class="mt-0 mb-0">Start Date</label>
+                                                            <input type="" class="form-control form-control-sm rounded-0" name="event_start" id="event_start3" autocomplete="off">
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="" class="mt-0 mb-0">End Date</label>
+                                                            <input type="text" class="form-control form-control-sm rounded-0" name="event_end" id="event_end3" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-1 pt-4">
+                                                            <i class="fas fa-sort" style="font-size:1.6rem;"></i>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="" class="mt-2 mb-0">Event Type</label>
+                                                            <!-- <input type="text" class="form-control form-control-sm rounded-0" id="event_start3"> -->
+                                                            <select name="event_type" id="event_type" class="form-control form-control-sm rounded-0">
+                                                                <option value="">Select one</option>
+                                                                <option value="Entertainment">Entertainment</option>
+                                                                <option value="Gala">Gala</option>
+                                                                <option value="Social">Social</option>
+                                                                
+                                                            </select>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="" class="mt-2 mb-0">Industry</label>
+                                                            <select name="event_industry" id="event_industry" class="form-control form-control-sm rounded-0">
+                                                                <option value="">Select one</option>
+                                                                <option value="Entertainment">Entertainment</option>
+                                                                <option value="Gala">Gala</option>
+                                                                <option value="Social">Social</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <label for="" class="mt-2 mb-0">Free/Paid?</label>
+                                                            <select name="event_price" id="event_price" class="form-control form-control-sm rounded-0">
+                                                                <option value="">Select one</option>
+                                                                <option value="Free">Free</option>
+                                                                <option value="Paid">Paid</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-3">
+                                                        <div class="col">
+                                                           <button class="btn btn-danger btn-sm" id="reset_btn" type="reset">Clear</button>
+                                                        </div>
+                                                        <div class="col text-right">
+                                                            <button class="btn btn-success btn-sm" type="submit">Apply</button>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div> 
 
-                        </div> 
-                            
-                    </div> -->
-                    <div class="mb-5 mt-5" style="margin-left: .08rem; margin-right: .009rem; ">
-                            <div>
-                           
+                             <div class="row mt-3">
+                                <div class="col"> 
 
-                        <h4 class="title px-2">Published Events <button class="btn btn-info btn-sm rounded-0 text-white float-right" style="background:#3090C7" id="add-event-btn" data-toggle="modal" data-target="#createEventModal">Create Event</button></h4>
-                        <br>
+                                <h4 class="title px-2">Published Events </h4>
+                        
+   
+                                </div>
+                            </div> 
+
 
                                    
 
@@ -361,12 +446,10 @@
                          
                 </div>
 
-                </div>
-
 
                 
                 <div class="mt-2 mb-5" id="ebroadcast-box" style="display:none;">
-					<div class="p-3 border bg-white">
+					<div class="p-3 border bg-white" style="margin-left: .08rem; margin-right: .009rem;">
 					
 						<h4 class="text-center title">Send Out Important Message To a Large Audience</h4>
 						<br>
@@ -375,22 +458,22 @@
 
 								<div class="col">
 									<div class="border p-3">
-										<p><strong> Compose Message</strong></p>
-										<label for="">Subject</label>
-										<input type="text" name="subject" id="subject" class="form-control" required>
+										
+										<label for="" class="mt-2  mb-0 text-primary"><strong>Subject</strong></label>
+										<input type="text" name="subject" id="subject" class="form-control form-control-sm rounded-0" placeholder="Enter Subject of Message" required>
 										<br>
 										<input type="hidden" name="sender" value="<?php echo $association_details['fassociation_id']; ?>">
 										<input type="hidden" name="sender_name" value="<?php echo $association_details['fassociation_name']; ?>">
-										<label for="">Message</label>
-										<textarea name="message" id="message" class="form-control"  cols="30" rows="8" required></textarea>
+										<label for="" class="mt-2  mb-0 text-primary">Message</label>
+										<textarea name="message" id="message" class="form-control rounded-0"  cols="30" rows="8" placeholder="Start typing..." required></textarea>
 
 										<br>
-										<label><strong>Select Target Group</strong></label> <br>
+										<label class="mt-2  mb-0 text-primary"><strong>Select Target Group</strong></label> <br>
 									
 										<input type="radio" name="target" > Members &nbsp; <input type="radio" name="target" id="target"> Followers
 
 										<br>
-										<button class="float-right btn btn-info btn-sm rounded-0  text-white" style="background:#3090C7" type="submit">SEND</button>
+										<button class="float-right btn btn-success btn-sm rounded-0  text-white " type="submit">SEND TO ALL</button>
 										<br>
 									</div>
 								</div>
@@ -401,22 +484,47 @@
 					</div>
                  
 
-                        <div class="col p-3 border bg-white mt-2">
+                    <div class="border bg-white mt-2 p-3">
 
 
-                            <div class="p-3 ">
+                      
 
-                                    <h4 class="title">Sent Broadcasts</h4>
+                                <h4 class="title">Sent Broadcasts</h4>
 
-                                    <div id="broadcast_list_area">
-                                    
+                                <div>
+
+
+                                <table class="table table-bordered table-sm datatable">
+                                    <thead class="table-primary">
+                                    <tr class="text-center">
+                                        <th>Subject</th>
+                                        <th>Content</th>
+                                        <th>Created</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody >
+
+			                            <?php foreach($broadcasts as $broadcast){?>
+							
+                                            <tr class="text-center">
+                                                <td><?php echo $broadcast['fsubject']; ?></td>
+                                                <td><?php echo $broadcast['fcontent']; ?></td>
+                                                <td><?php echo date('M j, Y', strtotime($broadcast['created_at'])); ?></td>
+                                            </tr>
                                         
-                                    </div>
-                            </div>
+                                        <?php } ?>
 
-                        </div>
+                                        </tbody>
 
-					</div>
+			 		                </table>
+                                
+                                    
+                                </div>
+                       
+
+                         </div>
+
+	        </div>
 
 
 
@@ -424,10 +532,10 @@
                    
                         <div class="col">
 
-                            <div class="portfolio_box bg-white">
+                            <div class="portfolio_box">
 
-                                <div class="row p-2">
-                                    <div class="col-sm-6 text-center">
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
                                     <div class="pt-5 m-3">
                                         <label for="file-input-images"><i class="fas fa-upload fa-5x border p-3 border-dark"></i></label>
                                             <input type="hidden" id="association_id" value="<?php echo $association_details['fassociation_id']; ?>">
@@ -443,10 +551,12 @@
 
                                     <?php foreach ($association_gallery as $portfolio) {?>
 
-                                        <div class="col-sm-6">
-                                            <div class="border m-2">
-                                                <img src="<?php echo site_url('public/associationgalleries/600/'.$portfolio['fimage']);?>" alt="" width="100%">
-                                                <span data-image_id="<?php echo $portfolio['fimage_id'];?>" data-image_name="<?php echo $portfolio['fimage'];?>" class="fa fa-times text-danger cursor delete-image" style="position:relative;top:-234px;left:438px;"></span>
+                                        <div class="col-md-6">
+                                            <div class="m-2">
+                                                <img src="<?php echo site_url('public/associationgalleries/600/'.$portfolio['fimage']);?>" alt="" width="100%" class="img-thumbnail">
+                                               
+                                                    <span data-image_id="<?php echo $portfolio['fimage_id'];?>" data-image_name="<?php echo $portfolio['fimage'];?>" class="fa fa-times text-danger cursor delete-image" style="position:relative;top: -15rem;lesft:170rem;"></span>
+                                               
                                             </div>
                                         </div>
 
@@ -471,8 +581,8 @@
 
 
            
-            <div class="col-lg-3 pl-0 info-box">
-               <div class="border p-2 bg-white">
+            <div class="col-lg-3 pl-0 info-box" style="padding-top: 2.1rem">
+               <div class="border p-3 bg-white">
                     <div id="info_section">
                    <p class="side-box mb-0">  Members</p>
                     554
@@ -505,7 +615,7 @@
                <div class="border p-2 bg-white mt-2">
                     <div id="info_section">
                   
-                  <p>Add a page Sub-Admin </p>
+                  <p data-toggle="popover" data-trigger="hover" data-content="Some content">Add a sub-admin to this page</p>
 
                  <form action="<?php echo site_url(); ?>association/makeadmin" method="post">
                    <div class="input-group mb-3">
@@ -551,8 +661,8 @@
         <div class="modal-content rounded-0">
             <form id="aboutform">
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <p class="modal-title"><strong> Edit About </strong></p>
+                <div class="modal-header rounded-0 py-2" style="background: #70a1B9">
+                    <p class="modal-title text-white"><strong> About Details</strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -560,11 +670,11 @@
         
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <textarea name="about"  cols="30" rows="5" class="form-control"><?php echo $association_details['fabout']; ?></textarea>
+                    <textarea name="about"  cols="30" rows="5" class="form-control rounded-0"><?php echo $association_details['fabout']; ?></textarea>
                 </div>
         
                 <!-- Modal footer -->
-                <div class="modal-footer">
+                <div class="modal-footer py-0">
                     <button type="submit" class="btn btn-success btn-sm">Update</button>
                 </div>
             </form>
@@ -580,8 +690,8 @@
         <div class="modal-content rounded-0">
             <form id="createbranchform">
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <p class="modal-title"><strong> Create New Branch</strong></p>
+                <div class="modal-header rounded-0 py-2" style="background: #70a1B9">
+                    <p class="modal-title text-white"><strong> Branch Details</strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
         
@@ -590,51 +700,47 @@
 
                     <div class="row">
                         <div class="col">
-                            <div class="form-group">
-                                <label for="email">Branch Name:</label>
-                                <input type="text" class="form-control" id="branch_name" name="branch_name" required>
-                            </div>
+                            
+                            <label for="email" class="mt-2 mb-0">Branch Name</label>
+                            <input type="text" class="form-control form-control-sm rounded-0" id="branch_name" name="branch_name" required>
+                            
                         </div>
                         <div class="col">
-                            <div class="form-group">
-                                <label for="email">Branch Manager:</label>
-                                <input type="text" class="form-control" id="branch_manager" name="branch_manager" required>
-                            </div>
+                           
+                                <label for="email"  class="mt-2 mb-0">Branch Manager</label>
+                                <input type="text" class="form-control form-control-sm rounded-0" id="branch_manager" name="branch_manager" required>
+                            
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
-                            <div class="form-group">
-                                <label for="email">Branch Address:</label>
-                                <textarea name="branch_address" class="form-control"  cols="30" rows="3" required></textarea>
-                            </div>
+                            
+                                <label for="email" class="mt-2 mb-0">Branch Address</label>
+                                <textarea name="branch_address" class="form-control form-control-sm rounded-0"  cols="30" rows="3" required></textarea>
+                            
                         </div>
                     </div>
 
 
                     <div class="row">
                         <div class="col">
-                            <div class="form-group">
-                                <label for="email">Branch Phone:</label>
-                                <input type="number" class="form-control" id="branch_phone" name="branch_phone" required>
-                            </div>
+                           
+                                <label for="email" class="mt-2 mb-0">Branch Phone:</label>
+                                <input type="number" class="form-control form-control-sm rounded-0" id="branch_phone" name="branch_phone" required>
+                            
                         </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="email">Branch Email:</label>
-                                <input type="email" class="form-control" id="branch_email" name="branch_email" required>
-                            </div>
-                        </div>
+
                     </div>
                      
                 </div>
         
                 <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="reset" class="btn btn-danger btn-sm float-right">Clear</button>
-                    <button type="submit" class="btn btn-success btn-sm">Add</button>
+               
+                <div class="modal-footer p-0">
+                    <button type="submit" class="btn btn-success btn-sm">Create</button>
                 </div>
+                
             
             </form>
         </div>
@@ -715,30 +821,30 @@
         <div class="modal-content rounded-0">
             <form id="socialform">
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <p class="modal-title"><strong> Edit Socials </strong></p>
+                <div class="modal-header rounded-0 py-2" style="background: #70a1B9">
+                    <p class="modal-title text-white"><strong> Social Media Details</strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
         
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="email">LinkedIn:</label>
+                        <label for="email" class="mt-2 mb-0">LinkedIn</label>
                         <input type="hidden" name="id"  value="<?php echo $association_details['frecno']; ?>">
-                        <input type="text" class="form-control"  name="linkedin"  value="<?php echo $association_details['flinkedin']; ?>">
+                        <input type="text" class="form-control form-control-sm rounded-0"  name="linkedin"  value="<?php echo $association_details['flinkedin']; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="email">Facebook:</label>
-                        <input type="text" class="form-control" name="facebook" value="<?php echo $association_details['ffacebook']; ?>">
+                        <label for="email" class="mt-2 mb-0">Facebook</label>
+                        <input type="text" class="form-control form-control-sm rounded-0" name="facebook" value="<?php echo $association_details['ffacebook']; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="email">Instagram:</label>
-                        <input type="text" class="form-control" name="instagram" value="<?php echo $association_details['finstagram']; ?>">
+                        <label for="email" class="mt-2 mb-0">Instagram</label>
+                        <input type="text" class="form-control form-control-sm rounded-0" name="instagram" value="<?php echo $association_details['finstagram']; ?>">
                     </div>
                 </div>
         
                 <!-- Modal footer -->
-                <div class="modal-footer">
+                <div class="modal-footer py-0">
                     <button type="submit" class="btn btn-success btn-sm">Update</button>
                 </div>
             </form>
@@ -754,39 +860,37 @@
         <div class="modal-content rounded-0">
             <form id="editinfoform">
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <p class="modal-title"><strong> Edit Info </strong></p>
+        
+                <div class="modal-header rounded-0 py-2" style="background: #70a1B9">
+                    <p class="modal-title text-white"><strong> Info Details</strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
         
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="email">CAC Reg No.:</label>
+                    
+                        <label for="email" class="mt-2 mb-0">CAC Reg No.</label>
                         <input type="hidden" name="recno" id="info_recno">
-                        <input type="text" class="form-control" id="cac" name="cac">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Official Website:</label>
-                        <input type="text" class="form-control"  id="website" name="website">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Field:</label>
-                        <input type="text" class="form-control"  id="field" name="field">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Headquarters:</label>
-                        <input type="text" class="form-control"  id="main_office_location" name="main_office_location">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="contact_email" name="contact_email">
-                    </div>
+                        <input type="text" class="form-control form-control-sm rounded-0" id="cac" name="cac">
+                   
+                        <label for="email" class="mt-2 mb-0">Official Website</label>
+                        <input type="text" class="form-control form-control-sm rounded-0"  id="website" name="website">
+                    
+                        <label for="email" class="mt-2 mb-0">Field</label>
+                        <input type="text" class="form-control form-control-sm rounded-0"  id="field" name="field">
+                   
+                   
+                        <label for="email" class="mt-2 mb-0">Headquarters</label>
+                        <input type="text" class="form-control form-control-sm rounded-0"  id="main_office_location" name="main_office_location">
+                   
+                        <label for="email" class="mt-2 mb-0">Email</label>
+                        <input type="email" class="form-control form-control-sm rounded-0" id="contact_email" name="contact_email">
+                   
                 </div>
         
                 <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Update</button>
+                <div class="modal-footer py-0">
+                    <button type="submit" class="btn btn-success btn-sm">Update</button>
                 </div>
             </form>
 
@@ -798,7 +902,7 @@
 
     <!-- Create Event Modal -->
     <div class="modal fade" id="createEventModal">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content rounded-0">
            
                 <!-- Modal Header -->
@@ -808,7 +912,7 @@
                 </div>
         
                 <!-- Modal body -->
-                <div class="modal-body pt-0">
+                <div class="modal-body pt-0 pb-0">
 
                     <div id="create-event-box">
 
@@ -829,7 +933,7 @@
                                     <div class="pt-0">
                                         <label for="" class="mb-0 mt-1">Event Online Link</label><br>
                                        
-                                        <input type="url" name="event_title" id="event_title" class="form-control form-control-sm rounded-0 mt-0">
+                                        <input type="url" name="event_link" id="event_title" class="form-control form-control-sm rounded-0 mt-0">
                                     </div>
                                   
                                 </div>
@@ -839,19 +943,19 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="">
-                                        <label for="" class="mb-0 mt-2">Start Date</label><span class="text-danger">*</span><br>
+                                        <label for="" class="mb-0 mt-1">Start Date</label><span class="text-danger">*</span><br>
                                         <input type="text" class="form-control form-control-sm rounded-0" name="event_start" id="event_start" required autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="">
-                                        <label for="" class="mb-0  mt-2">End Date</label><span class="text-danger">*</span><br>
+                                        <label for="" class="mb-0  mt-1">End Date</label><span class="text-danger">*</span><br>
                                         <input type="text" class="form-control form-control-sm rounded-0" name="event_end" id="event_end" required autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="">
-                                        <label for="" class="mb-0  mt-2">Event Type</label><span class="text-danger">*</span><br>
+                                        <label for="" class="mb-0  mt-1">Event Type</label><span class="text-danger">*</span><br>
                                         <select name="event_type" id="event_type" class="form-control form-control-sm rounded-0" required>
                                             <option value="">Select one</option>
                                             <option value="Entertainment">Entertainment</option>
@@ -864,7 +968,7 @@
 
                                 <div class="col-lg-3">
                                     <div class="">
-                                        <label for="" class="mb-0  mt-2">Industry</label><span class="text-danger">*</span><br>
+                                        <label for="" class="mb-0  mt-1">Industry</label><span class="text-danger">*</span><br>
                                         <select name="event_industry" id="event_industry" class="form-control form-control-sm rounded-0" required>
                                             <option value="">Select one</option>
                                             <option value="Entertainment">Entertainment</option>
@@ -880,7 +984,7 @@
                                 <div class="col">
 
                                     <div class="">
-                                        <label for="" class="mb-0  mt-2">Address</label><span class="text-danger">*</span><br>
+                                        <label for="" class="mb-0  mt-1">Address</label><span class="text-danger">*</span><br>
                                         <input type="text" class="form-control form-control-sm rounded-0" name="event_address" id="event_address" required>
                                     </div>
 
@@ -890,7 +994,7 @@
                                 <div class="col">
 
                                     <div class="">
-                                        <label for="" class="mb-0  mt-2">State</label><span class="text-danger">*</span><br>
+                                        <label for="" class="mb-0  mt-1">State</label><span class="text-danger">*</span><br>
                                         <select name="event_state" id="state" class="form-control form-control-sm rounded-0" required>
                                             <option value="" selected="selected"> Select State </option>
                                             <option value="Abia">Abia</option>
@@ -936,7 +1040,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="">
-                                        <label for="" class="mb-0 mt-2">LGA</label><span class="text-danger">*</span><br>
+                                        <label for="" class="mb-0 mt-1">LGA</label><span class="text-danger">*</span><br>
                                         <select class="form-control form-control-sm rounded-0" id="lga" name="event_lga" required>
                                             <option value="0">Select LGA:</option>
                                         </select>
@@ -948,47 +1052,48 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="">
-                                        <label for="" class="mb-0 mt-2">Description</label><span class="text-danger">*</span><br>
-                                        <textarea cols="30" rows="5" class="form-control form-control-sm rounded-0" name="event_description" id="event_description" required></textarea>
+                                        <label for="" class="mb-0 mt-1">Description</label><span class="text-danger">*</span><br>
+                                        <textarea cols="30" rows="3" class="form-control form-control-sm rounded-0" name="event_description" id="event_description" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="">
-                                        <label class="mt-2 mb-0">Upload Event Images</label>
-                                        <div class="border p-4">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <label for="event_images1"><span class="border py-1 pl-2 pr-1" style="display:block; width: 7rem;"><i class="fa fa-upload"></i><i class="fa fa-spinner fa-spin float-right" id="image1_spinner" style="display:none"></i></span></label>
+                                        <label class="mt-1 mb-0">Upload Event Images</label>
+                                        <div class="border pt-0 pb-0">
+                                            <div class="row p-0">
+                                                <div class="col-md-4">
+                                                    <label for="event_images1">
+                                                    <span class="border py-0 pl-2 pr-0" style="display:block; width: 6.5rem;"><i class="fa fa-upload"></i><i class="fa fa-spinner fa-spin float-right" id="image1_spinner" style="display:none"></i></span></label>
                                                     <input type="file" id="event_images1" name="event_images1" hidden/>
                                                     <img id="blah" src="#" alt="your image" width="100%" style="display:none"/>
                                                 
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <label for="event_images2"><i class="fa fa-upload border px-5 py-2"></i></label>
-                                                    <input type="file" id="event_images2" name="event_images2" hidden/>
+                                                <div class="col-md-4">
+                                                    <label for="event_images2"><i class="fa fa-upload border mx-0 py-1" style="padding-right: 5.4rem!important;"></i></label>
+                                                    <input type="file" id="event_images2" class="form-control form-control-sm rounded-0" name="event_images2" hidden/>
                                                     <img id="blah2" src="#" alt="your image" width="100%" style="display:none"/>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                <label for="event_images3"><i class="fa fa-upload border px-5 py-2"></i></label>
-                                                    <input type="file" id="event_images3" name="event_images3" hidden/>
+                                                <label for="event_images3"><i class="fa fa-upload border py-1" style="padding-right: 5.4rem!important;"></i></label>
+                                                    <input type="file" id="event_images3" class="form-control form-control-sm rounded-0" name="event_images3" hidden/>
                                                     <img id="blah3" src="#" alt="your image" width="100%" style="display:none"/>
                                                 </div>
                                                 
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-4">
-                                                <label for="event_images4"><i class="fa fa-upload border px-5 py-2"></i></label>
-                                                    <input type="file" id="event_images4" name="event_images4" hidden/>
+                                                <label for="event_images4"><i class="fa fa-upload border py-1" style="padding-right: 5.4rem!important;"></i></label>
+                                                    <input type="file" id="event_images4" class="form-control form-control-sm rounded-0" name="event_images4" hidden/>
                                                     <img id="blah4" src="#" alt="your image" width="100%" style="display:none"/>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label for="event_images5"><i class="fa fa-upload border px-5 py-2"></i></label>
-                                                    <input type="file" id="event_images5" name="event_images5" hidden/>
+                                                    <label for="event_images5"><i class="fa fa-upload border py-1" style="padding-right: 5.4rem!important;"></i></label>
+                                                    <input type="file" id="event_images5" class="form-control form-control-sm rounded-0" name="event_images5" hidden/>
                                                     <img id="blah5" src="#" alt="your image" width="100%" style="display:none"/>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label for="event_images6"><i class="fa fa-upload border px-5 py-2"></i></label>
-                                                    <input type="file" id="event_images6" name="event_images6" hidden/>
+                                                    <label for="event_images6"><i class="fa fa-upload border py-1" style="padding-right: 5.4rem!important;"></i></label>
+                                                    <input type="file" id="event_images6" class="form-control form-control-sm rounded-0" name="event_images6" hidden/>
                                                     <img id="blah6" src="#" alt="your image" width="100%" style="display:none"/>
                                                 </div>
                                             </div>
@@ -998,57 +1103,58 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <div class="">
-                                        <label for="" class="mb-0  mt-2">Price</label><span class="text-danger">*</span>
-                                        <div class="row">
-                                            <div class="col">
-                                                <input type="radio" name="event_price" id="free_event" value="free" required> Free 
-                                            </div>
-                                            <div class="col">
-                                                <input type="radio" name="event_price" id="paid_event"> Paid
-                                                    <div class="row" id="paid_price" style="display: none;">
-                                                        <div class="col">
-                                                            <input type="radio" name="price_range" id="single_price"> Single Price
-                                                            <div id="single_price_value" style="display: none;">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                        Value:
-                                                                        <input type="number" class="form-control form-control-sm rounded-0" name="event_price_from2" id="value1">
-                                                                    </div>
-                                                                </div>
-                                                            </div>    
-                                                        </div>
-                                                        <div class="col">
-                                                            <input type="radio" name="price_range" id="multi_price"> Multiple Prices
-                                                        </div>
-                                                        
-                                                        <div id="multi_price_value" style="display: none;">
-                                                            <div class="row p-2">
-                                                                <div class="col">
-                                                                    <div class="form-group">
-                                                                        <label for="">Min: </label> 
-                                                                        <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price_from3" id="value2">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="form-group">
-                                                                      <label for="">Max: </label>
-                                                                      <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price_to" id="value3">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                             
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                    <label for="" class="mb-0  mt-2">Price</label><span class="text-danger">*</span>
+                                </div>
+                                <div class="col pt-2">
+                                <label for="" class="mb-0  mt-2"></label>
+                                    <input type="radio" name="event_price" id="free_event" value="free" required> Free 
+                                </div>
+                                <div class="col pt-2">
+                                    <label for="" class="mb-0  mt-2"></label>
+                                    <input type="radio" name="event_price" id="paid_event"> Paid
                                 </div>
                             </div>
 
+                                <div class="row" id="paid_price" style="display: none;">
+                                    <div class="col"></div>
+                                    <div class="col"></div>
+                                    <div class="col text-right">
+                                        <input type="radio" name="price_range" id="single_price"> Single Price
+                                        <div id="single_price_value" style="display: none;">
+                                          
+                                            <div class="row pb-2">
+                                                
+                                                <label for="" class="text-left mt-0 mb-0">Value:</label>  
+                                                <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price_from2" id="value1">
+                                            </div>
+                                           
+                                        </div>    
+                                    </div>
+                                    <div class="col text-right">
+                                        <input type="radio" name="price_range" id="multi_price"> Multiple Prices
+                                    </div>
+                                </div>                       
+                                    <div id="multi_price_value" style="display: none;">
+                                        <div class="row p-0">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="" class="mt-0 mb-0">Min: </label> 
+                                                    <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price_from3" id="value2">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for=""  class="mt-0 mb-0">Max: </label>
+                                                    <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price_to" id="value3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                            
+                                    </div>
+                                                    
+
                            
-                        </fieldset>
+                   
 
 
                     </div>
@@ -1057,8 +1163,8 @@
                 </div>
         
                 <!-- Modal footer -->
-                <div class="modal-footer py-1">
-                    <button type="submit" class="btn btn-success btn-sm">Create</button>
+                <div class="modal-footer p-0">
+                    <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('Are you sure you want to create this event?')">Create</button>
                 </div>
             </form>
         </div>
@@ -1074,122 +1180,167 @@
            
                 <!-- Modal Header -->
                 <div class="modal-header rounded-0 py-2" style="background: #70a1B9">
-                    <p class="modal-title text-white"><strong> Edit Event</strong></p>
+                    <p class="modal-title text-white"><strong> Edit Event Details</strong></p>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
         
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body pt-0">
 
                     
                     <div id="create-event-box">
 
                         <form id="editEventform">
-                            <fieldset>
-                                    <legend>Edit Event Details</legend>
-
-                            <div class="row">
+                            
+                            <div class="row pt-1">
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Title</label><br>
-                                        <input type="hidden" name="author" value="<?php echo $association_details['fassociation_id']; ?>">
-                                        <input type="text" name="event_title" id="event_title2" class="form-control form-control-sm rounded-0 border-dark">
-                                    </div>
+                                   
+                                    <label for="" class="mt-0 mb-0">Title</label><span class="text-danger">*</span>
+                                    <input type="hidden" name="id" id="event_id">
+                                    <input type="text" name="event_title" id="event_title2" class="form-control form-control-sm rounded-0">
+                                    
+                                </div>
+                                <div class="col">
+                                   
+                                    <label for="" class="mt-0 mb-0">Event Online Link</label>
+                
+                                    <input type="text" name="event_link" id="event_link2" class="form-control form-control-sm rounded-0">
+                                    
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Start Date</label><br>
-                                        <input type="datetime-local" name="event_start" id="event_start2">
+                            <div class="row mb-0">
+                                    <div class="col">
+                                       
+                                            <label for=""  class="mt-1 mb-0">Start Date</label><span class="text-danger">*</span><br>
+                                            <input type="text" class="form-control form-control-sm rounded-0" name="event_start" id="event_start2">
+                                        
+                                    </div>
+                                    <div class="col">
+                                        
+                                            <label for="" class="mt-1 mb-0">End Date</label><span class="text-danger">*</span><br>
+                                            <input type="text" class="form-control form-control-sm rounded-0" name="event_end" id="event_end2">
+                                       
+                                    </div>
+                                    <div class="col">
+                                        
+                                            <label for=""  class="mt-1 mb-0">Event Type</label><span class="text-danger">*</span><br>
+                                            <select name="event_type" class="form-control form-control-sm rounded-0" id="event_type2">
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Gala">Gala</option>
+                                                <option value="Social">Social</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                            </select>
+                                       
+                                    </div>
+                                    <div class="col">
+                                       
+                                            <label for=""  class="mt-1 mb-0">Industry</label><span class="text-danger">*</span><br>
+                                            <select name="event_industry"  class="form-control form-control-sm rounded-0" id="event_industry2">
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Gala">Gala</option>
+                                                <option value="Social">Social</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                            </select>
+                                        
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="">End Date</label><br>
-                                        <input type="datetime-local" name="event_end" id="event_end2">
+                                <div class="row">
+                                    <div class="col">
+                                       
+                                        <label for=""  class="mt-1 mb-0">Address</label><span class="text-danger">*</span>
+                                        <input type="text" class="form-control form-control-sm rounded-0" name="event_address" id="event_address2">
+                                        
                                     </div>
                                 </div>
+
+                                <div class="row">
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Event Type</label><br>
-                                        <select name="event_type" id="event_type">
-                                            <option value="Entertainment">Entertainment</option>
-                                            <option value="Gala">Gala</option>
-                                            <option value="Social">Social</option>
-                                            <option value="Entertainment">Entertainment</option>
-                                            <option value="Entertainment">Entertainment</option>
+
+                                    <div class="">
+                                        <label for="" class="mb-0  mt-1">State</label><span class="text-danger">*</span><br>
+                                        <select name="event_state" id="state2" class="form-control form-control-sm rounded-0" required>
+                                            <option value="" selected="selected"> Select State </option>
+                                            <option value="Abia">Abia</option>
+                                            <option value="Adamawa">Adamawa</option>
+                                            <option value="AkwaIbom">AkwaIbom</option>
+                                            <option value="Anambra">Anambra</option>
+                                            <option value="Bauchi">Bauchi</option>
+                                            <option value="Bayelsa">Bayelsa</option>
+                                            <option value="Benue">Benue</option>
+                                            <option value="Borno">Borno</option>
+                                            <option value="Cross River">Cross River</option>
+                                            <option value="Delta">Delta</option>
+                                            <option value="Ebonyi">Ebonyi</option>
+                                            <option value="Edo">Edo</option>
+                                            <option value="Ekiti">Ekiti</option>
+                                            <option value="Enugu">Enugu</option>
+                                            <option value="FCT">FCT</option>
+                                            <option value="Gombe">Gombe</option>
+                                            <option value="Imo">Imo</option>
+                                            <option value="Jigawa">Jigawa</option>
+                                            <option value="Kaduna">Kaduna</option>
+                                            <option value="Kano">Kano</option>
+                                            <option value="Katsina">Katsina</option>
+                                            <option value="Kebbi">Kebbi</option>
+                                            <option value="Kogi">Kogi</option>
+                                            <option value="Kwara">Kwara</option>
+                                            <option value="Lagos">Lagos</option>
+                                            <option value="Nasarawa">Nasarawa</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Ogun">Ogun</option>
+                                            <option value="Ondo">Ondo</option>
+                                            <option value="Osun">Osun</option>
+                                            <option value="Oyo">Oyo</option>
+                                            <option value="Plateau">Plateau</option>
+                                            <option value="Rivers">Rivers</option>
+                                            <option value="Sokoto">Sokoto</option>
+                                            <option value="Taraba">Taraba</option>
+                                            <option value="Yobe">Yobe</option>
+                                            <option value="Zamfara">Zamfara</option>
                                         </select>
                                     </div>
+
                                 </div>
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Location</label><br>
-                                        <input type="text" class="form-control form-control-sm rounded-0 border-dark" name="event_location" id="event_location2">
+                                    <div class="">
+                                        <label for="" class="mb-0 mt-1">LGA</label><span class="text-danger">*</span><br>
+                                        <select class="form-control form-control-sm rounded-0" id="lga2" name="event_lga" required>
+                                            <option value="0">Select LGA:</option>
+                                        </select>
                                     </div>
+
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Description</label><br>
-                                        <textarea cols="30" rows="5" class="form-control form-control-sm rounded-0 border-dark" name="event_description" id="event_description2"></textarea>
-                                    </div>
+                                   
+                                    <label for=""  class="mt-1 mb-0">Description</label><span class="text-danger">*</span><br>
+                                    <textarea cols="30" rows="3" class="form-control form-control-sm rounded-0" name="event_description" id="event_description2"></textarea>
+                                    
                                 </div>
                             </div>
 
 
                             <div class="row">
                                 <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Price</label>
+                                        <label for=""  class="mt-1 mb-0">Price</label><span class="text-danger">*</span>
                                         <div class="row">
                                             <div class="col">
-                                                <input type="radio" name="event_price" id="free_event" value="free"> Free 
+                                                <label for="" class="mt-1 mb-0">Min. Price</label>
+                                                <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price1" id="event_price12">
                                             </div>
                                             <div class="col">
-                                                <input type="radio" name="event_price" id="paid_event"> Paid
-                                                    <div class="row" id="paid_price" style="display: none;">
-                                                        <div class="col">
-                                                            <input type="radio" name="price_range" id="single_price"> Single
-                                                            <div id="single_price_value" style="display: none;">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                        Value:
-                                                                        <input type="number" min="1" class="form-control form-control-sm rounded-0 border-dark" name="event_price_from2" id="value1">
-                                                                    </div>
-                                                                </div>
-                                                            </div>    
-                                                        </div>
-                                                        <div class="col">
-                                                            <input type="radio" name="price_range" id="multi_price"> Range
-                                                        </div>
-                                                        
-                                                        <div id="multi_price_value" style="display: none;">
-                                                            <div class="row p-2">
-                                                                <div class="col">
-                                                                    <div class="form-group">
-                                                                        <label for="">Min: </label> 
-                                                                        <input type="number" class="form-control form-control-sm rounded-0 border-dark" name="event_price_from3" id="value2">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="form-group">
-                                                                      <label for="">Max: </label>
-                                                                      <input type="number" class="form-control form-control-sm rounded-0 border-dark" name="event_price_to" id="value3">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                             
-                                                        </div>
-                                                    </div>
+                                                <label for="" class="mt-1 mb-0">Max. Price</label>
+                                                <input type="number" min="1" class="form-control form-control-sm rounded-0" name="event_price2" id="event_price22">
                                             </div>
                                         </div>
 
-                                    </div>
+                                    
                                 </div>
                             </div>
 
@@ -1203,8 +1354,8 @@
                 </div>
         
                 <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Update</button>
+                <div class="modal-footer py-0">
+                    <button type="submit" class="btn btn-success btn-sm">Update</button>
                 </div>
             </form>
         </div>
@@ -1234,18 +1385,15 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <script>
-    $( function() {
-        $( "#datepicker" ).datepicker();
-    } );
-    </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+  
+<!-- 
     <script>
         if ( $('[type="date"]').prop('type') != 'date' ) 
         {
             $('[type="date"]').datepicker();
         }
-    </script>
+    </script> -->
 
 
     <script>
@@ -1257,12 +1405,51 @@
         });
     </script>
 
-<script>
+    <script>
         $('#event_end').datetimepicker({
             uiLibrary: 'bootstrap4',
             modal: true,
             footer: true,
             format: 'HH:MM dd-mm-yyyy' 
+        });
+    </script>
+
+
+<script>
+        $('#event_start2').datetimepicker({
+            uiLibrary: 'bootstrap4',
+            modal: true,
+            footer: true,
+            format: 'HH:MM dd-mm-yyyy' 
+        });
+    </script>
+
+    <script>
+        $('#event_end2').datetimepicker({
+            uiLibrary: 'bootstrap4',
+            modal: true,
+            footer: true,
+            format: 'HH:MM dd-mm-yyyy' 
+        });
+    </script>
+
+
+    
+<script>
+        $('#event_start3').datepicker({
+            uiLibrary: 'bootstrap4',
+            modal: true,
+            footer: true,
+            format: 'dd-mm-yyyy' 
+        });
+    </script>
+
+    <script>
+        $('#event_end3').datepicker({
+            uiLibrary: 'bootstrap4',
+            modal: true,
+            footer: true,
+            format: 'dd-mm-yyyy' 
         });
     </script>
 
@@ -1458,7 +1645,7 @@
             },
             error: function(xhr, textStatus, errorThrown) {
                     //code to execute
-                    alert(xhr.responseText);
+                    //alert(xhr.responseText);
                     //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                 },
             });
@@ -1492,13 +1679,13 @@ $("#createbranchform").submit(function(){
             {
                 $("#createBranchModal").modal("hide");
                 $("#branches_section").load(location.href + " #branches_section");
-                location.reload();
+                //location.reload();
                 toastr.success('<p>About updated successfully</p>', {timeOut: 1000});
             }
         },
         error: function(xhr, textStatus, errorThrown) {
                 //code to execute
-                alert(xhr.responseText);
+                //alert(xhr.responseText);
                 //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
             },
         });
@@ -1561,7 +1748,7 @@ $("#createbranchform").submit(function(){
                 },
                 error: function(xhr, textStatus, errorThrown) {
                         //code to execute
-                        alert(xhr.responseText);
+                        //alert(xhr.responseText);
                         //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                     },
                 });
@@ -1642,7 +1829,7 @@ $("body").on('click' ,'.deletebranch', function(e){
                 },
                 error: function(xhr, textStatus, errorThrown) {
                         //code to execute
-                        alert(xhr.responseText);
+                        //alert(xhr.responseText);
                         //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                     },
                 });
@@ -1712,7 +1899,7 @@ $("body").on('click' ,'.deletebranch', function(e){
                 },
                 error: function(xhr, textStatus, errorThrown) {
                         //code to execute
-                        alert(xhr.responseText);
+                        //alert(xhr.responseText);
                         //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                     },
                 });
@@ -1786,17 +1973,19 @@ $("body").on('click' ,'.deletebranch', function(e){
                     {
                         $("#createEventModal").modal("hide");
                         
-                        loadassociationevents();
-                        //$("#editinfoform").trigger("reset");
+                        
+                        $("#createEventform").trigger("reset");
+
+                        filter_events_data();
                         //$('#editinfoform')[0].reset();
-                        //toastr.success('<p>About updated successfully</p>', {timeOut: 1000});
+                        toastr.success('<p>Event created successfully</p>', {timeOut: 1000});
                         //$("#info-btn").button("refresh");  // to refresh the state 
                         //location.reload();
                     }
                 },
                 error: function(xhr, textStatus, errorThrown) {
                         //code to execute
-                        alert(xhr.responseText);
+                        //alert(xhr.responseText);
                         //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                     },
                 });
@@ -1810,7 +1999,7 @@ $("body").on('click' ,'.deletebranch', function(e){
 
 
 
-<script>
+<!-- <script>
 
     function loadassociationevents()
       {
@@ -1839,7 +2028,69 @@ $("body").on('click' ,'.deletebranch', function(e){
 
       loadassociationevents();
 
-</script>
+</script> -->
+
+
+
+    <script>
+
+    filter_events_data();
+
+    function filter_events_data()
+    {
+    var start_date =  $('#event_start3').val();
+    var end_date =  $('#event_end3').val();
+    var event_type =  $('#event_type option:selected').val();
+    var event_industry =  $('#event_industry option:selected').val();
+    var event_price =  $('#event_price option:selected').val();
+    //alert(event_price);
+    
+    $.ajax({
+            url:"<?php echo site_url(); ?>association/loadassociationevents",
+        method:"POST",
+        dataType:"json",
+        data:{start_date:start_date, end_date:end_date, event_type:event_type, event_industry:event_industry, event_price:event_price},
+        success:function(data)
+        {
+            //console.log(data);
+
+            //$('#posted-event-container').html(data.association_events);
+            $('#posted-event-container').html(data.association_events);
+        },
+        error: function(xhr, textStatus, errorThrown) {
+                //code to execute
+                //alert(xhr.responseText);
+                //$('.badge').text(xhr.responseText));
+            //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+            },
+    });
+    }
+
+
+        $("#events_filter").submit(function (e) { 
+            e.preventDefault();
+            filter_events_data();
+        });
+
+
+
+    </script>
+
+
+
+
+    <script>
+    
+        $("#reset_btn").click(function(e) {
+        
+            //alert("Hi");
+            filter_events_data();
+            
+        });
+        
+    </script>
+
+
 
 
 
@@ -1851,23 +2102,117 @@ $("body").on('click' ,'.deletebranch', function(e){
 
                 var recno = $(this).data('edit_id');
 
+                var event_title = $(this).data('event_title');
+                var event_link = $(this).data('event_link');
                 var event_start = $(this).data('event_start');
                 var event_end = $(this).data('event_end');
-                var event_title = $(this).data('event_title');
+                var event_address = $(this).data('event_address');
                 var event_description = $(this).data('event_description');
-                var event_location = $(this).data('event_location');
+                var event_price1 = $(this).data('event_price1');
+                var event_price2 = $(this).data('event_price2');
+                if(event_price2)
+                {
+                    event_price_end = event_price2;
+                }
+                else
+                {
+                    event_price_end = event_price1;
+                }
                 
                 
                 //alert(event_start);
-                $('#info_recno').val(recno);
+                $('#event_id').val(recno);
+                $('#event_title2').val(event_title);
                 $('#event_start2').val(event_start);
                 $('#event_end2').val(event_end);
-                $('#event_title2').val(event_title);
+                $('#event_address2').val(event_address);
                 $('#event_description2').val(event_description);
-                $('#event_location2').val(event_location);
+                $('#event_price12').val(event_price1);
+                $('#event_price22').val(event_price_end);
                 $("#editEventModal").modal('show');
   
         });
+
+    </script>
+
+
+
+    <script>
+
+    $("#editEventform").submit(function(){ 
+
+        var form_data = new FormData();
+
+
+        var file1 = $('#event_images1')[0].files[0];
+        form_data.append('event_images1', file1);
+
+        var file2 = $('#event_images2')[0].files[0];
+        form_data.append('event_images2', file2);
+        
+        var file3 = $('#event_images3')[0].files[0];
+        form_data.append('event_images3', file3);
+
+        var file4 = $('#event_images4')[0].files[0];
+        form_data.append('event_images4', file4);
+
+        var file5 = $('#event_images5')[0].files[0];
+        form_data.append('event_images5', file5);
+
+        var file6 = $('#event_images6')[0].files[0];
+        form_data.append('event_images6', file6);
+
+        var params = $(this).serializeArray();
+        $.each(params, function (i, val) {
+            form_data.append(val.name, val.value);
+        });
+
+
+
+        // for(var pair of form_data.entries()) 
+        // {
+        //     console.log(pair[0]+ ', ' + pair[1]); 
+        // }
+
+        // console.log(form_data);
+
+
+      
+
+
+        $.ajax({
+            url: '<?php echo site_url(); ?>association/editeventaction',
+            type: "POST",
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            data: form_data,
+            success: function(response) {
+                //code to execute
+                //console.log(response);
+                if(response.success == true)
+                {
+                    $("#editEventModal").modal("hide");
+                    
+                    filter_events_data();
+                    //$("#editinfoform").trigger("reset");
+                    //$('#editinfoform')[0].reset();
+                    //toastr.success('<p>About updated successfully</p>', {timeOut: 1000});
+                    //$("#info-btn").button("refresh");  // to refresh the state 
+                    //location.reload();
+                }
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                    //code to execute
+                    //alert(xhr.responseText);
+                    //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+                },
+            });
+
+        return false;
+        
+    });
+
 
     </script>
 
@@ -1895,7 +2240,7 @@ $("body").on('click' ,'.delete-event-button', function(e){
             
             if(response.success == true)
             {
-                loadassociationevents();
+                filter_events_data();
                 toastr.success('<p>Event deleted successfully</p>', {timeOut: 1000});
             } 
             
@@ -1950,7 +2295,7 @@ $("body").on('click' ,'.delete-event-button', function(e){
                 },
                 error: function(xhr, textStatus, errorThrown) {
                         //code to execute
-                        alert(xhr.responseText);
+                        //alert(xhr.responseText);
                         //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                     },
                 });
@@ -1964,7 +2309,7 @@ $("body").on('click' ,'.delete-event-button', function(e){
 </script>
 
 
-<script>
+<!-- <script>
 
 function loadbroadcasts()
   {
@@ -1997,7 +2342,7 @@ function loadbroadcasts()
 
   loadbroadcasts();
 
-</script>
+</script> -->
 
 
 
@@ -2047,14 +2392,14 @@ $("#file-input-images").change(function(e){
                         // //$("#image_upload_form").trigger("reset");
                         $(".portfolio_box").load(location.href + " .portfolio_box"); 
                         // // // toastr.success('<p>Portfolio Image uploaded successfully</p>', {timeOut: 1000});\
-                        location.reload();
+                        //location.reload();
                         // // alert("");
                         
 
                     },
                     error: function(xhr, textStatus, errorThrown) {
                         //code to execute
-                        alert(xhr.responseText);
+                        //alert(xhr.responseText);
                         //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                     },
 
@@ -2098,7 +2443,7 @@ $("#file-input-images").change(function(e){
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     //code to execute
-                    alert(xhr.responseText);
+                    //alert(xhr.responseText);
                     //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
                 },
 
@@ -2215,6 +2560,41 @@ function scrollFunction() {
                 }
             });
     </script>
+
+
+<script>
+        $('#state2').change(function(){
+                var state = $('#state2').val();
+                //alert(state);
+                if(state != '')
+                {
+                    //alert("Hi");
+                    $.ajax({
+                        url:"<?php echo site_url(); ?>front/getAllLGAs",
+                        method:"POST",
+                        data:{state:state},
+                        success:function(data)
+                        {
+                            //alert(data);
+                            $('#lga2').html(data);
+                        },
+                        error: function(xhr, textStatus, errorThrown) {
+                        //code to execute
+                            //alert(xhr.responseText);
+                        //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+                        },
+                    });
+                    
+                }
+                else
+                {
+                    // $('#state').html('<option value="">Select State</option>');
+                    // $('#city').html('<option value="">Select City</option>');
+                }
+            });
+    </script>
+
+
 
     <script>
 
@@ -2454,6 +2834,23 @@ $("#event_images5").change(function()
     </script> -->
 
 
-    </body>
+    <script>
+    $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+    });
+    </script>
+
+
+
+    <script>
+
+        $(document).on('click', '.caret-icon', function() {
+            $('#caret-icon').toggleClass('fa-caret-up fa-caret-down');
+        });
+            
+    </script>
+
+
+   </body>
 
 </html>

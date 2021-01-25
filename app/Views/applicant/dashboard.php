@@ -844,19 +844,19 @@ function Eduinit () {
 
 
         <!--EXPERIENCE-->
-        <div id="user-experience" style="padding-left: 10px; padding-top: px; padding-bottom: 50px;">
+        <div id="user-experience" style="padding-left: 10px; padding-bottom: 50px;">
 
 
 
          <!--EXPERIENCE-->
-         <div style="padding-top: 15px; padding-bottom: 15px;">
+         <div style="padding-top: 15px; padding-bottom: 15px; margin-right: 8px;">
 
 
             <section class="user-experience">  
 
                 <div class="exp-update-button-container">
                     
-                    <button class="btn btn-primary rounded-0 ml-2" data-toggle="modal" data-target="#addExperienceModal">Create Experience +</button>      
+                    <button class="btn btn-primary rounded-0" data-toggle="modal" data-target="#addExperienceModal">Create Experience +</button>      
                     
                 </div> 
 
@@ -883,7 +883,7 @@ function Eduinit () {
             
 
             
-            <div class="experience-post-container">
+            <div class="experience-post-container" style="margin-right: 50px;">
                 
                 <div class="exp-cont">
                     
@@ -948,7 +948,7 @@ function Eduinit () {
         </div> 
         
         
-<div  style="padding-left: 10px; padding-top: 12px;">
+<div  style="padding-left: 40px; padding-top: 12px;">
         
         <section class="user-education">   
 
@@ -1253,7 +1253,7 @@ function Eduinit () {
         
         <!--PORTFOLIO-->
         
-        <div id="user-portfolio" style="padding-left: 10px; padding-bottom: 50px; margin-top: 20px; display: none;">
+        <div id="user-portfolio" style="padding-left: 53px; padding-bottom: 50px; margin-top: 20px; display: none;">
         
       <section class="user-portfolio">
           
@@ -1472,7 +1472,7 @@ function Eduinit () {
 
             <!-- Modal body -->
             <div class="modal-body">
-            <form id="experienceform">
+            <form id="add-experience-form">
 
 
                 <p class="text-center mt-0 mb-0">All fields marked <span class="text-danger">*</span> are compulsory</p> 
@@ -1736,13 +1736,396 @@ function Eduinit () {
 
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="<?php echo base_url();?>/public/assets/jquery.min.js"></script>
 
 <!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+<script>
+
+
+    $("body").on('submit', '#add-experience-form', function(e){
+    
+        e.preventDefault();
+
+        var querystring = $(this).serialize();
+        
+        //console.log(querystring);
+
+        //alert("Hi");
+
+        $.ajax({
+            url: '<?php echo site_url(); ?>applicant/addexperienceaction',
+            type: "POST",
+            data: querystring,
+            dataType: "json",
+            success: function(response) {
+                //code to execute
+                //alert(response.success);
+                if(response.success == true)
+                {
+                    //CancelExperience();
+                    document.getElementById("exp-update-form-div").style.display = "none";
+                    $("#add-experience-form").trigger("reset");
+                    load_experiences();
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('Job Experience Added Successfully');
+                    
+                }
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                    //code to execute
+                    //alert(xhr.responseText);
+                    //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+                },
+            });
+
+            return false;
+    });
+
+</script>
+
+
+<script>
+
+    function load_experiences()
+      {
+          $.ajax({
+          url:"<?php echo site_url(); ?>applicant/experiences_container",
+          method:"POST",
+          dataType:"json",
+          success:function(data)
+          {
+           
+            $('#experience-post-container').html(data.experiences);
+            
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            //code to execute
+            //alert(xhr.responseText);
+            //$('.badge').text(xhr.responseText));
+          //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+          },
+        });
+        
+        
+      }
+
+      load_experiences();
+
+</script>
+
+
+<script>
+
+
+    $("body").on('submit' ,'#update-experience-form', function(e){
+    
+        e.preventDefault();
+
+    var querystring = $(this).serialize();
+    
+    //alert(querystring);
+
+        $.ajax({
+            url: '<?php echo site_url(); ?>applicant/updateexperienceaction',
+            type: "POST",
+            data: querystring,
+            dataType: "json",
+            success: function(response) {
+                //code to execute
+                //alert(response.success);
+               
+                if(response.success == true)
+                {
+                    //CancelExperience();
+                   // $("#id01").hide();
+                   
+                   load_experiences();
+                   
+                    $(".update-experience-form").trigger("reset");
+                    // $(".experience_box").load(location.href + " .experience_box");
+
+                    alertify.set('notifier','position', 'top-right');
+                    alertify.success('Job experience updated successfully');
+
+
+                   
+                }
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                    //code to execute
+                    //alert(xhr.responseText);
+                    //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+                },
+            });
+
+        return false;
+    });
+
+</script>
+
+
+<script>
+
+    $("body").on('click', '.exp-delete', function(e){
+
+            e.preventDefault();
+
+             var exp_id = $(this).data('exp_id');
+           
+            // alert(exp_id);
+
+           
+
+            $.ajax({
+                url: '<?php echo site_url();?>applicant/deletejobexperienceaction',
+                method:"POST",
+                dataType: "json",
+                data: {exp_id:exp_id},
+                beforeSend:function(){
+                return confirm("Are you sure you want to delete this record?");
+                },
+                success: function(response){
+                    
+                    if(response.success == true)
+                    {
+                        //alert(response.success);
+                        load_experiences();
+                        alertify.set('notifier','position', 'top-right');
+                        alertify.success('Experience deleted successfully');
+                        
+                    } 
+                    
+
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    //code to execute
+                    //alert(xhr.responseText);
+                    //$('#request-result2').html('Error occurred! Try again').delay(4000).fadeOut();
+                },
+
+            });
+
+            return false;
+            
+        });
+
+
+</script>
+
+
+
+<script>
+  function setOpt(selector, text, value) {
+  var node = document.querySelector(selector);
+  var opt = document.createElement("option");
+  opt.text = text;
+  opt.value = value;
+  node.add(opt);
+  return false;
+}
+
+function T(t) {
+  var now = new Date();
+  var time;
+  switch (t.toLowerCase()) {
+    case 'm':
+      time = now.getMonth() + 1;
+      break;
+    case 'd':
+      time = now.getDate();
+      break;
+    case 'y':
+      time = now.getFullYear();
+      break;
+    default:
+      break;
+  }
+  return time;
+}
+for (let i = 1950; i <= T('y'); i++) {
+  setOpt('#year1', i, i);
+}
+</script>
+
+
+<script>
+  function setOpt(selector, text, value) {
+  var node = document.querySelector(selector);
+  var opt = document.createElement("option");
+  opt.text = text;
+  opt.value = value;
+  node.add(opt);
+  return false;
+}
+
+function T(t) {
+  var now = new Date();
+  var time;
+  switch (t.toLowerCase()) {
+    case 'm':
+      time = now.getMonth() + 1;
+      break;
+    case 'd':
+      time = now.getDate();
+      break;
+    case 'y':
+      time = now.getFullYear();
+      break;
+    default:
+      break;
+  }
+  return time;
+}
+for (let i = 1930; i <= T('y'); i++) {
+  setOpt('#year2', i, i);
+}
+</script>
+
+
+
+<script>
+  function setOpt(selector, text, value) {
+  var node = document.querySelector(selector);
+  var opt = document.createElement("option");
+  opt.text = text;
+  opt.value = value;
+  node.add(opt);
+  return false;
+}
+
+function T(t) {
+  var now = new Date();
+  var time;
+  switch (t.toLowerCase()) {
+    case 'm':
+      time = now.getMonth() + 1;
+      break;
+    case 'd':
+      time = now.getDate();
+      break;
+    case 'y':
+      time = now.getFullYear();
+      break;
+    default:
+      break;
+  }
+  return time;
+}
+for (let i = 1930; i <= T('y'); i++) {
+  setOpt('#year3', i, i);
+}
+</script>
+
+
+<script>
+  function setOpt(selector, text, value) {
+  var node = document.querySelector(selector);
+  var opt = document.createElement("option");
+  opt.text = text;
+  opt.value = value;
+  node.add(opt);
+  return false;
+}
+
+function T(t) {
+  var now = new Date();
+  var time;
+  switch (t.toLowerCase()) {
+    case 'm':
+      time = now.getMonth() + 1;
+      break;
+    case 'd':
+      time = now.getDate();
+      break;
+    case 'y':
+      time = now.getFullYear();
+      break;
+    default:
+      break;
+  }
+  return time;
+}
+for (let i = 1930; i <= T('y'); i++) {
+  setOpt('#year4', i, i);
+}
+</script>
+
+
+<script>
+  function setOpt(selector, text, value) {
+  var node = document.querySelector(selector);
+  var opt = document.createElement("option");
+  opt.text = text;
+  opt.value = value;
+  node.add(opt);
+  return false;
+}
+
+function T(t) {
+  var now = new Date();
+  var time;
+  switch (t.toLowerCase()) {
+    case 'm':
+      time = now.getMonth() + 1;
+      break;
+    case 'd':
+      time = now.getDate();
+      break;
+    case 'y':
+      time = now.getFullYear();
+      break;
+    default:
+      break;
+  }
+  return time;
+}
+for (let i = 1930; i <= T('y'); i++) {
+  setOpt('#year5', i, i);
+}
+</script>
+
+
+<script>
+  function setOpt(selector, text, value) {
+  var node = document.querySelector(selector);
+  var opt = document.createElement("option");
+  opt.text = text;
+  opt.value = value;
+  node.add(opt);
+  return false;
+}
+
+function T(t) {
+  var now = new Date();
+  var time;
+  switch (t.toLowerCase()) {
+    case 'm':
+      time = now.getMonth() + 1;
+      break;
+    case 'd':
+      time = now.getDate();
+      break;
+    case 'y':
+      time = now.getFullYear();
+      break;
+    default:
+      break;
+  }
+  return time;
+}
+for (let i = 1930; i <= T('y'); i++) {
+  setOpt('#year6', i, i);
+}
+</script>
+
 
 <script>
 
