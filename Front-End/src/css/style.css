@@ -1,0 +1,13 @@
+
+
+@media screen and (max-width: 900px) {
+
+    .landing-page-section-1 {
+      padding: 5%;
+      background: transparent;
+    }
+    
+    .whoever-div, .lets-brand-div {
+        background : rgba(243, 243, 243, 0.6);
+    }
+}
